@@ -59,9 +59,9 @@ export default function Header() {
         {/* Mobile Button */}
         <div onClick={handleNav} className="block sm:hidden z-50">
           {nav ? (
-            <AiOutlineClose size={20} />
+            <AiOutlineClose color="white" size={20} />
           ) : (
-            <AiOutlineMenu color="black" size={20} />
+            <AiOutlineMenu color="white" size={20} />
           )}
         </div>
         {/* Mobile Menu */}
@@ -73,16 +73,28 @@ export default function Header() {
           }
         >
           <ul>
-            <li onClick={handleNav} className="p-4 text-4xl hover:text-black">
+            <li
+              onClick={handleNav}
+              className="p-4 text-4xl hover:text-white transition duration-300 transform hover:scale-110"
+            >
               <Link href="/">Home</Link>
             </li>
-            <li onClick={handleNav} className="p-4 text-4xl hover:text-black">
+            <li
+              onClick={handleNav}
+              className="p-4 text-4xl hover:text-white transition duration-300 transform hover:scale-110"
+            >
               <Link href="/database">Database</Link>
             </li>
-            <li onClick={handleNav} className="p-4 text-4xl hover:text-black">
+            <li
+              onClick={handleNav}
+              className="p-4 text-4xl hover:text-white transition duration-300 transform hover:scale-110"
+            >
               <Link href="/careers">Careers</Link>
             </li>
-            <li onClick={handleNav} className="p-4 text-4xl hover:text-black">
+            <li
+              onClick={handleNav}
+              className="p-4 text-4xl hover:text-white transition duration-300 transform hover:scale-110"
+            >
               <Link href="/contact">Contact</Link>
             </li>
           </ul>

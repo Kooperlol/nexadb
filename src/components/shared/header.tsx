@@ -41,17 +41,17 @@ export default function Header() {
             height={100}
           />
         </Link>
-        <ul className="hidden text-black sm:flex">
-          <li className="p-4 hover:text-primary">
+        <ul className="hidden text-background sm:flex">
+          <li className="p-4 hover:text-black">
             <Link href="/">Home</Link>
           </li>
-          <li className="p-4 hover:text-primary">
+          <li className="p-4 hover:text-black">
             <Link href="/database">Database</Link>
           </li>
-          <li className="p-4 hover:text-primary">
+          <li className="p-4 hover:text-black">
             <Link href="/careers">Careers</Link>
           </li>
-          <li className="p-4 hover:text-primary">
+          <li className="p-4 hover:text-black">
             <Link href="/contact">Contact</Link>
           </li>
         </ul>
@@ -73,16 +73,16 @@ export default function Header() {
           }
         >
           <ul>
-            <li onClick={handleNav} className="p-4 text-4xl hover:text-primary">
+            <li onClick={handleNav} className="p-4 text-4xl hover:text-black">
               <Link href="/">Home</Link>
             </li>
-            <li onClick={handleNav} className="p-4 text-4xl hover:text-primary">
+            <li onClick={handleNav} className="p-4 text-4xl hover:text-black">
               <Link href="/database">Database</Link>
             </li>
-            <li onClick={handleNav} className="p-4 text-4xl hover:text-primary">
+            <li onClick={handleNav} className="p-4 text-4xl hover:text-black">
               <Link href="/careers">Careers</Link>
             </li>
-            <li onClick={handleNav} className="p-4 text-4xl hover:text-primary">
+            <li onClick={handleNav} className="p-4 text-4xl hover:text-black">
               <Link href="/contact">Contact</Link>
             </li>
           </ul>

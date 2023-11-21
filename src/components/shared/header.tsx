@@ -37,8 +37,8 @@ export default function Header() {
             draggable={false}
             src="/media/logo.png"
             alt="logo"
-            width={100}
-            height={100}
+            width={125}
+            height={125}
           />
         </Link>
         <ul className="hidden text-black sm:flex">

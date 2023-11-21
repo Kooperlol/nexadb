@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { ChakraProvider } from "@chakra-ui/react";
 import "./globals.css";
 import Header from "@/components/shared/header";
+import Footer from "@/components/shared/footer";
 import BgParticles from "@/components/shared/bg-particles";
 
 const poppins = Poppins({
@@ -31,7 +32,10 @@ export default function RootLayout({
         <BgParticles />
         <ChakraProvider>
           <Header />
-          <div style={{ zIndex: 10, position: "relative" }}>{children}</div>
+          <div style={{ zIndex: 10, position: "relative" }}>
+            {children}
+            <Footer />
+          </div>
         </ChakraProvider>
       </body>
     </html>

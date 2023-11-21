@@ -31,7 +31,7 @@ export default function RootLayout({
         <BgParticles />
         <ChakraProvider>
           <Header />
-          {children}
+          <div style={{ zIndex: 10, position: "relative" }}>{children}</div>
         </ChakraProvider>
       </body>
     </html>

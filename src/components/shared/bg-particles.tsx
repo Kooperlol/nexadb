@@ -35,7 +35,7 @@ const BgParticles = () => {
         autoPlay: true,
         background: {
           color: {
-            value: "#E2BEFF",
+            value: "#4b0082",
           },
           image: "",
           position: "50% 50%",
@@ -47,7 +47,7 @@ const BgParticles = () => {
           composite: "destination-out",
           cover: {
             color: {
-              value: "#E2BEFF",
+              value: "#4b0082",
             },
             opacity: 1,
           },
@@ -127,7 +127,7 @@ const BgParticles = () => {
               radius: 60,
             },
             grab: {
-              distance: 400,
+              distance: 275,
               links: {
                 blink: false,
                 consent: false,

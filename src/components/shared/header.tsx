@@ -42,16 +42,16 @@ export default function Header() {
           />
         </Link>
         <ul className="hidden text-background sm:flex">
-          <li className="p-4 hover:text-black">
+          <li className="p-4 hover:text-black transition duration-300 transform hover:scale-105">
             <Link href="/">Home</Link>
           </li>
-          <li className="p-4 hover:text-black">
+          <li className="p-4 hover:text-black transition duration-300 transform hover:scale-105">
             <Link href="/database">Database</Link>
           </li>
-          <li className="p-4 hover:text-black">
+          <li className="p-4 hover:text-black transition duration-300 transform hover:scale-105">
             <Link href="/careers">Careers</Link>
           </li>
-          <li className="p-4 hover:text-black">
+          <li className="p-4 hover:text-black transition duration-300 transform hover:scale-105">
             <Link href="/contact">Contact</Link>
           </li>
         </ul>

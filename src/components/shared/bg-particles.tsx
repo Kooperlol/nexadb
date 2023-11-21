@@ -127,7 +127,7 @@ const BgParticles = () => {
               radius: 60,
             },
             grab: {
-              distance: 275,
+              distance: 250,
               links: {
                 blink: false,
                 consent: false,

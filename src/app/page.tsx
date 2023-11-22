@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center h-screen p-32">
+    <div className="flex items-center justify-center min-h-screen p-32">
       <div className="flex flex-row justify-between w-screen items-center">
         <div className="flex flex-col gap-5 w-1/2">
           <TypeAnimation

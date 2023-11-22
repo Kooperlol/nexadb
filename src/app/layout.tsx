@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { ChakraProvider } from "@chakra-ui/react";
+import Footer from "@/components/shared/footer";
 import "./globals.css";
 import Header from "@/components/shared/header";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
         <ChakraProvider>
           <Header />
           {children}
+          <Footer />
         </ChakraProvider>
       </body>
     </html>

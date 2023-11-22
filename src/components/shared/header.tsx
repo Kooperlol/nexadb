@@ -35,16 +35,16 @@ export default function Header() {
       >
         <p className="text-2xl font-bold">NexaDB</p>
         <ul className="hidden text-background sm:flex">
-          <li className="p-4 hover:text-black transition duration-300 transform hover:scale-110">
+          <li className="p-4 hover:text-purple-950 transition duration-300 transform hover:scale-110">
             <Link href="/">Home</Link>
           </li>
-          <li className="p-4 hover:text-black transition duration-300 transform hover:scale-110">
+          <li className="p-4 hover:text-purple-950 transition duration-300 transform hover:scale-110">
             <Link href="/database">Database</Link>
           </li>
-          <li className="p-4 hover:text-black transition duration-300 transform hover:scale-110">
+          <li className="p-4 hover:text-purple-950 transition duration-300 transform hover:scale-110">
             <Link href="/careers">Careers</Link>
           </li>
-          <li className="p-4 hover:text-black transition duration-300 transform hover:scale-110">
+          <li className="p-4 hover:text-purple-950 transition duration-300 transform hover:scale-110">
             <Link href="/contact">Contact</Link>
           </li>
         </ul>

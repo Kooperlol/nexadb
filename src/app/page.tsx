@@ -4,8 +4,11 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import AnimatedNumbers from "react-animated-numbers";
+import { Button } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const { push } = useRouter();
   return (
     <div>
       <div className="flex items-center justify-center min-h-screen md:p-32 p-8 py-32">
@@ -106,7 +109,7 @@ export default function Home() {
                   })}
                 />
                 <p>K+</p>
-              </div>{" "}
+              </div>
               <p className="text-lg">Github stars</p>
             </CardBody>
           </Card>
@@ -126,6 +129,41 @@ export default function Home() {
             </CardBody>
           </Card>
         </div>
+      </div>
+      <div className="flex md:flex-row flex-col items-center justify-between bg-primary md:gap-0 gap-24 text-white md:text-left text-center p-16">
+        <div className="flex flex-col md:items-start items-center gap-5 w-3/5">
+          <p className="text-2xl font-semibold">
+            Ready to Get Started with NexaDB?
+          </p>
+          <p className="text-xl">
+            Ready to experience the power of NexaDB? Follow these simple steps
+            to get started and unlock a seamless, open-source database solution.
+            Whether you're a business, developer, or data enthusiast, NexaDB
+            makes data management straightforward and efficient. Let's embark on
+            a journey of innovation together - explore NexaDB and elevate your
+            data experience today!
+          </p>
+          <Button
+            className="w-fit"
+            bg={"purple.800"}
+            color={"white"}
+            onClick={() => push("/database")}
+            _hover={{
+              bg: "purple.900",
+            }}
+          >
+            Get Started
+          </Button>
+        </div>
+        <Image
+          className="select-none"
+          priority
+          src="/media/server.svg"
+          draggable={false}
+          width={400}
+          height={400}
+          alt="Person sitting on a cloud"
+        />
       </div>
     </div>
   );

@@ -3,7 +3,6 @@ import { Poppins } from "next/font/google";
 import { ChakraProvider } from "@chakra-ui/react";
 import "./globals.css";
 import Header from "@/components/shared/header";
-import BgParticles from "@/components/shared/bg-particles";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,11 +26,10 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="/media/logo.png" />
       </head>
-      <body className={`${poppins.className}`}>
-        <BgParticles />
+      <body className={`${poppins.className} bg-primary`}>
         <ChakraProvider>
           <Header />
-          <div style={{ zIndex: 10, position: "relative" }}>{children}</div>
+          {children}
         </ChakraProvider>
       </body>
     </html>

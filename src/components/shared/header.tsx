@@ -31,16 +31,9 @@ export default function Header() {
           scrollPosition > 0 ? "fixed drop-shadow-md" : "fixed shadow-none"
         }`}
       >
-        <Link href="/">
-          <Image
-            priority
-            draggable={false}
-            src="/media/logo.png"
-            alt="logo"
-            width={100}
-            height={100}
-          />
-        </Link>
+        <b>
+          <p className="text-2xl">NexaDB</p>
+        </b>
         <ul className="hidden text-background sm:flex">
           <li className="p-4 hover:text-black transition duration-300 transform hover:scale-110">
             <Link href="/">Home</Link>

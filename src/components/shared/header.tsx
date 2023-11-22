@@ -28,12 +28,12 @@ export default function Header() {
     <div className="absolute left-0 top-0 z-50 ease-in duration-300">
       <div
         className={`m-auto flex w-screen justify-between items-center px-8 py-5 text-white ${
-          scrollPosition > 0 ? "fixed drop-shadow-md" : "fixed shadow-none"
+          scrollPosition > 0
+            ? "fixed bg-primary drop-shadow-md"
+            : "fixed shadow-none"
         }`}
       >
-        <b>
-          <p className="text-2xl">NexaDB</p>
-        </b>
+        <p className="text-2xl font-bold">NexaDB</p>
         <ul className="hidden text-background sm:flex">
           <li className="p-4 hover:text-black transition duration-300 transform hover:scale-110">
             <Link href="/">Home</Link>

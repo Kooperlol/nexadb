@@ -1,11 +1,21 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import {
+  Box,
+  Text,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverBody,
+  PopoverArrow,
+} from "@chakra-ui/react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { FaChevronRight, FaChevronDown } from "react-icons/fa";
 
 export default function Header() {
   const [nav, setNav] = useState(false);
+  const [careersOpen, setCareersOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleNav = () => {
@@ -29,22 +39,54 @@ export default function Header() {
       <div
         className={`m-auto flex w-screen justify-between items-center px-8 py-5 text-white ${
           scrollPosition > 0
-            ? "fixed bg-primary drop-shadow-md"
-            : "fixed shadow-none"
+            ? "ease-in duration-150 fixed bg-primary-foreground drop-shadow-md"
+            : "ease-out duration-150 fixed shadow-none"
         }`}
       >
         <p className="text-2xl font-bold">NexaDB</p>
-        <ul className="hidden text-background sm:flex">
-          <li className="p-4 hover:text-purple-950 transition duration-300 transform hover:scale-110">
+        <ul className="gap-8 hidden text-background sm:flex items-center">
+          <li className="hover:text-purple-950 transition duration-300 transform hover:scale-110">
             <Link href="/">Home</Link>
           </li>
-          <li className="p-4 hover:text-purple-950 transition duration-300 transform hover:scale-110">
+          <li className=" hover:text-purple-950 transition duration-300 transform hover:scale-110">
             <Link href="/database">Database</Link>
           </li>
-          <li className="p-4 hover:text-purple-950 transition duration-300 transform hover:scale-110">
-            <Link href="/careers">Careers</Link>
+          <li className="relative">
+            <Popover trigger="hover" placement="bottom">
+              <PopoverTrigger>
+                <Box
+                  className="hover:text-purple-950 transition duration-300 transform hover:scale-110"
+                  cursor="pointer"
+                  color="gray.800"
+                  textColor={"white"}
+                  transition="color 0.3s, transform 0.3s"
+                >
+                  Careers
+                </Box>
+              </PopoverTrigger>
+              <PopoverContent
+                p={2}
+                fontSize="md"
+                style={{ width: "min-content" }}
+                className="text-center text-black"
+                bg="white"
+              >
+                <PopoverArrow />
+                <PopoverBody className="flex flex-col gap-3">
+                  <Text className="hover:text-purple-950 transition duration-300 transform hover:scale-110">
+                    Why Us
+                  </Text>
+                  <Text className="hover:text-purple-950 transition duration-300 transform hover:scale-110">
+                    Positions
+                  </Text>
+                  <Text className="hover:text-purple-950 transition duration-300 transform hover:scale-110">
+                    Apply
+                  </Text>
+                </PopoverBody>
+              </PopoverContent>
+            </Popover>
           </li>
-          <li className="p-4 hover:text-purple-950 transition duration-300 transform hover:scale-110">
+          <li className=" hover:text-purple-950 transition duration-300 transform hover:scale-110">
             <Link href="/contact">Contact</Link>
           </li>
         </ul>
@@ -61,33 +103,41 @@ export default function Header() {
         <div
           className={
             nav
-              ? "sm:hidden z-40 absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
-              : "sm:hidden z-40 absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+              ? "sm:hidden z-40 absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-left ease-in duration-300"
+              : "sm:hidden z-40 absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-left ease-in duration-300"
           }
         >
-          <ul>
-            <li
-              onClick={handleNav}
-              className="p-4 text-4xl hover:text-white transition duration-300 transform hover:scale-110"
-            >
+          <ul className="flex-col text-4xl gap-5 flex">
+            <li className="hover:text-purple-950" onClick={handleNav}>
               <Link href="/">Home</Link>
             </li>
-            <li
-              onClick={handleNav}
-              className="p-4 text-4xl hover:text-white transition duration-300 transform hover:scale-110"
-            >
+            <li className="hover:text-purple-950" onClick={handleNav}>
               <Link href="/database">Database</Link>
             </li>
-            <li
-              onClick={handleNav}
-              className="p-4 text-4xl hover:text-white transition duration-300 transform hover:scale-110"
-            >
-              <Link href="/careers">Careers</Link>
+            <li>
+              <p
+                onClick={() => {
+                  setCareersOpen(!careersOpen);
+                }}
+                className="hover:text-purple-950 flex flex-row items-center gap-2"
+              >
+                <span>Careers</span>
+                {careersOpen ? (
+                  <FaChevronDown size={25} />
+                ) : (
+                  <FaChevronRight size={25} />
+                )}
+              </p>
+              <ul
+                hidden={!careersOpen}
+                className="px-5 py-3 flex flex-col gap-2"
+              >
+                <li className="hover:text-purple-950">Why Us</li>
+                <li className="hover:text-purple-950">Positions</li>
+                <li className="hover:text-purple-950">Apply</li>
+              </ul>
             </li>
-            <li
-              onClick={handleNav}
-              className="p-4 text-4xl hover:text-white transition duration-300 transform hover:scale-110"
-            >
+            <li className="hover:text-purple-950" onClick={handleNav}>
               <Link href="/contact">Contact</Link>
             </li>
           </ul>

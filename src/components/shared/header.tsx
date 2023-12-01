@@ -73,15 +73,24 @@ export default function Header() {
               >
                 <PopoverArrow />
                 <PopoverBody className="flex flex-col gap-3">
-                  <Text className="hover:text-purple-950 transition duration-300 transform hover:scale-110">
+                  <Link
+                    href={"/careers/why-us"}
+                    className="hover:text-purple-950 transition duration-300 transform hover:scale-110"
+                  >
                     Why Us
-                  </Text>
-                  <Text className="hover:text-purple-950 transition duration-300 transform hover:scale-110">
+                  </Link>
+                  <Link
+                    href={"/careers/positions"}
+                    className="hover:text-purple-950 transition duration-300 transform hover:scale-110"
+                  >
                     Positions
-                  </Text>
-                  <Text className="hover:text-purple-950 transition duration-300 transform hover:scale-110">
+                  </Link>
+                  <Link
+                    href={"/careers/apply"}
+                    className="hover:text-purple-950 transition duration-300 transform hover:scale-110"
+                  >
                     Apply
-                  </Text>
+                  </Link>
                 </PopoverBody>
               </PopoverContent>
             </Popover>

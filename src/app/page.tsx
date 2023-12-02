@@ -18,7 +18,7 @@ export default function Home() {
           priority
           draggable={false}
           src={headerBackground}
-          alt="404"
+          alt="Header Background"
         />
         <div className="flex relative items-center justify-center min-h-screen md:p-32 p-8 py-32">
           <div className="flex md:flex-row flex-col md:gap-0 gap-5 md:text-left text-center justify-between w-screen items-center">
@@ -143,7 +143,7 @@ export default function Home() {
       <div className="flex md:flex-row flex-col items-center justify-between bg-primary md:gap-0 gap-24 text-white md:text-left text-center p-16">
         <div className="flex flex-col md:items-start items-center gap-5 w-3/5">
           <p className="text-2xl font-semibold">
-            Ready to Get Started with NexaDB?
+            Ready to get started with NexaDB?
           </p>
           <p className="text-xl w-1/2">
             Ready to experience the power of NexaDB? Follow these simple steps

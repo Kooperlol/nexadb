@@ -1,21 +1,10 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Text,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverBody,
-  PopoverArrow,
-} from "@chakra-ui/react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { FaChevronRight, FaChevronDown } from "react-icons/fa";
 
 export default function Header() {
   const [nav, setNav] = useState(false);
-  const [careersOpen, setCareersOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleNav = () => {
@@ -51,49 +40,8 @@ export default function Header() {
           <li className=" hover:text-purple-950 transition duration-300 transform hover:scale-110">
             <Link href="/database">Database</Link>
           </li>
-          <li className="relative">
-            <Popover trigger="hover" placement="bottom">
-              <PopoverTrigger>
-                <Box
-                  className="hover:text-purple-950 transition duration-300 transform hover:scale-110"
-                  cursor="pointer"
-                  color="gray.800"
-                  textColor={"white"}
-                  transition="color 0.3s, transform 0.3s"
-                >
-                  Careers
-                </Box>
-              </PopoverTrigger>
-              <PopoverContent
-                p={2}
-                fontSize="md"
-                style={{ width: "min-content" }}
-                className="text-center text-black"
-                bg="white"
-              >
-                <PopoverArrow />
-                <PopoverBody className="flex flex-col gap-3">
-                  <Link
-                    href={"/careers/why-us"}
-                    className="hover:text-purple-950 transition duration-300 transform hover:scale-110"
-                  >
-                    Why Us
-                  </Link>
-                  <Link
-                    href={"/careers/positions"}
-                    className="hover:text-purple-950 transition duration-300 transform hover:scale-110"
-                  >
-                    Positions
-                  </Link>
-                  <Link
-                    href={"/careers/apply"}
-                    className="hover:text-purple-950 transition duration-300 transform hover:scale-110"
-                  >
-                    Apply
-                  </Link>
-                </PopoverBody>
-              </PopoverContent>
-            </Popover>
+          <li className=" hover:text-purple-950 transition duration-300 transform hover:scale-110">
+            <Link href="/careers">Careers</Link>
           </li>
           <li className=" hover:text-purple-950 transition duration-300 transform hover:scale-110">
             <Link href="/contact">Contact</Link>
@@ -123,28 +71,8 @@ export default function Header() {
             <li className="hover:text-purple-950" onClick={handleNav}>
               <Link href="/database">Database</Link>
             </li>
-            <li>
-              <p
-                onClick={() => {
-                  setCareersOpen(!careersOpen);
-                }}
-                className="hover:text-purple-950 flex flex-row items-center gap-2"
-              >
-                <span>Careers</span>
-                {careersOpen ? (
-                  <FaChevronDown size={25} />
-                ) : (
-                  <FaChevronRight size={25} />
-                )}
-              </p>
-              <ul
-                hidden={!careersOpen}
-                className="px-5 py-3 flex flex-col gap-2"
-              >
-                <li className="hover:text-purple-950">Why Us</li>
-                <li className="hover:text-purple-950">Positions</li>
-                <li className="hover:text-purple-950">Apply</li>
-              </ul>
+            <li className="hover:text-purple-950" onClick={handleNav}>
+              <Link href="/careers">Careers</Link>
             </li>
             <li className="hover:text-purple-950" onClick={handleNav}>
               <Link href="/contact">Contact</Link>

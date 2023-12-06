@@ -105,7 +105,7 @@ export default function Home() {
                 />
                 <p>M+</p>
               </div>
-              <p className="text-lg">Downloads</p>
+              <p className="text-lg">Applications</p>
             </CardBody>
           </Card>
           <Card width={200} height={200}>

@@ -4,6 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Footer from "@/components/shared/footer";
 import "./globals.css";
 import Header from "@/components/shared/header";
+import HeaderProvider from "@/providers/header-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,7 +30,7 @@ export default function RootLayout({
       </head>
       <body className={`${poppins.className} bg-primary`}>
         <ChakraProvider>
-          <Header />
+          <HeaderProvider />
           {children}
           <Footer />
         </ChakraProvider>

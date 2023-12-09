@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
-export default function Header() {
+export default function AdminHeader() {
   const [nav, setNav] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -35,16 +35,13 @@ export default function Header() {
         <p className="text-2xl font-bold">NexaDB</p>
         <ul className="gap-8 hidden text-background sm:flex items-center">
           <li className="hover:text-purple-950 transition duration-300 transform hover:scale-110">
-            <Link href="/">Home</Link>
+            <Link href="/admin/dashboard">Dashboard</Link>
           </li>
           <li className=" hover:text-purple-950 transition duration-300 transform hover:scale-110">
-            <Link href="/database">Database</Link>
+            <Link href="/admin/positions">Positions</Link>
           </li>
           <li className=" hover:text-purple-950 transition duration-300 transform hover:scale-110">
-            <Link href="/careers">Careers</Link>
-          </li>
-          <li className=" hover:text-purple-950 transition duration-300 transform hover:scale-110">
-            <Link href="/contact">Contact</Link>
+            <Link href="/admin/inquiries">Inquiries</Link>
           </li>
         </ul>
 
@@ -66,16 +63,13 @@ export default function Header() {
         >
           <ul className="flex-col text-4xl gap-5 flex">
             <li className="hover:text-purple-950" onClick={handleNav}>
-              <Link href="/">Home</Link>
+              <Link href="/admin/dashboard">Dashboard</Link>
             </li>
             <li className="hover:text-purple-950" onClick={handleNav}>
-              <Link href="/database">Database</Link>
+              <Link href="/admin/positions">Positions</Link>
             </li>
             <li className="hover:text-purple-950" onClick={handleNav}>
-              <Link href="/careers">Careers</Link>
-            </li>
-            <li className="hover:text-purple-950" onClick={handleNav}>
-              <Link href="/contact">Contact</Link>
+              <Link href="/admin/inquiries">Inquiries</Link>
             </li>
           </ul>
         </div>

@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import careersMobile from "@/../public/media/mobile_careers.jpg";
+import { Button } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import careersDesktop from "@/../public/media/careers.gif";
 import {
   FaClock,
@@ -13,6 +16,7 @@ import { MdAccountBalance, MdOutlineSecurity } from "react-icons/md";
 import { FaMoneyBillTransfer, FaUserDoctor } from "react-icons/fa6";
 
 const Careers = () => {
+  const { push } = useRouter();
   return (
     <>
       <Image
@@ -199,8 +203,22 @@ const Careers = () => {
           </ul>
         </div>
       </div>
-      <div className="flex lg:flex-row flex-col items-center justify-center gap-16 p-16 bg-white">
-        <p>IDK HERE</p>
+      <div className="flex flex-col items-center justify-center gap-5 p-16 bg-white">
+        <p className="text-3xl text-center">
+          Join us in shaping the future of database management.
+        </p>
+        <Button
+          size={"lg"}
+          className="w-fit"
+          bg={"purple.800"}
+          color={"white"}
+          onClick={() => push("/careers/search")}
+          _hover={{
+            bg: "purple.900",
+          }}
+        >
+          View all open roles
+        </Button>
       </div>
     </>
   );

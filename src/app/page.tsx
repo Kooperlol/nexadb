@@ -12,7 +12,7 @@ export default function Home() {
   const { push } = useRouter();
   return (
     <div>
-      <div className="max-h-screen">
+      <div className="min-h-screen">
         <Image
           className="absolute object-cover min-h-screen max-h-screen opacity-0 md:opacity-100"
           priority
@@ -22,7 +22,7 @@ export default function Home() {
         />
         <div className="flex relative items-center justify-center min-h-screen md:p-32 p-8 py-32">
           <div className="flex md:flex-row flex-col md:gap-0 gap-5 md:text-left text-center justify-between w-screen items-center">
-            <div className="flex flex-col gap-5 w-1/3">
+            <div className="flex flex-col gap-5 md:w-1/3">
               <TypeAnimation
                 className="md:text-2xl text-2xl header-shadow"
                 sequence={[
@@ -78,12 +78,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-12 text-center text-black bg-white md:p-32">
+      <div className="flex flex-col gap-12 text-center text-black bg-white md:p-32 p-8 py-32">
         <div className="flex flex-col items-center gap-5">
           <p className="text-2xl font-semibold">
             A dynamic, open source database
           </p>
-          <p className="text-xl w-1/2">
+          <p className="text-xl md:w-1/2">
             NexaDB has won the hearts of developers with its seamless
             performance and top-notch features. Praised and top-voted, NexaDB
             stands as a reliable choice for businesses and organizations,
@@ -140,12 +140,12 @@ export default function Home() {
           </Card>
         </div>
       </div>
-      <div className="flex md:flex-row flex-col items-center justify-between bg-primary md:gap-0 gap-24 text-white md:text-left text-center p-16">
-        <div className="flex flex-col md:items-start items-center gap-5 w-3/5">
+      <div className="flex md:flex-row flex-col items-center justify-between bg-primary md:gap-0 gap-24 text-white md:text-left text-center md:p-16 p-8">
+        <div className="flex flex-col md:items-start items-center gap-5 md:w-3/5">
           <p className="text-2xl font-semibold">
             Ready to get started with NexaDB?
           </p>
-          <p className="text-xl w-1/2">
+          <p className="text-xl md:w-1/2">
             Ready to experience the power of NexaDB? Follow these simple steps
             to get started and unlock a seamless, open-source database solution.
             Whether you're a business, developer, or data enthusiast, NexaDB

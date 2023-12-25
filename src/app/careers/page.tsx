@@ -33,7 +33,7 @@ const Careers = () => {
         src={careersMobile}
         alt="Careers Background"
       />
-      <div className="gap-2 flex flex-col items-center justify-center relative min-h-screen text-white text-center">
+      <div className="gap-2 flex flex-col items-center px-8 justify-center relative min-h-screen text-white text-center">
         <p className="lg:text-5xl text-3xl font-bold">
           Fostering Excellence Through Collaboration
         </p>

@@ -1,3 +1,4 @@
+"use client";
 import {
   Card,
   CardBody,
@@ -9,37 +10,52 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import Image from "next/image";
+import axios from "axios";
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 
 const page = () => {
+  const handSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    const payload = {
+      firstname: event.currentTarget.firstname.value,
+      lastname: event.currentTarget.lastname.value,
+      email: event.currentTarget.email.value,
+      message: event.currentTarget.message.value,
+    };
+
+    try {
+      await axios.post("/api/inquiries", payload);
+    } catch (e) {
+      console.log("Something went wrong while creating an inquery.");
+    }
+  };
+
   return (
     <div>
-      <div className="flex lg:flex-row flex-col items-center gap-16 p-32 justify-evenly min-h-screen text-center">
+      <div className="flex lg:flex-row flex-col items-center gap-16 md:p-32 py-32 p-8 justify-evenly min-h-screen text-center">
         <div className="flex flex-col gap-10 items-center">
           <p className="text-white text-4xl font-bold">
             Let's personalize NexaDB for you
           </p>
           <Card>
-            <CardBody className="flex flex-col gap-5">
-              <div className="flex flex-row gap-3 items-center">
+            <CardBody className="flex flex-col gap-5 text-left">
+              <div className="flex flex-row gap-3  justify-between items-center">
                 <FaCheck color="green" size={20} />
-                <p>
+                <p className="lg:w-full w-5/6">
                   Unlock the Power of Tailored Solutions with Our Exclusive
                   Custom Server Plans!
                 </p>
               </div>
-              <div className="flex flex-row gap-3 items-center">
+              <div className="flex flex-row gap-3 justify-between items-center">
                 <FaCheck color="green" size={20} />
-                <p>
+                <p className="lg:w-full w-5/6">
                   Feel Safe Anywhere with our Enterprise-Grade Protection
                   Powered by the Latest Technology!
                 </p>
               </div>
-              <div className="flex flex-row gap-3 items-center">
+              <div className="flex flex-row gap-3 justify-between items-center">
                 <FaCheck color="green" size={20} />
-                <p>
+                <p className="lg:w-full w-5/6">
                   Dive into the World of Possibilities with Fully Customizable
                   Hardware!
                 </p>
@@ -76,9 +92,10 @@ const page = () => {
                 to you as soon as possible.
               </Text>
             </Stack>
-            <Box as={"form"} mt={10}>
+            <Box onSubmit={handSubmit} as={"form"} mt={10}>
               <Stack spacing={4}>
                 <Input
+                  id="firstname"
                   placeholder="Firstname"
                   bg={"gray.100"}
                   border={0}
@@ -88,6 +105,7 @@ const page = () => {
                   }}
                 />
                 <Input
+                  id="lastname"
                   placeholder="Lastname"
                   bg={"gray.100"}
                   border={0}
@@ -97,6 +115,7 @@ const page = () => {
                   }}
                 />
                 <Input
+                  id="email"
                   placeholder="Email"
                   bg={"gray.100"}
                   border={0}
@@ -106,6 +125,7 @@ const page = () => {
                   }}
                 />
                 <Textarea
+                  id="message"
                   defaultValue="Message"
                   bg={"gray.100"}
                   border={0}
@@ -121,6 +141,7 @@ const page = () => {
                 w={"full"}
                 bgGradient="linear(to-r, purple.400,purple.600)"
                 color={"white"}
+                type="submit"
                 _hover={{
                   bgGradient: "linear(to-r, purple.400,purple.600)",
                   boxShadow: "xl",

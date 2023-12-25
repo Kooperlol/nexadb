@@ -1,7 +1,7 @@
 import { sign } from "jsonwebtoken";
 import { NextResponse } from "next/server";
 import { serialize } from "cookie";
-import { COOKIE_NAME, MAX_AGE } from "@/constants";
+import { COOKIE_NAME, MAX_AGE } from "@/helpers/constants";
 
 export async function POST(request: Request) {
   const body = await request.json();

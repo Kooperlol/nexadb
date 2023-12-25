@@ -34,13 +34,13 @@ export default function AdminHeader() {
       >
         <p className="text-2xl font-bold">NexaDB</p>
         <ul className="gap-8 hidden text-background sm:flex items-center">
-          <li className="hover:text-purple-950 transition duration-300 transform hover:scale-110">
+          <li className="hover:text-purple-950">
             <Link href="/admin/dashboard">Dashboard</Link>
           </li>
-          <li className=" hover:text-purple-950 transition duration-300 transform hover:scale-110">
+          <li className=" hover:text-purple-950">
             <Link href="/admin/positions">Positions</Link>
           </li>
-          <li className=" hover:text-purple-950 transition duration-300 transform hover:scale-110">
+          <li className=" hover:text-purple-950">
             <Link href="/admin/inquiries">Inquiries</Link>
           </li>
         </ul>

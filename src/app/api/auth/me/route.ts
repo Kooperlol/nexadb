@@ -1,4 +1,4 @@
-import { COOKIE_NAME } from "@/constants";
+import { COOKIE_NAME } from "@/helpers/constants";
 import { cookies } from "next/headers";
 import { verify } from "jsonwebtoken";
 import { NextResponse } from "next/server";

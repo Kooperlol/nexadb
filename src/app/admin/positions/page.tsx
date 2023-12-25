@@ -1,7 +1,11 @@
 import React from "react";
 
 const PositionsPage = () => {
-  return <div>PositionsPage</div>;
+  return (
+    <>
+      <div className="min-h-screen"></div>
+    </>
+  );
 };
 
 export default PositionsPage;

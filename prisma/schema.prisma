@@ -13,6 +13,7 @@ model Position {
   location String
   about String
   salary Int
+  listed Boolean
 }
 
 model Inquiry {

@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Kooperlol/nexadb">
-    <img src="public/media/logo.png" alt="Logo" width="110" height="80">
+    <img src="public/media/logo.png" alt="Logo" width="110" height="110">
   </a>
 
 <h3 align="center">NexaDB</h3>
@@ -41,8 +41,8 @@ Coming soon
 
 | Technology                                                                                                        | Description                               |
 | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| [![Flutter][Flutter]](https://flutter.dev/)           | A framework that can compile to multiple operating systems from just one coding language.        |
-| [![Firebase][Firebase]](https://firebase.google.com/) | A backend database used for authentication, file storage, and document storage.           |
+| | |
+| | |
 
 
 
@@ -54,18 +54,10 @@ Coming soon
 <!-- EXTERNAL RESOURCES -->
 ## 🔌 External Resources
 
-* [Undraw](https://undraw.co/)
-* [Pexels](https://www.pexels.com/)
-* [Best Readme Template](https://github.com/othneildrew/Best-README-Template)
-* [Github Image Shields](https://github.com/badges/shields)
-
 
 
 <!-- COMPATIBILITY -->
 ## 📱 Compatibility
-
-![IOS][IOS]<br>
-![Android][Android]
 
 
 

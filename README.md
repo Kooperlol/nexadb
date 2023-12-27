@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a name="readme-top"></a>
 
-## Getting Started
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/Kooperlol/nexadb">
+    <img src="public/media/logo.png" alt="Logo" width="110" height="110">
+  </a>
 
-First, run the development server:
+<h3 align="center">NexaDB</h3>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  <p align="center">
+    A project for FBLA Website Coding & Development (2023 - 2024)
+  </p>
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<!-- ABOUT THE PROJECT -->
+## ❓ About The Project
 
-## Learn More
+Coming soon
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🏆 Program Awards
 
-## Deploy on Vercel
+tbd Wisconsin - Regionals<br>
+tbd Wisconsin - State<br>
+tbd Flordia - Nationals
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## 📜 Requirements Met
+
+Coming soon
+
+
+
+## 👷 Built With
+
+| Technology                                                                                                        | Description                               |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| | |
+| | |
+
+
+
+<!-- DEPENDENCIES -->
+## 💾 Dependencies
+
+
+
+<!-- EXTERNAL RESOURCES -->
+## 🔌 External Resources
+
+
+
+<!-- COMPATIBILITY -->
+## 📱 Compatibility
+
+
+
+<!-- GETTING STARTED -->
+## 🔧 Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### 🧠 Prerequisites
+
+Coming soon
+
+
+
+### ⬇️ Installation
+
+Coming soon
+
+
+
+### 📑 Instructions
+
+Coming soon
+
+
+
+<!-- LICENSE -->
+## 👨‍⚖️ License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+
+
+<!-- CONTACT -->
+## ✉️ Contact
+
+Kooper Propp - kooperjack8@gmail.com<br>
+Nolan Erickson - add<br>
+Project Link: [https://github.com/Kooperlol/nexadb](https://github.com/Kooperlol/nexadb)
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[Flutter]: https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white
+[Firebase]: https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white
+[IOS]: https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white
+[Android]: https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white

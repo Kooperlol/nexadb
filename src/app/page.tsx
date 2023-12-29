@@ -1,9 +1,9 @@
 "use client";
 import { Card, CardBody } from "@chakra-ui/react";
 import Image from "next/image";
-//import { TypeAnimation } from "react-type-animation";
+import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import AnimatedNumbers from "react-animated-numbers";
+//import AnimatedNumbers from "react-animated-numbers";
 import { Button } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import headerBackground from "../../public/media/header.jpg";
@@ -23,7 +23,7 @@ export default function Home() {
         <div className="flex relative items-center justify-center min-h-screen md:p-32 p-8 py-32">
           <div className="flex md:flex-row flex-col md:gap-0 gap-5 md:text-left text-center justify-between w-screen items-center">
             <div className="flex flex-col gap-5 md:w-1/3">
-              {/* <TypeAnimation
+              <TypeAnimation
                 className="md:text-2xl text-2xl header-shadow"
                 sequence={[
                   "We store data for Businesses",
@@ -47,7 +47,7 @@ export default function Home() {
                   display: "inline-block",
                 }}
                 repeat={Infinity}
-              /> */}
+              />
               <p className="text-2xl header-shadow text-white">
                 NexaDB is your trusted partner in data management. With
                 cutting-edge technology and a commitment to excellence, we
@@ -96,13 +96,13 @@ export default function Home() {
           <Card width={200} height={200}>
             <CardBody className="flex flex-col gap-3 justify-center">
               <div className="flex flex-row justify-center text-4xl">
-                <AnimatedNumbers
+                {/* <AnimatedNumbers
                   animateToNumber={3}
                   transitions={(index) => ({
                     type: "tween",
                     duration: index + 0.5,
                   })}
-                />
+                /> */}
                 <p>M+</p>
               </div>
               <p className="text-lg">Applications</p>
@@ -111,13 +111,13 @@ export default function Home() {
           <Card width={200} height={200}>
             <CardBody className="flex flex-col gap-3 justify-center">
               <div className="flex flex-row justify-center text-4xl">
-                <AnimatedNumbers
+                {/* <AnimatedNumbers
                   animateToNumber={10}
                   transitions={(index) => ({
                     type: "tween",
                     duration: index + 0.5,
                   })}
-                />
+                /> */}
                 <p>K+</p>
               </div>
               <p className="text-lg">Github stars</p>
@@ -126,13 +126,13 @@ export default function Home() {
           <Card width={200} height={200}>
             <CardBody className="flex flex-col gap-3 justify-center">
               <div className="flex flex-row justify-center text-4xl">
-                <AnimatedNumbers
+                {/* <AnimatedNumbers
                   animateToNumber={30}
                   transitions={(index) => ({
                     type: "tween",
                     duration: index + 0.5,
                   })}
-                />
+                /> */}
                 <p>+</p>
               </div>{" "}
               <p className="text-lg">Supported programming languages</p>

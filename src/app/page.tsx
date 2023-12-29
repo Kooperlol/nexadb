@@ -3,7 +3,10 @@ import { Card, CardBody } from "@chakra-ui/react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-//import AnimatedNumbers from "react-animated-numbers";
+import dynamic from "next/dynamic";
+const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
+  ssr: false,
+});
 import { Button } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import headerBackground from "../../public/media/header.jpg";
@@ -96,13 +99,13 @@ export default function Home() {
           <Card width={200} height={200}>
             <CardBody className="flex flex-col gap-3 justify-center">
               <div className="flex flex-row justify-center text-4xl">
-                {/* <AnimatedNumbers
+                <AnimatedNumbers
                   animateToNumber={3}
                   transitions={(index) => ({
                     type: "tween",
                     duration: index + 0.5,
                   })}
-                /> */}
+                />
                 <p>M+</p>
               </div>
               <p className="text-lg">Applications</p>
@@ -111,13 +114,13 @@ export default function Home() {
           <Card width={200} height={200}>
             <CardBody className="flex flex-col gap-3 justify-center">
               <div className="flex flex-row justify-center text-4xl">
-                {/* <AnimatedNumbers
+                <AnimatedNumbers
                   animateToNumber={10}
                   transitions={(index) => ({
                     type: "tween",
                     duration: index + 0.5,
                   })}
-                /> */}
+                />
                 <p>K+</p>
               </div>
               <p className="text-lg">Github stars</p>
@@ -126,13 +129,13 @@ export default function Home() {
           <Card width={200} height={200}>
             <CardBody className="flex flex-col gap-3 justify-center">
               <div className="flex flex-row justify-center text-4xl">
-                {/* <AnimatedNumbers
+                <AnimatedNumbers
                   animateToNumber={30}
                   transitions={(index) => ({
                     type: "tween",
                     duration: index + 0.5,
                   })}
-                /> */}
+                />
                 <p>+</p>
               </div>{" "}
               <p className="text-lg">Supported programming languages</p>

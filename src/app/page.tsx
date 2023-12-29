@@ -1,7 +1,7 @@
 "use client";
 import { Card, CardBody } from "@chakra-ui/react";
 import Image from "next/image";
-import { TypeAnimation } from "react-type-animation";
+//import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import AnimatedNumbers from "react-animated-numbers";
 import { Button } from "@chakra-ui/react";
@@ -23,7 +23,7 @@ export default function Home() {
         <div className="flex relative items-center justify-center min-h-screen md:p-32 p-8 py-32">
           <div className="flex md:flex-row flex-col md:gap-0 gap-5 md:text-left text-center justify-between w-screen items-center">
             <div className="flex flex-col gap-5 md:w-1/3">
-              <TypeAnimation
+              {/* <TypeAnimation
                 className="md:text-2xl text-2xl header-shadow"
                 sequence={[
                   "We store data for Businesses",
@@ -47,7 +47,7 @@ export default function Home() {
                   display: "inline-block",
                 }}
                 repeat={Infinity}
-              />
+              /> */}
               <p className="text-2xl header-shadow text-white">
                 NexaDB is your trusted partner in data management. With
                 cutting-edge technology and a commitment to excellence, we

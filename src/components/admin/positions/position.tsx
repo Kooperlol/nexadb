@@ -7,12 +7,12 @@ const Position = (position: any) => {
   const router = useRouter();
   return (
     <Tr
-      onClick={() => router.push(`/admin/position/${position.id}`)}
+      onClick={() => router.push(`/admin/positions/${position.id}`)}
       key={position.id}
     >
       <Td>{position.position}</Td>
       <Td>{position.location}</Td>
-      <Td>{position.salary}</Td>
+      <Td>${position.salary.toLocaleString()}</Td>
       <Td>{position.listed ? "yes" : "no"}</Td>
     </Tr>
   );

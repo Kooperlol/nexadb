@@ -14,11 +14,11 @@ export async function POST(request: Request) {
       },
     });
 
-    return new Response(null, {
+    return new Response("Succesfully created inquiry", {
       status: 200,
     });
   } catch (error) {
-    return new Response(null, {
+    return new Response(JSON.stringify(error), {
       status: 500,
     });
   }
@@ -37,12 +37,12 @@ export async function PUT(request: Request) {
       },
     });
 
-    return new Response(null, {
+    return new Response("Succesfully updated inquiry", {
       status: 200,
     });
   } catch (error) {
     console.error(error);
-    return new Response(null, {
+    return new Response(JSON.stringify(error), {
       status: 500,
     });
   }

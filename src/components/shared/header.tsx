@@ -28,8 +28,8 @@ export default function Header() {
       <div
         className={`m-auto flex w-screen justify-between items-center px-8 py-5 text-white ${
           scrollPosition > 0
-            ? "ease-in duration-150 fixed bg-primary-foreground drop-shadow-md"
-            : "ease-out duration-150 fixed shadow-none"
+            ? "fixed bg-primary-foreground drop-shadow-md"
+            : "fixed shadow-none"
         }`}
       >
         <p className="text-2xl font-bold">NexaDB</p>

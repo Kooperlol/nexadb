@@ -1,26 +1,41 @@
+"use client";
+import LoadingPage from "@/app/loading";
 import PageNotFound from "@/app/not-found";
-import ToggleOpen from "@/components/admin/inquiries/toggle-open";
-import prisma from "@/lib/prisma";
 import {
   Button,
   Card,
   CardBody,
   CardFooter,
   CardHeader,
+  useToast,
 } from "@chakra-ui/react";
+import { Inquiry } from "@prisma/client";
+import axios from "axios";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const InquiriesPage = async ({ params }: { params: { id: string } }) => {
-  const inquiry = await prisma.inquiry
-    .findFirst({
-      where: {
-        id: params.id,
-      },
-    })
-    .catch(() => {
-      console.error("Error while querying for inquiry");
-    });
+const InquiriesPage = ({ params }: { params: { id: string } }) => {
+  const [inquiry, setInquiry] = useState<Inquiry>();
+  const [loading, setLoading] = useState(true);
+  const toast = useToast();
+
+  useEffect(() => {
+    const fetchInquiry = async () => {
+      try {
+        const response = await axios.get(`/api/inquiries/${params.id}`);
+        setInquiry(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.log("Error fetching inquiry.");
+      }
+    };
+
+    fetchInquiry();
+  }, [params]);
+
+  if (loading) {
+    return <LoadingPage />;
+  }
 
   if (inquiry == null) {
     return <PageNotFound />;
@@ -58,7 +73,39 @@ const InquiriesPage = async ({ params }: { params: { id: string } }) => {
                 Reply
               </Button>
             </Link>
-            <ToggleOpen {...inquiry} />
+            <Button
+              fontFamily={"heading"}
+              mt={8}
+              w={"full"}
+              bgGradient="linear(to-r, purple.400,purple.600)"
+              color={"white"}
+              _hover={{
+                bgGradient: "linear(to-r, purple.400,purple.600)",
+                boxShadow: "xl",
+              }}
+              onClick={async () => {
+                await axios.put("/api/inquiries", {
+                  inquiryId: inquiry.id,
+                  open: !inquiry.open,
+                });
+                setInquiry((prevObject) => ({
+                  ...prevObject!!,
+                  open: !prevObject!!.open,
+                }));
+                toast({
+                  title: "Status Changed",
+                  colorScheme: "green",
+                  description: `You have ${
+                    inquiry.open ? "closed" : "opened"
+                  } this inquiry.`,
+                  status: "success",
+                  duration: 3000,
+                  isClosable: true,
+                });
+              }}
+            >
+              {inquiry.open ? "Resolve" : "Reopen"}
+            </Button>
           </CardFooter>
         </Card>
       </div>

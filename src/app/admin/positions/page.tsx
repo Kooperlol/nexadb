@@ -1,14 +1,7 @@
+import AddPositionButton from "@/components/admin/positions/add-position";
 import Position from "@/components/admin/positions/position";
 import prisma from "@/lib/prisma";
-import {
-  Button,
-  Table,
-  TableContainer,
-  Tbody,
-  Th,
-  Thead,
-  Tr,
-} from "@chakra-ui/react";
+import { Table, TableContainer, Tbody, Th, Thead, Tr } from "@chakra-ui/react";
 import React from "react";
 
 const PositionsPage = async () => {
@@ -20,23 +13,11 @@ const PositionsPage = async () => {
   return (
     <>
       <div className="min-h-screen py-36 px-16 gap-5 flex flex-col">
-        <div className="flex flex-row items-center justify-between">
+        <div className="flex md:flex-row flex-col items-center justify-between">
           <p className="text-4xl text-white text-center">
             Manage all positions
           </p>
-          <Button
-            fontFamily={"heading"}
-            mt={8}
-            w={"fit"}
-            bgGradient="linear(to-r, purple.400,purple.600)"
-            color={"white"}
-            _hover={{
-              bgGradient: "linear(to-r, purple.400,purple.600)",
-              boxShadow: "xl",
-            }}
-          >
-            Add Position
-          </Button>
+          <AddPositionButton />
         </div>
         <TableContainer bg={"white"}>
           <Table variant="simple">

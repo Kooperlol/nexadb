@@ -126,7 +126,7 @@ const page = () => {
                 />
                 <Textarea
                   id="message"
-                  defaultValue="Message"
+                  placeholder="Message"
                   bg={"gray.100"}
                   border={0}
                   color={"gray.500"}

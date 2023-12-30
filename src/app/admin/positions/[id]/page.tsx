@@ -2,7 +2,6 @@
 import LoadingPage from "@/app/loading";
 import PageNotFound from "@/app/not-found";
 import {
-  Box,
   Button,
   Card,
   CardBody,

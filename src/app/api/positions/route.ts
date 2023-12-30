@@ -42,3 +42,16 @@ export async function PUT(request: Request) {
     return new Response(JSON.stringify(error), { status: 500 });
   }
 }
+
+export async function GET(request: Request) {
+  try {
+    const positions = await prisma.position.findMany({
+      orderBy: {
+        position: "desc",
+      },
+    });
+    return new Response(JSON.stringify(positions), { status: 200 });
+  } catch (error) {
+    return new Response(JSON.stringify(error), { status: 500 });
+  }
+}

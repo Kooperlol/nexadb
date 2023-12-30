@@ -30,7 +30,7 @@ const PositionsPage = async () => {
               </Tr>
             </Thead>
             <Tbody>
-              {positions.map((position: any) => (
+              {positions.map((position) => (
                 <Position key={position.id} {...position} />
               ))}
             </Tbody>

@@ -34,8 +34,8 @@ export default function AdminHeader() {
       >
         <p className="text-2xl font-bold">NexaDB</p>
         <ul className="gap-8 hidden text-background sm:flex items-center">
-          <li className="hover:text-purple-950">
-            <Link href="/admin/dashboard">Dashboard</Link>
+          <li className=" hover:text-purple-950">
+            <Link href="/admin/applications">Applications</Link>
           </li>
           <li className=" hover:text-purple-950">
             <Link href="/admin/positions">Positions</Link>
@@ -63,7 +63,7 @@ export default function AdminHeader() {
         >
           <ul className="flex-col text-4xl gap-5 flex">
             <li className="hover:text-purple-950" onClick={handleNav}>
-              <Link href="/admin/dashboard">Dashboard</Link>
+              <Link href="/admin/applications">Applications</Link>
             </li>
             <li className="hover:text-purple-950" onClick={handleNav}>
               <Link href="/admin/positions">Positions</Link>

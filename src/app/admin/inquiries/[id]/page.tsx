@@ -14,7 +14,7 @@ import axios from "axios";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-const InquiriesPage = ({ params }: { params: { id: string } }) => {
+const ViewInquiryPage = ({ params }: { params: { id: string } }) => {
   const [inquiry, setInquiry] = useState<Inquiry>();
   const [loading, setLoading] = useState(true);
   const toast = useToast();
@@ -113,4 +113,4 @@ const InquiriesPage = ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default InquiriesPage;
+export default ViewInquiryPage;

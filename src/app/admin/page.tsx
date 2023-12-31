@@ -25,7 +25,7 @@ export default function AdminPage() {
 
     try {
       await axios.post("/api/auth/login", payload);
-      push("/admin/dashboard");
+      push("/admin/applications");
     } catch (e) {
       toast({
         title: "Incorrect Credentials",

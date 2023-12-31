@@ -2,8 +2,9 @@
 import React from "react";
 import { Tr, Td } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
+import { Position } from "@prisma/client";
 
-const Position = (position: any) => {
+const Position = (position: Position) => {
   const router = useRouter();
   return (
     <Tr

@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import careersMobile from "@/../public/media/mobile_careers.jpg";
-import { Button } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import careersDesktop from "@/../public/media/careers.gif";
 import {
@@ -15,7 +15,7 @@ import {
 import { MdAccountBalance, MdOutlineSecurity } from "react-icons/md";
 import { FaMoneyBillTransfer, FaUserDoctor } from "react-icons/fa6";
 
-const Careers = () => {
+const CareersPage = () => {
   const { push } = useRouter();
   return (
     <>
@@ -172,33 +172,66 @@ const Careers = () => {
           </div>
           <ul className="lg:text-lg text-base">
             <li className="flex flex-row gap-2 items-center">
-              <FaClock /> Monday through Friday work week
+              <Box className="w-fit">
+                <FaWheelchair />
+              </Box>
+              <p>Fully subsidized Long Term Disability</p>
             </li>
             <li className="flex flex-row gap-2 items-center">
-              <FaMoneyCheckAlt /> 401K with company contribution
+              <Box className="w-fit">
+                <FaClock />
+              </Box>
+              <p>Monday through Friday work week</p>
             </li>
             <li className="flex flex-row gap-2 items-center">
-              <FaMoneyBillTransfer /> Quarterly/annual profit-sharing bonuses
+              <Box className="w-fit">
+                <FaMoneyCheckAlt />
+              </Box>
+              <p>401K with company contribution</p>
             </li>
             <li className="flex flex-row gap-2 items-center">
-              <FaUserDoctor />
-              Group rates for dental/vision/life insurance (non-subsidized)
+              <Box className="w-fit">
+                <FaMoneyBillTransfer />
+              </Box>
+              <p>Quarterly/annual profit-sharing bonuses</p>
             </li>
             <li className="flex flex-row gap-2 items-center">
-              <MdAccountBalance /> Flexible Spending Account with company match
+              <Box className="w-fit">
+                <FaUserDoctor />
+              </Box>
+              <p>
+                Group rates for dental/vision/life insurance (non-subsidized)
+              </p>
             </li>
             <li className="flex flex-row gap-2 items-center">
-              <MdOutlineSecurity /> Preventative Care Insurance Minimum
-              Essential Coverage
+              <Box className="w-fit">
+                <MdAccountBalance />
+              </Box>
+              <p>Flexible Spending Account with company match</p>
             </li>
             <li className="flex flex-row gap-2 items-center">
-              <FaWheelchair /> Fully subsidized Long Term Disability
+              <Box className="w-fit">
+                <MdOutlineSecurity />
+              </Box>
+              <p>Preventative Care Insurance Minimum Essential Coverage</p>
             </li>
             <li className="flex flex-row gap-2 items-center">
-              <FaCalendarTimes /> Flexible Time Off
+              <Box className="w-fit">
+                <FaWheelchair />
+              </Box>
+              <p>Fully subsidized Long Term Disability</p>
             </li>
             <li className="flex flex-row gap-2 items-center">
-              <FaBalanceScale /> Company culture based on work/life balance
+              <Box className="w-fit">
+                <FaCalendarTimes />
+              </Box>
+              <p>Flexible Time Off</p>
+            </li>
+            <li className="flex flex-row gap-2 items-center">
+              <Box className="w-fit">
+                <FaBalanceScale />
+              </Box>
+              <p>Company culture based on work/life balance</p>
             </li>
           </ul>
         </div>
@@ -224,4 +257,4 @@ const Careers = () => {
   );
 };
 
-export default Careers;
+export default CareersPage;

@@ -7,7 +7,7 @@ import axios from "axios";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-const CareerInfo = ({ params }: { params: { id: string } }) => {
+const ViewCareerPage = ({ params }: { params: { id: string } }) => {
   const [position, setPosition] = useState<Position>();
   const [loading, setLoading] = useState(true);
 
@@ -72,4 +72,4 @@ const CareerInfo = ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default CareerInfo;
+export default ViewCareerPage;

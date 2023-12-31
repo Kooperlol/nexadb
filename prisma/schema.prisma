@@ -24,6 +24,7 @@ model Application {
   email String
   phone String
   resume String
+  createdAt DateTime @default(now())
 }
 
 model Inquiry {

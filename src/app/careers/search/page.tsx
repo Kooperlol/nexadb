@@ -7,7 +7,7 @@ import { Position } from "@prisma/client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const SearchPage = () => {
+const SearchCareersPage = () => {
   const [positions, setPositions] = useState<Position[]>();
   const [displayed, setDisplayed] = useState<Position[]>();
   const [loading, setLoading] = useState(true);
@@ -42,9 +42,11 @@ const SearchPage = () => {
         <p className="text-white text-3xl">Careers at NexaDB</p>
         <div className="flex flex-row justify-between items-center">
           <Input
+            style={{
+              width: "200px",
+            }}
             placeholder="Search"
             size="lg"
-            w={"fit-content"}
             background={"white"}
             onChange={(search) => {
               const filteredPositions = positions.filter((pos) =>
@@ -65,4 +67,4 @@ const SearchPage = () => {
   );
 };
 
-export default SearchPage;
+export default SearchCareersPage;

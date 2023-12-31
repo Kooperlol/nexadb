@@ -93,6 +93,7 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
     <>
       <div className="min-h-screen justify-center items-center flex">
         <Stack
+          className="w-3/4"
           bg={"gray.50"}
           rounded={"xl"}
           p={{ base: 4, sm: 6, md: 8 }}

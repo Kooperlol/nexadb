@@ -11,7 +11,7 @@ import { Button } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import headerBackground from "../../public/media/header.jpg";
 
-export default function Home() {
+export default function HomePage() {
   const { push } = useRouter();
   return (
     <div>

@@ -18,7 +18,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const PositionsPage = ({ params }: { params: { id: string } }) => {
+const ViewPositionPage = ({ params }: { params: { id: string } }) => {
   const [position, setPosition] = useState<Position>();
   const [loading, setLoading] = useState(true);
   const toast = useToast();
@@ -193,4 +193,4 @@ const PositionsPage = ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default PositionsPage;
+export default ViewPositionPage;

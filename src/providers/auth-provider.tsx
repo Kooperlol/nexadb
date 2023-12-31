@@ -63,7 +63,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   if (loading) return <LoadingPage />;
 
   if (path === "/admin" && user) {
-    router.push("/admin/dashboard");
+    router.push("/admin/applications");
     return null;
   }
 

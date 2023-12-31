@@ -11,7 +11,7 @@ import {
 import axios from "axios";
 import React, { useRef, useState } from "react";
 
-const AddPosition = () => {
+const AddPositionPage = () => {
   const [checked, setChecked] = useState(false);
   const toast = useToast();
   const formRef = useRef<HTMLFormElement>(null);
@@ -174,4 +174,4 @@ const AddPosition = () => {
   );
 };
 
-export default AddPosition;
+export default AddPositionPage;

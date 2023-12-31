@@ -1,10 +1,10 @@
+import prisma from "@/lib/prisma";
 import React from "react";
 import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
-import Inquiry from "@/components/admin/inquiries/inquiry";
-import prisma from "@/lib/prisma";
+import Application from "@/components/admin/applications/application";
 
-const InquiriesPage = async () => {
-  const inquiries = await prisma.inquiry.findMany({
+const ApplicationsPage = async () => {
+  const applications = await prisma.application.findMany({
     orderBy: {
       createdAt: "desc",
     },
@@ -12,7 +12,9 @@ const InquiriesPage = async () => {
   return (
     <>
       <div className="min-h-screen py-36 px-16 gap-5 flex flex-col">
-        <p className="text-4xl text-white text-center">Manage all inquiries</p>
+        <p className="text-4xl text-white text-center">
+          Manage all applications
+        </p>
         <TableContainer bg={"white"}>
           <Table variant="simple">
             <Thead>
@@ -21,12 +23,12 @@ const InquiriesPage = async () => {
                 <Th>Firstname</Th>
                 <Th>Lastname</Th>
                 <Th>Email</Th>
-                <Th>Status</Th>
+                <Th>Phone</Th>
               </Tr>
             </Thead>
             <Tbody>
-              {inquiries.map((inquiry: any) => (
-                <Inquiry key={inquiry.id} {...inquiry} />
+              {applications.map((inquiry: any) => (
+                <Application key={inquiry.id} {...inquiry} />
               ))}
             </Tbody>
           </Table>
@@ -36,4 +38,4 @@ const InquiriesPage = async () => {
   );
 };
 
-export default InquiriesPage;
+export default ApplicationsPage;

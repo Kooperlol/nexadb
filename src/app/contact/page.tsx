@@ -9,13 +9,36 @@ import {
   Heading,
   Text,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
-import React from "react";
+import React, { useRef } from "react";
 import { FaCheck } from "react-icons/fa";
 
 const page = () => {
+  const toast = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
+
   const handSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (
+      event.currentTarget.firstname.value.trim() === "" ||
+      event.currentTarget.lastname.value.trim() === "" ||
+      event.currentTarget.email.value.trim() === "" ||
+      event.currentTarget.message.value.trim() === ""
+    ) {
+      toast({
+        title: "Invalid Fields",
+        colorScheme: "red",
+        description: "Please fill in all fields.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+      return;
+    }
+
     const payload = {
       firstname: event.currentTarget.firstname.value,
       lastname: event.currentTarget.lastname.value,
@@ -24,7 +47,16 @@ const page = () => {
     };
 
     try {
+      formRef.current!!.reset();
       await axios.post("/api/inquiries", payload);
+      toast({
+        title: "Inquiry Sent",
+        colorScheme: "green",
+        description: "We have received your message and will email you soon.",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
     } catch (e) {
       console.log("Something went wrong while creating an inquery.");
     }
@@ -92,7 +124,7 @@ const page = () => {
                 to you as soon as possible.
               </Text>
             </Stack>
-            <Box onSubmit={handSubmit} as={"form"} mt={10}>
+            <Box ref={formRef} onSubmit={handSubmit} as={"form"} mt={10}>
               <Stack spacing={4}>
                 <Input
                   id="firstname"

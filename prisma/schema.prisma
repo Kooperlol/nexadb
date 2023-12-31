@@ -16,6 +16,16 @@ model Position {
   listed Boolean
 }
 
+model Application {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  position String
+  firstname String
+  lastname String
+  email String
+  phone String
+  resume String
+}
+
 model Inquiry {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   createdAt DateTime @default(now())

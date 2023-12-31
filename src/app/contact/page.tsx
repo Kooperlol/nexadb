@@ -15,7 +15,7 @@ import axios from "axios";
 import React, { useRef } from "react";
 import { FaCheck } from "react-icons/fa";
 
-const page = () => {
+const ContactPage = () => {
   const toast = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -190,4 +190,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ContactPage;

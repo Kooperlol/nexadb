@@ -60,6 +60,7 @@ const SearchCareersPage = () => {
           <p className="text-white text-xl">{positions.length} careers</p>
         </div>
         <div>
+          <hr />
           {displayed!!.map((position) => (
             <PositionBox key={position.id} {...position} />
           ))}

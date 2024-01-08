@@ -6,7 +6,6 @@ const PositionBox = (position: Position) => {
   return (
     <>
       <div className="flex flex-col gap-8">
-        <hr />
         <div className="flex flex-col text-white">
           <div className="flex flex-row justify-between">
             <Link href={""}>

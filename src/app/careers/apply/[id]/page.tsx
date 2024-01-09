@@ -91,7 +91,7 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-      <div className="min-h-screen justify-center items-center flex">
+      <div className="min-h-screen md:p-32 py-32 p-8 justify-center items-center flex">
         <Stack
           className="w-3/4"
           bg={"gray.50"}

@@ -32,7 +32,9 @@ export default function AdminHeader() {
             : "fixed shadow-none"
         }`}
       >
-        <p className="text-2xl font-bold">NexaDB</p>
+        <Link href="/admin/applications" className="text-2xl font-bold">
+          NexaDB
+        </Link>
         <ul className="gap-8 hidden text-background sm:flex items-center">
           <li className=" hover:text-purple-950">
             <Link href="/admin/applications">Applications</Link>

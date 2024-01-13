@@ -7,7 +7,7 @@ const Footer = () => {
         <p className="text-xl">NexaDB</p>
         <p>Next generation data management</p>
       </div>
-      <p>© Nexa Database LLC</p>
+      <p>© 2024 Nexa Database LLC. All rights reserved.</p>
     </div>
   );
 };

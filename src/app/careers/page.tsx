@@ -133,7 +133,7 @@ const CareersPage = () => {
             <p className="lg:text-2xl text-xl">Motivation</p>
             <p className="lg:text-lg text-base">
               Demonstrates self-motivation, excelling in both independent work
-              and collaborative team efforts
+              and collaborative team efforts.
             </p>
           </div>
           <div>

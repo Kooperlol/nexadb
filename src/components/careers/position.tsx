@@ -10,13 +10,15 @@ const PositionBox = (position: Position) => {
           <div className="flex flex-row justify-between">
             <Link href={""}>
               <Link href={`/careers/${position.id}`}>
-                <p className="text-lg font-bold hover:underline">
+                <p className="text-lg font-bold hover:underline w-4/5">
                   {position.position}
                 </p>
               </Link>
             </Link>
             <Link href={`/careers/apply/${position.id}`}>
-              <p className="hover:underline">Apply Now</p>
+              <p className="hover:underline w-full text-right overflow-hidden">
+                Apply Now
+              </p>
             </Link>
           </div>
           <p>{position.location}</p>

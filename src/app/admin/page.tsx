@@ -9,11 +9,9 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 
 export default function AdminPage() {
   const toast = useToast();
-  const { refresh } = useRouter();
 
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
 import Inquiry from "@/components/admin/inquiries/inquiry";

@@ -1,3 +1,4 @@
+"use client";
 import AddPositionButton from "@/components/admin/positions/add-position";
 import Position from "@/components/admin/positions/position";
 import prisma from "@/lib/prisma";

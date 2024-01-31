@@ -1,24 +1,15 @@
+"use client";
 import prisma from "@/lib/prisma";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
 import Application from "@/components/admin/applications/application";
-import { Application as App } from "@prisma/client";
 
 const ApplicationsPage = async () => {
-  const [applications, setApplications] = useState<Array<App>>();
-
-  useEffect(() => {
-    const fetchApplication = async () => {
-      setApplications(
-        await prisma.application.findMany({
-          orderBy: {
-            createdAt: "desc",
-          },
-        })
-      );
-    };
-    fetchApplication();
-  }, [applications]);
+  const applications = await prisma.application.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
 
   return (
     <>
@@ -38,10 +29,9 @@ const ApplicationsPage = async () => {
               </Tr>
             </Thead>
             <Tbody>
-              {applications &&
-                applications.map((application: any) => (
-                  <Application key={application.id} {...application} />
-                ))}
+              {applications.map((application: any) => (
+                <Application key={application.id} {...application} />
+              ))}
             </Tbody>
           </Table>
         </TableContainer>

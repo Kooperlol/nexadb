@@ -3,6 +3,19 @@ import { v4 as uuidv4 } from "uuid";
 import prisma from "@/lib/prisma";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
+export async function GET(request: Request) {
+  try {
+    const inquiries = await prisma.inquiry.findMany({
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+    return new Response(JSON.stringify(inquiries), { status: 200 });
+  } catch (error) {
+    return new Response(JSON.stringify(error), { status: 500 });
+  }
+}
+
 export async function POST(request: Request) {
   const { position, firstname, lastname, email, phone, resume } =
     Object.fromEntries(await request.formData());

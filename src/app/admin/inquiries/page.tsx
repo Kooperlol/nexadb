@@ -1,15 +1,25 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
 import Inquiry from "@/components/admin/inquiries/inquiry";
-import prisma from "@/lib/prisma";
+import { Inquiry as InquiryData } from "@prisma/client";
+import axios from "axios";
 
 const InquiriesPage = async () => {
-  const inquiries = await prisma.inquiry.findMany({
-    orderBy: {
-      createdAt: "desc",
-    },
-  });
+  const [inquiries, setInquiries] = useState<InquiryData[]>();
+
+  useEffect(() => {
+    const fetchInquiries = async () => {
+      try {
+        const response = await axios.get("/api/inquiries");
+        setInquiries(response.data);
+      } catch (error) {
+        console.log("Error fetching inquiries.");
+      }
+    };
+    fetchInquiries();
+  }, []);
+
   return (
     <>
       <div className="min-h-screen py-36 px-16 gap-5 flex flex-col">
@@ -26,9 +36,10 @@ const InquiriesPage = async () => {
               </Tr>
             </Thead>
             <Tbody>
-              {inquiries.map((inquiry: any) => (
-                <Inquiry key={inquiry.id} {...inquiry} />
-              ))}
+              {inquiries &&
+                inquiries.map((inquiry: any) => (
+                  <Inquiry key={inquiry.id} {...inquiry} />
+                ))}
             </Tbody>
           </Table>
         </TableContainer>

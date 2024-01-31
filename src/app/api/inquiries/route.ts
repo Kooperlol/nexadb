@@ -1,5 +1,18 @@
 import prisma from "@/lib/prisma";
 
+export async function GET(request: Request) {
+  try {
+    const inquiries = await prisma.inquiry.findMany({
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+    return new Response(JSON.stringify(inquiries), { status: 200 });
+  } catch (error) {
+    return new Response(JSON.stringify(error), { status: 500 });
+  }
+}
+
 export async function POST(request: Request) {
   const body = await request.json();
   const { firstname, lastname, email, message } = body;

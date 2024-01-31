@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 
 export default function AdminPage() {
   const toast = useToast();
-  const { push } = useRouter();
+  const { refresh } = useRouter();
 
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -25,7 +25,7 @@ export default function AdminPage() {
 
     try {
       await axios.post("/api/auth/login", payload);
-      push("/admin/applications");
+      window.location.reload();
     } catch (e) {
       toast({
         title: "Incorrect Credentials",

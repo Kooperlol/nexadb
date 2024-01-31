@@ -62,7 +62,6 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
                     ...prevObject!!,
                     position: pos,
                   }));
-                  console.log(position);
                 }}
               >
                 <EditablePreview />

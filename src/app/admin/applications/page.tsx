@@ -9,6 +9,7 @@ const ApplicationsPage = async () => {
       createdAt: "desc",
     },
   });
+  console.log(applications);
   return (
     <>
       <div className="min-h-screen py-36 px-16 gap-5 flex flex-col">
@@ -27,8 +28,8 @@ const ApplicationsPage = async () => {
               </Tr>
             </Thead>
             <Tbody>
-              {applications.map((inquiry: any) => (
-                <Application key={inquiry.id} {...inquiry} />
+              {applications.map((application: any) => (
+                <Application key={application.id} {...application} />
               ))}
             </Tbody>
           </Table>

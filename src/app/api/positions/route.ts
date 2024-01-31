@@ -3,17 +3,15 @@ import prisma from "@/lib/prisma";
 export async function POST(request: Request) {
   const { position, salary, location, listed, about } = await request.json();
   try {
-    console.log(
-      await prisma.position.create({
-        data: {
-          position,
-          location,
-          about,
-          salary,
-          listed,
-        },
-      })
-    );
+    await prisma.position.create({
+      data: {
+        position,
+        location,
+        about,
+        salary,
+        listed,
+      },
+    });
 
     return new Response("Succesfully created position", { status: 200 });
   } catch (error) {

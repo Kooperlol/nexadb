@@ -16,9 +16,7 @@ const PositionBox = (position: Position) => {
               </Link>
             </Link>
             <Link href={`/careers/apply/${position.id}`}>
-              <p className="hover:underline w-full text-right overflow-hidden">
-                Apply Now
-              </p>
+              <p className="hover:underline w-full text-right">Apply Now</p>
             </Link>
           </div>
           <p>{position.location}</p>

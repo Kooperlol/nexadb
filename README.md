@@ -19,21 +19,12 @@
 <!-- ABOUT THE PROJECT -->
 ## ❓ About The Project
 
-Coming soon
+NexaDB is a website for a database management company to help the company find applicants. The website includes an application form, a page with employee benefits and business information, a careers page, and a dashboard for the management to review applicants.
 
 
 
 ## 🏆 Program Awards
-
-tbd Wisconsin - Regionals<br>
-tbd Wisconsin - State<br>
-tbd Flordia - Nationals
-
-
-
-## 📜 Requirements Met
-
-Coming soon
+To be determined
 
 
 
@@ -41,23 +32,9 @@ Coming soon
 
 | Technology                                                                                                        | Description                               |
 | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| | |
-| | |
-
-
-
-<!-- DEPENDENCIES -->
-## 💾 Dependencies
-
-
-
-<!-- EXTERNAL RESOURCES -->
-## 🔌 External Resources
-
-
-
-<!-- COMPATIBILITY -->
-## 📱 Compatibility
+|[NextJS](https://nextjs.org/)|A React framework for building full-stack web applications |
+|[MongoDB](https://nextjs.org/)|A non-relational document database that provides support for JSON-like storage|
+|[Firebase](https://firebase.google.com/)|A backend database used for file storage.|
 
 
 
@@ -65,22 +42,6 @@ Coming soon
 ## 🔧 Getting Started
 
 To get a local copy up and running follow these simple steps.
-
-### 🧠 Prerequisites
-
-Coming soon
-
-
-
-### ⬇️ Installation
-
-Coming soon
-
-
-
-### 📑 Instructions
-
-Coming soon
 
 
 
@@ -95,14 +56,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## ✉️ Contact
 
 Kooper Propp - kooperjack8@gmail.com<br>
-Nolan Erickson - add<br>
+Nolan Erickson - ericksonn@milton.k12.wi.us<br>
 Project Link: [https://github.com/Kooperlol/nexadb](https://github.com/Kooperlol/nexadb)
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[Flutter]: https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white
-[Firebase]: https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white
-[IOS]: https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white
-[Android]: https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white

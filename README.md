@@ -24,7 +24,7 @@ NexaDB is a website for a database management company to help the company find a
 
 
 ## 🏆 Program Awards
-To be determined
+#1 Regionals (Columbus, WI)
 
 
 

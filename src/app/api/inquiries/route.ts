@@ -4,7 +4,7 @@ import { withAccelerate } from "@prisma/extension-accelerate";
 
 export async function GET(request: Request) {
   try {
-    const inquiries = await prisma.inquiry.$extends(withAccelerate()).findMany({
+    const inquiries = await prisma.$extends(withAccelerate()).inquiry.findMany({
       cacheStrategy: {
         ttl: 60,
       },

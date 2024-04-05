@@ -1,18 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Card, CardBody, Stack, Heading, Text } from "@chakra-ui/react";
 import { Position } from "@prisma/client";
 import axios from "axios";
-import Image from "next/image";
 import LoadingPage from "@/app/loading";
-import { useRouter } from "next/navigation";
 import PositionApplications from "@/components/admin/applications/position";
 
 const ApplicationsPage = async () => {
   const [positions, setPositions] = useState<Position[]>();
   const [unread, setUnread] = useState<Map<string, number>>(new Map());
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
 
   useEffect(() => {
     const fetchPositions = async () => {

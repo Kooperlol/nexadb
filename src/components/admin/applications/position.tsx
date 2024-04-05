@@ -2,7 +2,7 @@
 import { Card, CardBody, Heading, Stack, Text } from "@chakra-ui/react";
 import { Position } from "@prisma/client";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 type PositionApplicationsProps = {

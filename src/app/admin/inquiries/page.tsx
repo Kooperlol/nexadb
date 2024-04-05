@@ -4,9 +4,11 @@ import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
 import Inquiry from "@/components/admin/inquiries/inquiry";
 import { Inquiry as InquiryData } from "@prisma/client";
 import axios from "axios";
+import LoadingPage from "@/app/loading";
 
 const InquiriesPage = async () => {
   const [inquiries, setInquiries] = useState<InquiryData[]>();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchInquiries = async () => {
@@ -16,9 +18,14 @@ const InquiriesPage = async () => {
       } catch (error) {
         console.log("Error fetching inquiries.");
       }
+      setLoading(false);
     };
     fetchInquiries();
   }, []);
+
+  if (loading) {
+    return <LoadingPage />;
+  }
 
   return (
     <>

@@ -86,7 +86,7 @@ const AddPositionPage = () => {
 
   return (
     <>
-      <div className="min-h-screen items-center justify-center flex">
+      <div className="min-h-screen py-48 items-center justify-center flex">
         <Stack
           className="w-fit"
           bg={"gray.50"}
@@ -100,7 +100,7 @@ const AddPositionPage = () => {
             <p className="text-xl text-center">Add Position</p>
           </div>
           <Box
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-3"
             onSubmit={handSubmit}
             as={"form"}
             ref={formRef}

@@ -8,7 +8,6 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
-  useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -17,7 +16,6 @@ import Link from "next/link";
 const ViewApplicationPage = ({ params }: { params: { id: string } }) => {
   const [application, setApplication] = useState<Application>();
   const [loading, setLoading] = useState(true);
-  const toast = useToast();
 
   useEffect(() => {
     const fetchApplication = async () => {

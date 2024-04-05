@@ -16,6 +16,7 @@ import {
 import { Dropzone, ExtFile, FileMosaic } from "@dropzone-ui/react";
 import { Position } from "@prisma/client";
 import axios from "axios";
+import { first } from "lodash";
 import { useReCaptcha } from "next-recaptcha-v3";
 import React, { useEffect, useRef, useState } from "react";
 import { FaDollarSign } from "react-icons/fa";
@@ -30,6 +31,14 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
 
   const handSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const firstName = event.currentTarget.firstname.value;
+    const lastName = event.currentTarget.lastname.value;
+    const email = event.currentTarget.email.value;
+    const phone = event.currentTarget.phone.value;
+    const birthday = event.currentTarget.birthday.value;
+    const salary = event.currentTarget.salary.value;
+    const gender = event.currentTarget.gender.value;
 
     if (!executeRecaptcha) {
       console.log("Recaptcha not loaded.");
@@ -51,7 +60,6 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
       toast({
         title: "Recaptcha Failed",
         colorScheme: "red",
-        description: "Please complete the recaptcha.",
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -60,15 +68,14 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
     }
 
     if (
-      event.currentTarget == null ||
-      event.currentTarget.firstname.value.trim() === "" ||
-      event.currentTarget.lastname.value.trim() === "" ||
-      event.currentTarget.email.value.trim() === "" ||
-      event.currentTarget.phone.value.trim() === "" ||
-      event.currentTarget.birthday.value.trim() === "" ||
-      event.currentTarget.salary.value.trim() === "" ||
+      firstName.trim() === "" ||
+      lastName.trim() === "" ||
+      email.trim() === "" ||
+      phone.trim() === "" ||
+      birthday.trim() === "" ||
+      salary.trim() === "" ||
       resume == null ||
-      event.currentTarget.gender.value.trim() === ""
+      gender.trim() === ""
     ) {
       toast({
         title: "Invalid Fields",
@@ -81,7 +88,7 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
       return;
     }
 
-    if (isNaN(Number(event.currentTarget.salary.value.replace(",", "")))) {
+    if (isNaN(Number(salary.replace(",", "")))) {
       toast({
         title: "Invalid Salary",
         colorScheme: "red",
@@ -95,16 +102,13 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
 
     const formData = new FormData();
     formData.append("position", position?.position!!);
-    formData.append("firstname", event.currentTarget.firstname.value);
-    formData.append("lastname", event.currentTarget.lastname.value);
-    formData.append("email", event.currentTarget.email.value);
-    formData.append(
-      "salary",
-      event.currentTarget.salary.value.replace(",", "")
-    );
-    formData.append("birthdate", event.currentTarget.birthday.valueAsNumber);
-    formData.append("phone", event.currentTarget.phone.value);
-    formData.append("gender", event.currentTarget.gender.value);
+    formData.append("firstname", firstName.trim());
+    formData.append("lastname", lastName.trim());
+    formData.append("email", email.trim());
+    formData.append("salary", salary.replace(",", ""));
+    formData.append("birthdate", birthday.valueAsNumber);
+    formData.append("phone", phone);
+    formData.append("gender", gender);
     formData.append("resume", resume?.file!!);
 
     try {

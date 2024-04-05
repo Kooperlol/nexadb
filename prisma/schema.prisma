@@ -10,7 +10,7 @@ datasource db {
 model Application {
   id              String   @id @default(auto()) @map("_id") @db.ObjectId
   birthdate       String
-  createdAt       DateTime @db.Date
+  createdAt       DateTime @db.Date @default(now())
   email           String
   firstname       String
   gender          String

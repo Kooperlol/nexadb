@@ -14,6 +14,7 @@ model Position {
   about String
   salary Int
   listed Boolean
+  image String
 }
 
 model Application {
@@ -21,6 +22,9 @@ model Application {
   position String
   firstname String
   lastname String
+  birthdate Int
+  gender String
+  preferredSalary Int
   email String
   phone String
   resume String

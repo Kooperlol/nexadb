@@ -28,7 +28,7 @@ export default function AdminHeader() {
       <div
         className={`m-auto flex w-screen justify-between items-center px-8 py-5 text-white ${
           scrollPosition > 0
-            ? "fixed bg-primary-foreground drop-shadow-md"
+            ? "fixed bg-main-foreground drop-shadow-md"
             : "fixed shadow-none"
         }`}
       >
@@ -59,8 +59,8 @@ export default function AdminHeader() {
         <div
           className={
             nav
-              ? "sm:hidden z-40 absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-primary text-left ease-in duration-300"
-              : "sm:hidden z-40 absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-primary text-left ease-in duration-300"
+              ? "sm:hidden z-40 absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-main text-left ease-in duration-300"
+              : "sm:hidden z-40 absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-main text-left ease-in duration-300"
           }
         >
           <ul className="flex-col text-4xl gap-5 flex">

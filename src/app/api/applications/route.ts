@@ -17,8 +17,17 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  const { position, firstname, lastname, email, phone, resume } =
-    Object.fromEntries(await request.formData());
+  const {
+    position,
+    firstname,
+    lastname,
+    email,
+    phone,
+    resume,
+    birthdate,
+    gender,
+    salary,
+  } = Object.fromEntries(await request.formData());
   try {
     const resumeRef = ref(storage, uuidv4());
     const uploadTask = await uploadBytesResumable(resumeRef, resume as File);
@@ -32,6 +41,9 @@ export async function POST(request: Request) {
         lastname: lastname.toString(),
         email: email.toString(),
         phone: phone.toString(),
+        birthdate: parseFloat(birthdate.toString()),
+        gender: gender.toString(),
+        preferredSalary: parseFloat(salary.toString()),
         resume: downloadURL,
       },
     });

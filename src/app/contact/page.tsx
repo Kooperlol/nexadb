@@ -12,15 +12,45 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
+import { useReCaptcha } from "next-recaptcha-v3";
 import React, { useRef } from "react";
 import { FaCheck } from "react-icons/fa";
 
 const ContactPage = () => {
   const toast = useToast();
   const formRef = useRef<HTMLFormElement>(null);
+  const { executeRecaptcha } = useReCaptcha();
 
   const handSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (!executeRecaptcha) {
+      console.log("Recaptcha not loaded.");
+      return;
+    }
+
+    const token = await executeRecaptcha("application_submit");
+    const response = await axios({
+      method: "POST",
+      url: "/api/recaptcha",
+      data: { token },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json, text/plain, */*",
+      },
+    });
+
+    if (response?.data?.success === false) {
+      toast({
+        title: "Recaptcha Failed",
+        colorScheme: "red",
+        description: "Please complete the recaptcha.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+      return;
+    }
 
     if (
       event.currentTarget.firstname.value.trim() === "" ||

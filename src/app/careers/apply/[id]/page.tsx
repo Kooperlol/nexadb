@@ -6,6 +6,9 @@ import {
   Button,
   Heading,
   Input,
+  InputGroup,
+  InputLeftElement,
+  Select,
   Stack,
   Text,
   useToast,
@@ -13,7 +16,9 @@ import {
 import { Dropzone, ExtFile, FileMosaic } from "@dropzone-ui/react";
 import { Position } from "@prisma/client";
 import axios from "axios";
+import { useReCaptcha } from "next-recaptcha-v3";
 import React, { useEffect, useRef, useState } from "react";
+import { FaDollarSign } from "react-icons/fa";
 
 const ApplyPage = ({ params }: { params: { id: string } }) => {
   const toast = useToast();
@@ -21,15 +26,49 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
   const formRef = useRef<HTMLFormElement>(null);
   const [resume, setResume] = useState<ExtFile | null>();
   const [loading, setLoading] = useState(true);
+  const { executeRecaptcha } = useReCaptcha();
 
   const handSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    if (!executeRecaptcha) {
+      console.log("Recaptcha not loaded.");
+      return;
+    }
+
+    const token = await executeRecaptcha("application_submit");
+    const response = await axios({
+      method: "POST",
+      url: "/api/recaptcha",
+      data: { token },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json, text/plain, */*",
+      },
+    });
+
+    if (response?.data?.success === false) {
+      toast({
+        title: "Recaptcha Failed",
+        colorScheme: "red",
+        description: "Please complete the recaptcha.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+      return;
+    }
+
     if (
+      event.currentTarget == null ||
       event.currentTarget.firstname.value.trim() === "" ||
       event.currentTarget.lastname.value.trim() === "" ||
       event.currentTarget.email.value.trim() === "" ||
-      event.currentTarget.phone.value.trim() === ""
+      event.currentTarget.phone.value.trim() === "" ||
+      event.currentTarget.birthday.value.trim() === "" ||
+      event.currentTarget.salary.value.trim() === "" ||
+      resume == null ||
+      event.currentTarget.gender.value.trim() === ""
     ) {
       toast({
         title: "Invalid Fields",
@@ -42,12 +81,30 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
       return;
     }
 
+    if (isNaN(Number(event.currentTarget.salary.value.replace(",", "")))) {
+      toast({
+        title: "Invalid Salary",
+        colorScheme: "red",
+        description: "Please enter a valid salary.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+      return;
+    }
+
     const formData = new FormData();
     formData.append("position", position?.position!!);
     formData.append("firstname", event.currentTarget.firstname.value);
     formData.append("lastname", event.currentTarget.lastname.value);
     formData.append("email", event.currentTarget.email.value);
+    formData.append(
+      "salary",
+      event.currentTarget.salary.value.replace(",", "")
+    );
+    formData.append("birthdate", event.currentTarget.birthday.valueAsNumber);
     formData.append("phone", event.currentTarget.phone.value);
+    formData.append("gender", event.currentTarget.gender.value);
     formData.append("resume", resume?.file!!);
 
     try {
@@ -149,7 +206,7 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
               />
               <Input
                 id="phone"
-                placeholder="Phone"
+                placeholder="Phone (xxx-xxx-xxxx)"
                 bg={"gray.100"}
                 border={0}
                 color={"gray.500"}
@@ -157,10 +214,38 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
                   color: "gray.500",
                 }}
               />
+              <InputGroup>
+                <InputLeftElement>
+                  <FaDollarSign color="gray.300" />
+                </InputLeftElement>
+                <Input
+                  id="salary"
+                  placeholder="Preferred Salary"
+                  bg={"gray.100"}
+                  border={0}
+                  color={"gray.500"}
+                  _placeholder={{
+                    color: "gray.500",
+                  }}
+                />
+              </InputGroup>
+              <Select id="gender" placeholder="Gender" variant="filled">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </Select>
+              <Input
+                id="birthday"
+                placeholder="Birthday"
+                size="md"
+                type="date"
+                variant="filled"
+              />
               <Dropzone
                 onChange={(file) => {
                   setResume(file[0]);
                 }}
+                style={{ fontFamily: "sans-serif" }}
                 label="Upload your resume"
                 accept="application/pdf"
                 maxFiles={1}

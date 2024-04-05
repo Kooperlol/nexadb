@@ -17,17 +17,17 @@ export default function HomePage() {
     <div>
       <div className="min-h-screen">
         <Image
-          className="absolute object-cover min-h-screen max-h-screen opacity-0 md:opacity-100"
+          className="absolute object-cover min-h-screen max-h-screen hidden md:block"
           priority
           draggable={false}
           src={headerBackground}
           alt="Header Background"
         />
         <div className="flex relative items-center justify-center min-h-screen md:p-32 p-8 py-32">
-          <div className="flex md:flex-row flex-col md:gap-0 gap-5 md:text-left text-center justify-between w-screen items-center">
-            <div className="flex flex-col gap-5 md:w-1/3">
+          <div className="flex md:flex-row flex-col md:gap-0 gap-5 justify-between w-screen items-center">
+            <div className="flex flex-col items-center lg:items-start gap-3 md:w-1/3">
               <TypeAnimation
-                className="md:text-2xl text-2xl header-shadow"
+                className="text-response header-shadow"
                 sequence={[
                   "We store data for Businesses",
                   1000,
@@ -47,15 +47,30 @@ export default function HomePage() {
                 style={{
                   fontWeight: "bold",
                   color: "white",
+                  fontSize: "1.5rem",
                   display: "inline-block",
                 }}
                 repeat={Infinity}
               />
-              <p className="text-2xl header-shadow text-white">
-                NexaDB is your trusted partner in data management. With
+              <p className="text-response text-2xl header-shadow text-white">
+                NexaDB is your trusted partner in <b>Data Management</b>. With
                 cutting-edge technology and a commitment to excellence, we
                 provide scalable and secure database solutions.
               </p>
+
+              <style jsx>{`
+                @media (max-width: 768px) {
+                  .text-response {
+                    text-align: center;
+                  }
+                }
+
+                @media (min-width: 768px) {
+                  .text-response {
+                    text-align: left;
+                  }
+                }
+              `}</style>
             </div>
             <motion.div
               animate={{
@@ -143,12 +158,12 @@ export default function HomePage() {
           </Card>
         </div>
       </div>
-      <div className="flex md:flex-row flex-col items-center justify-between bg-primary md:gap-0 gap-24 text-white md:text-left text-center md:p-16 p-8">
+      <div className="flex md:flex-row flex-col items-center justify-between bg-main md:gap-0 gap-24 text-white md:text-left text-center md:p-16 p-8">
         <div className="flex flex-col md:items-start items-center gap-5 md:w-3/5">
           <p className="text-2xl font-semibold">
             Ready to get started with NexaDB?
           </p>
-          <p className="text-xl md:w-1/2">
+          <p className="text-xl md:w-1/2 md:text-left">
             Ready to experience the power of NexaDB? Follow these simple steps
             to get started and unlock a seamless, open-source database solution.
             Whether you're a business, developer, or data enthusiast, NexaDB

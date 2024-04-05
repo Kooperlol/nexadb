@@ -1,33 +1,34 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import careersMobile from "@/../public/media/mobile_careers.jpg";
-import { Box, Button } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import careersDesktop from "@/../public/media/careers.gif";
-import {
-  FaClock,
-  FaMoneyCheckAlt,
-  FaWheelchair,
-  FaCalendarTimes,
-  FaBalanceScale,
-} from "react-icons/fa";
-import { MdAccountBalance, MdOutlineSecurity } from "react-icons/md";
-import { FaMoneyBillTransfer, FaUserDoctor } from "react-icons/fa6";
+import ourMissionSlide from "@/../public/media/mission.jpg";
+import ourVisionSlide from "@/../public/media/vision.jpg";
+import ourValuesSlide from "@/../public/media/values.jpg";
+import communitySlide from "@/../public/media/community.jpg";
+
+import { Carousel } from "react-bootstrap";
 
 const CareersPage = () => {
   const { push } = useRouter();
+  const [index, setIndex] = useState(0);
+  const handleSelect = (selectedIndex: number) => {
+    setIndex(selectedIndex);
+  };
   return (
-    <>
+    <div>
       <Image
-        className="absolute object-cover min-h-screen max-h-screen opacity-0 w-full brightness-50 lg:opacity-100"
+        className="absolute object-cover min-h-screen w-screen max-h-screen brightness-50 hidden md:block"
         priority
         draggable={false}
         src={careersDesktop}
         alt="Careers Background"
       />
       <Image
-        className="absolute object-cover min-h-screen max-h-screen opacity-100 brightness-50 lg:opacity-0"
+        className="absolute object-cover min-h-screen max-h-screen brightness-50 block md:hidden"
         priority
         draggable={false}
         src={careersMobile}
@@ -43,16 +44,15 @@ const CareersPage = () => {
           uniqueness and nurtures an environment of excellence.
         </p>
       </div>
-      <div className="justify-center flex w-screen">
+      <div className="justify-center flex">
         <div className="flex flex-col gap-5 p-16 w-3/4 text-white">
           <div>
-            <div className="inline-flex items-center justify-center w-full">
-              <hr className="w-full h-px my-8 bg-gray-700 border-0" />
-              <span className="absolute px-3 font-bold lg:text-4xl text-xl -translate-x-1/2 bg-primary left-1/2">
+            <div className="items-center justify-center">
+              <p className="font-bold lg:text-4xl text-xl left-1/2 lg:text-center text-left">
                 Company Overview
-              </span>
+              </p>
             </div>
-            <p className="lg:text-lg text-base">
+            <p className="lg:text-lg text-base lg:text-center text-left">
               Welcome to NexaDB, a leading force in server management and
               hosting solutions. Specializing in optimizing digital
               infrastructure, we provide services to cultivate your needs. Our
@@ -60,44 +60,125 @@ const CareersPage = () => {
               seamlessly, allowing you to focus on what matters most.
             </p>
           </div>
-          <div>
-            <p className="lg:text-2xl text-xl">The Mission—Why We Exist</p>
-            <p className="lg:text-lg text-base">
-              Our mission is to empower clients with reliable, secure, and
-              scalable server solutions. By simplifying the complexities of
-              digital infrastructure management, we enable clients to thrive.
-            </p>
-          </div>
-          <div>
-            <p className="lg:text-2xl text-xl">
-              The Vision – What We Are Working Toward
-            </p>
-            <p className="lg:text-lg text-base">
-              We envision a future where server management is synonymous with
-              efficiency and security. Our commitment to setting industry
-              standards ensures that our clients receive state-of-the-art
-              hosting experiences.
-            </p>
-          </div>
-          <div>
-            <p className="lg:text-2xl text-xl">
-              Our Values – How We Will Accomplish This Mission
-            </p>
-            <p className="lg:text-lg text-base">
-              Driven by a dedication to excellence and client satisfaction, we
-              uphold values that prioritize the security and reliability in our
-              server solutions. Our team is committed to improvement, ensuring
-              that our services evolve with tomorrow's techonology.
-            </p>
-          </div>
-          <div>
-            <p className="lg:text-2xl text-xl">Community — Who We Serve</p>
-            <p className="lg:text-lg text-base">
-              Our services cater to a diverse community, including businesses,
-              organizations, and individuals seeking dependable server
-              management. By tailoring our solutions to meet the unique needs of
-              each client, we foster collaborative partnerships.
-            </p>
+          <Carousel
+            className="md:block hidden"
+            activeIndex={index}
+            onSelect={handleSelect}
+          >
+            <Carousel.Item>
+              <Image
+                className="carousel-image"
+                objectFit="cover"
+                draggable={false}
+                src={ourMissionSlide}
+                alt="Our Mission Slide"
+              />
+              <Carousel.Caption>
+                <h3>The Mission—Why We Exist</h3>
+                <p className="text-xl">
+                  Our mission is to empower clients with reliable, secure, and
+                  scalable server solutions. By simplifying the complexities of
+                  digital infrastructure management, we enable clients to
+                  thrive.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <Image
+                className="carousel-image"
+                objectFit="cover"
+                draggable={false}
+                src={ourVisionSlide}
+                alt="Our Mission Slide"
+              />
+              <Carousel.Caption>
+                <h3>The Vision – What We Are Working Toward</h3>
+                <p className="text-xl">
+                  We envision a future where server management is synonymous
+                  with efficiency and security. Our commitment to setting
+                  industry standards ensures that our clients receive
+                  state-of-the-art hosting experiences.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <Image
+                className="carousel-image"
+                objectFit="cover"
+                draggable={false}
+                src={ourValuesSlide}
+                alt="Our Mission Slide"
+              />
+              <Carousel.Caption>
+                <h3>Our Values – How We Will Accomplish This Mission</h3>
+                <p className="text-xl">
+                  Driven by a dedication to excellence and client satisfaction,
+                  we uphold values that prioritize the security and reliability
+                  in our server solutions. Our team is committed to improvement,
+                  ensuring that our services evolve with tomorrow's techonology.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <Image
+                className="carousel-image"
+                objectFit="cover"
+                draggable={false}
+                src={communitySlide}
+                alt="Our Mission Slide"
+              />
+              <Carousel.Caption>
+                <h3>Community — Who We Serve</h3>
+                <p className="text-xl">
+                  Our services cater to a diverse community, including
+                  businesses, organizations, and individuals seeking dependable
+                  server management. By tailoring our solutions to meet the
+                  unique needs of each client, we foster collaborative
+                  partnerships.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+          <div className="lg:hidden block">
+            <div>
+              <p className="lg:text-2xl text-xl">The Mission—Why We Exist</p>
+              <p className="lg:text-lg text-base">
+                Our mission is to empower clients with reliable, secure, and
+                scalable server solutions. By simplifying the complexities of
+                digital infrastructure management, we enable clients to thrive.
+              </p>
+            </div>
+            <div>
+              <p className="lg:text-2xl text-xl">
+                The Vision – What We Are Working Toward
+              </p>
+              <p className="lg:text-lg text-base">
+                We envision a future where server management is synonymous with
+                efficiency and security. Our commitment to setting industry
+                standards ensures that our clients receive state-of-the-art
+                hosting experiences.
+              </p>
+            </div>
+            <div>
+              <p className="lg:text-2xl text-xl">
+                Our Values – How We Will Accomplish This Mission
+              </p>
+              <p className="lg:text-lg text-base">
+                Driven by a dedication to excellence and client satisfaction, we
+                uphold values that prioritize the security and reliability in
+                our server solutions. Our team is committed to improvement,
+                ensuring that our services evolve with tomorrow's techonology.
+              </p>
+            </div>
+            <div>
+              <p className="lg:text-2xl text-xl">Community — Who We Serve</p>
+              <p className="lg:text-lg text-base">
+                Our services cater to a diverse community, including businesses,
+                organizations, and individuals seeking dependable server
+                management. By tailoring our solutions to meet the unique needs
+                of each client, we foster collaborative partnerships.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -162,81 +243,7 @@ const CareersPage = () => {
           alt="Employees"
         />
       </div>
-      <div className="justify-center flex w-screen">
-        <div className="flex flex-col items-center gap-5 p-16 w-3/4 text-white">
-          <div className="inline-flex items-center justify-center w-full">
-            <hr className="w-full h-px my-8 bg-gray-700 border-0" />
-            <span className="absolute px-3 font-bold lg:text-4xl text-xl -translate-x-1/2 bg-primary left-1/2">
-              Employee Benefits
-            </span>
-          </div>
-          <ul className="lg:text-lg text-base">
-            <li className="flex flex-row gap-2 items-center">
-              <Box className="w-fit">
-                <FaWheelchair />
-              </Box>
-              <p>Fully subsidized Long Term Disability</p>
-            </li>
-            <li className="flex flex-row gap-2 items-center">
-              <Box className="w-fit">
-                <FaClock />
-              </Box>
-              <p>Monday through Friday work week</p>
-            </li>
-            <li className="flex flex-row gap-2 items-center">
-              <Box className="w-fit">
-                <FaMoneyCheckAlt />
-              </Box>
-              <p>401K with company contribution</p>
-            </li>
-            <li className="flex flex-row gap-2 items-center">
-              <Box className="w-fit">
-                <FaMoneyBillTransfer />
-              </Box>
-              <p>Quarterly/annual profit-sharing bonuses</p>
-            </li>
-            <li className="flex flex-row gap-2 items-center">
-              <Box className="w-fit">
-                <FaUserDoctor />
-              </Box>
-              <p>
-                Group rates for dental/vision/life insurance (non-subsidized)
-              </p>
-            </li>
-            <li className="flex flex-row gap-2 items-center">
-              <Box className="w-fit">
-                <MdAccountBalance />
-              </Box>
-              <p>Flexible Spending Account with company match</p>
-            </li>
-            <li className="flex flex-row gap-2 items-center">
-              <Box className="w-fit">
-                <MdOutlineSecurity />
-              </Box>
-              <p>Preventative Care Insurance Minimum Essential Coverage</p>
-            </li>
-            <li className="flex flex-row gap-2 items-center">
-              <Box className="w-fit">
-                <FaWheelchair />
-              </Box>
-              <p>Fully subsidized Long Term Disability</p>
-            </li>
-            <li className="flex flex-row gap-2 items-center">
-              <Box className="w-fit">
-                <FaCalendarTimes />
-              </Box>
-              <p>Flexible Time Off</p>
-            </li>
-            <li className="flex flex-row gap-2 items-center">
-              <Box className="w-fit">
-                <FaBalanceScale />
-              </Box>
-              <p>Company culture based on work/life balance</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="flex flex-col items-center justify-center gap-5 p-16 bg-white">
+      <div className="flex flex-col items-center justify-center gap-5 p-16 bg-main text-white">
         <p className="text-3xl text-center">
           Join us in shaping the future of database management.
         </p>
@@ -253,7 +260,7 @@ const CareersPage = () => {
           View all open roles
         </Button>
       </div>
-    </>
+    </div>
   );
 };
 

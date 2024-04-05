@@ -15,16 +15,16 @@ export async function GET(request: Request) {
 
     if (position != null) {
       try {
-        const positionName = (
-          await prisma.$extends(withAccelerate()).position.findFirst({
+        const positionName = (await prisma
+          .$extends(withAccelerate())
+          .position.findFirst({
             cacheStrategy: {
               ttl: 60,
             },
             where: {
               id: position,
             },
-          })
-        ).position;
+          }))!!.position;
         applications = await prisma
           .$extends(withAccelerate())
           .application.findMany({

@@ -15,10 +15,16 @@ export async function GET(request: Request) {
 
     if (position != null) {
       try {
-        const response = await axios.get(
-          `https://vercel.nexadb.com/api/positions/${position}`
-        );
-        const positionName = response.data.position;
+        const positionName = (
+          await prisma.$extends(withAccelerate()).position.findFirst({
+            cacheStrategy: {
+              ttl: 60,
+            },
+            where: {
+              id: position,
+            },
+          })
+        ).position;
         applications = await prisma
           .$extends(withAccelerate())
           .application.findMany({

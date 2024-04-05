@@ -16,7 +16,7 @@ export async function GET(request: Request) {
     if (position != null) {
       try {
         const response = await axios.get(
-          `http://vercel.nexadb.com:3000/api/positions/${position}`
+          `https://vercel.nexadb.com/api/positions/${position}`
         );
         const positionName = response.data.position;
         applications = await prisma

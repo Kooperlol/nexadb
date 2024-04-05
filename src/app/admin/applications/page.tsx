@@ -49,7 +49,7 @@ const ApplicationsPage = async () => {
   }
 
   return (
-    <div className="container py-36 flex flex-col gap-3 items-center">
+    <div className="container min-h-screen py-36 flex flex-col gap-3 items-center">
       <div className="gap-2 flex flex-col">
         <p className="text-4xl text-white text-center">
           Click a position to view its applications

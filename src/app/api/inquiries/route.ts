@@ -1,15 +1,20 @@
+import json from "@/helpers/json";
 import prisma from "@/lib/prisma";
+import { withAccelerate } from "@prisma/extension-accelerate";
 
 export async function GET(request: Request) {
   try {
-    const inquiries = await prisma.inquiry.findMany({
+    const inquiries = await prisma.inquiry.$extends(withAccelerate()).findMany({
+      cacheStrategy: {
+        ttl: 60,
+      },
       orderBy: {
         createdAt: "desc",
       },
     });
-    return new Response(JSON.stringify(inquiries), { status: 200 });
+    return new Response(json(inquiries), { status: 200 });
   } catch (error) {
-    return new Response(JSON.stringify(error), { status: 500 });
+    return new Response(json(error), { status: 500 });
   }
 }
 
@@ -31,7 +36,7 @@ export async function POST(request: Request) {
       status: 200,
     });
   } catch (error) {
-    return new Response(JSON.stringify(error), {
+    return new Response(json(error), {
       status: 500,
     });
   }
@@ -55,7 +60,7 @@ export async function PUT(request: Request) {
     });
   } catch (error) {
     console.error(error);
-    return new Response(JSON.stringify(error), {
+    return new Response(json(error), {
       status: 500,
     });
   }

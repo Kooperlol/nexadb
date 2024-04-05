@@ -51,6 +51,15 @@ const ViewApplicationPage = ({ params }: { params: { id: string } }) => {
             <p>
               Name: {application?.firstname} {application?.lastname}
             </p>
+            <p>Position: {application?.position}</p>
+            <p>Gender: {application?.gender}</p>
+            <p>Birthday: {application?.birthdate}</p>
+            <p>
+              Preferred Salary: $
+              {application?.preferredSalary
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            </p>
             <p>Email: {application?.email}</p>
             <p>Phone: {application?.phone}</p>
           </CardBody>

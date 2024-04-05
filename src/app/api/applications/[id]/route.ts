@@ -1,4 +1,6 @@
+import json from "@/helpers/json";
 import prisma from "@/lib/prisma";
+import { withAccelerate } from "@prisma/extension-accelerate";
 
 export async function GET(
   request: Request,
@@ -6,13 +8,18 @@ export async function GET(
 ) {
   const id = params.id;
   try {
-    const application = await prisma.application.findFirst({
-      where: {
-        id,
-      },
-    });
-    return new Response(JSON.stringify(application), { status: 200 });
+    const application = await prisma
+      .$extends(withAccelerate())
+      .application.findFirst({
+        cacheStrategy: {
+          ttl: 60,
+        },
+        where: {
+          id,
+        },
+      });
+    return new Response(json(application), { status: 200 });
   } catch (error) {
-    return new Response(JSON.stringify(error), { status: 500 });
+    return new Response(json(error), { status: 500 });
   }
 }

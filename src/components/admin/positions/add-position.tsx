@@ -9,7 +9,6 @@ const AddPositionButton = () => {
     <Button
       fontFamily={"heading"}
       w={"fit"}
-      zIndex={-5}
       bgGradient="linear(to-r, purple.400,purple.600)"
       color={"white"}
       _hover={{

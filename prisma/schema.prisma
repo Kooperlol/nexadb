@@ -7,36 +7,36 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Position {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  position String
-  location String
-  about String
-  salary Int
-  listed Boolean
-  image String
-}
-
 model Application {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  position String
-  firstname String
-  lastname String
-  birthdate String
-  gender String
-  preferredSalary Int
-  email String
-  phone String
-  resume String
-  createdAt DateTime @default(now())
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  birthdate       String
+  createdAt       DateTime @db.Date
+  email           String
+  firstname       String
+  gender          String
+  lastname        String
+  phone           String
+  position        String
+  preferredSalary BigInt
+  resume          String
 }
 
 model Inquiry {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime @db.Date
+  email     String
   firstname String
-  lastname String
-  email String
-  message String
-  open Boolean @default(false)
+  lastname  String
+  message   String
+  open      Boolean
+}
+
+model Position {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  about    String
+  image    String
+  listed   Boolean
+  location String
+  position String
+  salary   Int
 }

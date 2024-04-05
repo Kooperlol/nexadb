@@ -6,6 +6,7 @@ import axios from "axios";
 import Image from "next/image";
 import LoadingPage from "@/app/loading";
 import { useRouter } from "next/navigation";
+import PositionApplications from "@/components/admin/applications/position";
 
 const ApplicationsPage = async () => {
   const [positions, setPositions] = useState<Position[]>();
@@ -64,33 +65,11 @@ const ApplicationsPage = async () => {
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full justify-items-center"
       >
         {positions?.map((position) => (
-          <Card
-            onClick={() =>
-              router.push(`/admin/applications/position/${position.id}`)
-            }
-            maxW="sm"
-            id={position.id}
-            className="transition w-full h-full duration-300 transform hover:scale-105"
-          >
-            <CardBody className="flex flex-col h-full">
-              <Image
-                src={position.image}
-                alt="Position Image"
-                width={300}
-                height={300}
-                style={{
-                  objectFit: "cover",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  width: "100%",
-                }}
-              />
-              <Stack mt="6" spacing="3" flexGrow={1}>
-                <Heading size="md">{position.position}</Heading>
-                <Text>{unread.get(position.id)} unread applications</Text>
-              </Stack>
-            </CardBody>
-          </Card>
+          <PositionApplications
+            key={position.id}
+            pos={position}
+            unread={unread.get(position.id)!!}
+          />
         ))}
       </div>
     </div>

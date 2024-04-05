@@ -62,8 +62,8 @@ const ViewCareerPage = ({ params }: { params: { id: string } }) => {
                   .split("Requirements:")[1]
                   .replace(".", "")
                   .split(";")
-                  .map((req) => (
-                    <li>{req}</li>
+                  .map((req, index) => (
+                    <li key={index}>{req}</li>
                   ))}
               </ul>
             </div>

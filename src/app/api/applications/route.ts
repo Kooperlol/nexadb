@@ -2,7 +2,6 @@ import { storage } from "@/lib/firebase";
 import { v4 as uuidv4 } from "uuid";
 import prisma from "@/lib/prisma";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import axios from "axios";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import json from "@/helpers/json";
 
@@ -27,12 +26,11 @@ export async function GET(request: Request) {
           }))!!.position;
         applications = await prisma
           .$extends(withAccelerate())
-          .application.findMany({
+          .application.findFirst({
             cacheStrategy: {
               ttl: 60,
             },
             where: { position: positionName },
-            orderBy: { createdAt: "desc" },
           });
       } catch (error) {
         console.error("Error fetching position data:", error);
@@ -43,6 +41,9 @@ export async function GET(request: Request) {
         .$extends(withAccelerate())
         .application.findMany({
           orderBy: { createdAt: "desc" },
+          cacheStrategy: {
+            ttl: 60,
+          },
         });
     }
 

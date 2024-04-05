@@ -27,6 +27,7 @@ const PositionApplications: React.FC<PositionApplicationsProps> = ({
           src={pos.image}
           alt="Position Image"
           width={300}
+          loading="lazy"
           height={300}
           style={{
             objectFit: "cover",

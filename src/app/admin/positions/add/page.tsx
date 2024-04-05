@@ -23,6 +23,7 @@ const AddPositionPage = () => {
       event.currentTarget.position.value.trim() === "" ||
       event.currentTarget.salary.value.trim() === "" ||
       event.currentTarget.location.value.trim() === "" ||
+      event.currentTarget.image.value.trim() === "" ||
       event.currentTarget.listed.value === null ||
       event.currentTarget.about.value.trim() === ""
     ) {
@@ -127,6 +128,16 @@ const AddPositionPage = () => {
             <Input
               id="location"
               placeholder="Location"
+              bg={"gray.100"}
+              border={0}
+              color={"gray.500"}
+              _placeholder={{
+                color: "gray.500",
+              }}
+            />
+            <Input
+              id="image"
+              placeholder="Image URL"
               bg={"gray.100"}
               border={0}
               color={"gray.500"}

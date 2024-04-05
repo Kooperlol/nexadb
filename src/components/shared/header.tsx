@@ -26,6 +26,7 @@ import {
   NavbarBrand,
   NavbarToggle,
 } from "react-bootstrap";
+import { FaEye } from "react-icons/fa";
 
 export default function Header() {
   return (
@@ -96,6 +97,12 @@ export default function Header() {
                   iconMessage="Read Page"
                   title="Read Page"
                   body={<ModalBody>Read Page</ModalBody>}
+                />
+                <MenuPopup
+                  icon={<FaEye />}
+                  iconMessage="Color Blind Mode"
+                  title="Color Blind Mode"
+                  body={<ModalBody>Color Blind Mode</ModalBody>}
                 />
               </MenuList>
             </Menu>

@@ -37,7 +37,7 @@ const PositionApplications: React.FC<PositionApplicationsProps> = ({
         />
         <Stack mt="6" spacing="3" flexGrow={1}>
           <Heading size="md">{pos.position}</Heading>
-          <Text>{unread} unread applications</Text>
+          <Text>{unread} applications</Text>
         </Stack>
       </CardBody>
     </Card>

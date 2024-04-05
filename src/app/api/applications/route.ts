@@ -52,14 +52,14 @@ export async function POST(request: Request) {
         lastname: lastname.toString(),
         email: email.toString(),
         phone: phone.toString(),
-        birthdate: parseInt(birthdate.toString()),
+        birthdate: birthdate.toString(),
         gender: gender.toString(),
         preferredSalary: parseInt(salary.toString()),
         resume: downloadURL,
       },
     });
 
-    return new Response("Succesfully created resume", { status: 200 });
+    return new Response("Succesfully created application", { status: 200 });
   } catch (error) {
     return new Response(JSON.stringify(error), { status: 500 });
   }

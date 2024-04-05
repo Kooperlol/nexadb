@@ -22,7 +22,7 @@ model Application {
   position String
   firstname String
   lastname String
-  birthdate Int
+  birthdate String
   gender String
   preferredSalary Int
   email String

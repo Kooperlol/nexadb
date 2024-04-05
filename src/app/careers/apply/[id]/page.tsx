@@ -106,7 +106,7 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
     formData.append("lastname", lastName.trim());
     formData.append("email", email.trim());
     formData.append("salary", salary.replace(",", ""));
-    formData.append("birthdate", birthday.valueAsNumber);
+    formData.append("birthdate", birthday.toString());
     formData.append("phone", phone);
     formData.append("gender", gender);
     formData.append("resume", resume?.file!!);

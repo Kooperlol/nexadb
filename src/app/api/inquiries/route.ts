@@ -28,6 +28,7 @@ export async function POST(request: Request) {
         lastname,
         email,
         message,
+        createdAt: new Date(),
         open: true,
       },
     });

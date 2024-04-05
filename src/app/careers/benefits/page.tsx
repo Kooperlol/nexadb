@@ -22,13 +22,13 @@ import InView from "@/components/shared/slide-in-animation";
 
 const CareerBenefits = () => {
   return (
-    <div className="flex flex-col lg:gap-3 gap-20">
-      <div className="flex flex-col min-h-screen lg:flex-row px-32 items-center sm:pt-32 lg:pt-0">
+    <div className="flex flex-col lg:gap-3 pt-32 md:pt-0 gap-20">
+      <div className="flex flex-col min-h-screen lg:flex-row md:px-32 px-16 items-center sm:pt-32 lg:pt-0">
         <div className="flex flex-col gap-3 text-center lg:text-left justify-center lg:px-32">
-          <h1 className="text-5xl font-bold text-white">
+          <h1 className="md:text-5xl text-4xl font-bold text-white">
             Better Benefits Start Here
           </h1>
-          <p className="text-white text-3xl">
+          <p className="text-white md:text-3xl text-2xl">
             At NexaDB, we believe our employees are our greatest asset. That's
             why we're committed to providing a{" "}
             <b>comprehensive benefits package</b> designed to support{" "}
@@ -66,7 +66,7 @@ const CareerBenefits = () => {
                 </AccordionButton>
                 <AccordionPanel
                   pb={4}
-                  className="flex flex-row justify-between"
+                  className="flex md:flex-row flex-col items-center md:gap-0 gap-3 justify-between"
                 >
                   <Image
                     className="lg:w-1/3 w-1/2"
@@ -75,7 +75,7 @@ const CareerBenefits = () => {
                     src={health}
                     alt="Health Illustration"
                   />
-                  <div className="w-1/2">
+                  <div className="md:w-1/2 w-2/3">
                     <p>
                       Keeping our employees <b>healthy</b> and <b>happy</b>
                     </p>
@@ -108,7 +108,7 @@ const CareerBenefits = () => {
                 </AccordionButton>
                 <AccordionPanel
                   pb={4}
-                  className="flex flex-row justify-between"
+                  className="flex md:flex-row flex-col items-center md:gap-0 gap-3 justify-between"
                 >
                   <Image
                     className="lg:w-1/3 w-1/2"
@@ -117,7 +117,7 @@ const CareerBenefits = () => {
                     src={flexibility}
                     alt="Flexibility Illustration"
                   />
-                  <div className="w-1/2">
+                  <div className="md:w-1/2 w-2/3">
                     <p>
                       Keeping our employees <b>charged</b> and <b>refreshed</b>
                     </p>
@@ -150,7 +150,7 @@ const CareerBenefits = () => {
                 </AccordionButton>
                 <AccordionPanel
                   pb={4}
-                  className="flex flex-row justify-between"
+                  className="flex md:flex-row flex-col items-center md:gap-0 gap-3 justify-between"
                 >
                   <Image
                     className="lg:w-1/3 w-1/2"
@@ -159,7 +159,7 @@ const CareerBenefits = () => {
                     src={savings}
                     alt="Financial Illustration"
                   />
-                  <div className="w-1/2">
+                  <div className="md:w-1/2 w-2/3">
                     <p>
                       Provding our employees with <b>compensation</b> and{" "}
                       <b>opportunity</b>

@@ -66,10 +66,9 @@ const DatabasePage = () => {
             bg="white"
             rounded="xl"
             boxShadow="xl"
-            textAlign="left"
             width="full"
             maxWidth="sm"
-            className="flex flex-col justify-between"
+            className="flex flex-col justify-between md:text-left sm:text-center"
           >
             <Heading as="h3" size="lg" mb={4} color="black">
               {server.name}

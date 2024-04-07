@@ -9,13 +9,14 @@ import ourMissionSlide from "@/../public/media/mission.jpg";
 import ourVisionSlide from "@/../public/media/vision.jpg";
 import ourValuesSlide from "@/../public/media/values.jpg";
 import communitySlide from "@/../public/media/community.jpg";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Carousel } from "react-bootstrap";
 
 const CareersPage = () => {
   const { push } = useRouter();
   const [index, setIndex] = useState(0);
+  const locale = useLocale()
   const t = useTranslations("Careers.AboutUs");
   const handleSelect = (selectedIndex: number) => {
     setIndex(selectedIndex);
@@ -219,7 +220,7 @@ const CareersPage = () => {
           className="w-fit"
           bg={"purple.800"}
           color={"white"}
-          onClick={() => push("/careers/search")}
+          onClick={() => push(`/${locale}/careers/search`)}
           _hover={{
             bg: "purple.900",
           }}

@@ -3,12 +3,14 @@ import React, { useState, useEffect } from "react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { MdLocationPin } from "react-icons/md";
 import { debounce } from "lodash";
+import { useTranslations } from "next-intl";
 
 interface JobSearchProps {
   onSearch: (jobTitle: string, location: string) => void;
 }
 
 const JobSearchBar: React.FC<JobSearchProps> = ({ onSearch }) => {
+  const t = useTranslations("Careers.Positions.search");
   const [jobTitle, setJobTitle] = useState("");
   const [location, setLocation] = useState("");
 
@@ -25,7 +27,7 @@ const JobSearchBar: React.FC<JobSearchProps> = ({ onSearch }) => {
 
   return (
     <div
-      className="bg-white w-1/2 flex flex-row"
+      className="bg-white md:w-1/2 flex md:flex-row flex-col"
       style={{
         borderRadius: "10px",
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -42,7 +44,7 @@ const JobSearchBar: React.FC<JobSearchProps> = ({ onSearch }) => {
           borderColor={"transparent"}
           border={"none"}
           _hover={{ border: "none" }}
-          placeholder="Job title or keywords"
+          placeholder={t("job")}
           onChange={(e) => setJobTitle(e.target.value)}
         />
       </InputGroup>
@@ -56,7 +58,7 @@ const JobSearchBar: React.FC<JobSearchProps> = ({ onSearch }) => {
           _focusVisible={{ border: "none" }}
           _hover={{ border: "none" }}
           border={"none"}
-          placeholder="City, state, zip code, or remote"
+          placeholder={t("location")}
           onChange={(e) => setLocation(e.target.value)}
         />
       </InputGroup>

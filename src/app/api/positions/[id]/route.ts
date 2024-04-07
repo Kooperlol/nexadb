@@ -1,6 +1,6 @@
-import json from "@/helpers/json";
 import prisma from "@/lib/prisma";
 import { withAccelerate } from "@prisma/extension-accelerate";
+var JSONbig = require("json-bigint");
 
 export async function DELETE(
   request: Request,
@@ -15,7 +15,7 @@ export async function DELETE(
     });
     return new Response("Succesfully deleted position", { status: 200 });
   } catch (error) {
-    return new Response(json(error), { status: 500 });
+    return new Response(JSON.stringify(error), { status: 500 });
   }
 }
 
@@ -35,8 +35,8 @@ export async function GET(
           id,
         },
       });
-    return new Response(json(position), { status: 200 });
+    return new Response(JSONbig.stringify(position), { status: 200 });
   } catch (error) {
-    return new Response(json(error), { status: 500 });
+    return new Response(JSON.stringify(error), { status: 500 });
   }
 }

@@ -3,12 +3,16 @@ import React from "react";
 import { Tr, Td } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { Application } from "@prisma/client";
+import { useLocale } from "next-intl";
 
 const Application = (application: Application) => {
+  const locale = useLocale();
   const router = useRouter();
   return (
     <Tr
-      onClick={() => router.push(`/admin/applications/${application.id}`)}
+      onClick={() =>
+        router.push(`/${locale}/admin/applications/${application.id}`)
+      }
       key={application.id}
     >
       <Td>{application.id}</Td>

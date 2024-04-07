@@ -1,0 +1,417 @@
+{
+  "Buttons": {
+    "close": "Close",
+    "purchase": "Purchase",
+    "Submit": "Submit"
+  },
+  "Footer": {
+    "value": "Next generation data management",
+    "rights": "All rights reserved."
+  },
+  "Header": {
+    "user-nav": {
+      "home": "Home",
+      "database": "Database",
+      "careers": "Careers",
+      "contact": "Contact",
+      "about-us": "About Us",
+      "positions": "Positions",
+      "benefits": "Benefits"
+    },
+    "admin-nav": {
+      "applications": "Applications",
+      "positions": "Positions",
+      "inquiries": "Inquiries"
+    },
+    "settings": {
+      "language": {
+        "value": "Language",
+        "options": {
+          "en": "English",
+          "es": "Spanish",
+          "fr": "French"
+        },
+        "description": "Select your preferred language"
+      },
+      "font-size": "Font Size",
+      "read-page": {
+        "value": "Read Page",
+        "description": "Read the page aloud",
+        "start": "Start Reading",
+        "stop": "Stop Reading"
+      }
+    }
+  },
+  "Home": {
+    "banner": {
+      "title": {
+        "1": "We store data for Businesses",
+        "2": "We store data for Innovators",
+        "3": "We store data for Researchers",
+        "4": "We store data for Organizations",
+        "5": "We store data for Non-Profits",
+        "6": "We store data for Entrepreneurs"
+      },
+      "description": "NexaDB is your trusted partner in <important>Data Management</important>. With cutting-edge technology and a commitment to excellence, we provide scalable and secure database solutions."
+    },
+    "dynamicContent": {
+      "mainText": "A dynamic, open source database",
+      "secondaryText": "NexaDB has won the hearts of developers with its seamless performance and top-notch features. Praised and top-voted, NexaDB stands as a reliable choice for businesses and organizations, offering innovative solutions and a user-friendly experience. Its popularity is a testament to its commitment to excellence in data management."
+    },
+    "features": {
+      "applications": "Applications",
+      "githubStars": "Github stars",
+      "supportedLanguages": "Supported programming languages"
+    },
+    "cta": {
+      "heading": "Ready to get started with NexaDB?",
+      "text": "Ready to experience the power of NexaDB? Follow these simple steps to get started and unlock a seamless, open-source database solution. Whether you're a business, developer, or data enthusiast, NexaDB makes data management straightforward and efficient. Let's embark on a journey of innovation together - explore NexaDB and elevate your data experience today!",
+      "buttonText": "Get Started"
+    },
+    "image-alt": {
+      "header": "Header Background",
+      "cloud": "Person sitting on a cloud"
+    }
+  },
+  "Database": {
+    "title": "Explore Our Database Servers",
+    "storage": "Storage",
+    "year": "year",
+    "cores": "Cores",
+    "basic": "Basic",
+    "standard": "Standard",
+    "advanced": "Advanced",
+    "professional": "Professional",
+    "ultimate": "Ultimate"
+  },
+  "Careers": {
+    "AboutUs": {
+      "banner": {
+        "title": "Fostering Excellence Through Collaboration",
+        "description": "Discover opportunities at NexaDB, where collaboration is the cornerstone of our dynamic workplace. Join a team that values your uniqueness and nurtures an environment of excellence."
+      },
+      "overview": {
+        "title": "Company Overview",
+        "description": "Welcome to NexaDB, a leading force in server management and hosting solutions. Specializing in optimizing digital infrastructure, we provide services to cultivate your needs. Our commitment to excellence ensures that your servers operate seamlessly, allowing you to focus on what matters most.",
+        "slides": {
+          "1": {
+            "title": "The Mission—Why We Exist",
+            "description": "Our mission is to empower clients with reliable, secure, and scalable server solutions. By simplifying the complexities of digital infrastructure management, we enable clients to thrive."
+          },
+          "2": {
+            "title": "The Vision – What We Are Working Toward",
+            "description": "We envision a future where server management is synonymous with efficiency and security. Our commitment to setting industry standards ensures that our clients receive state-of-the-art hosting experiences."
+          },
+          "3": {
+            "title": "Our Values – How We Will Accomplish This Mission",
+            "description": "Driven by a dedication to excellence and client satisfaction, we uphold values that prioritize the security and reliability in our server solutions. Our team is committed to improvement, ensuring that our services evolve with tomorrow's techonology."
+          },
+          "4": {
+            "title": "Community — Who We Serve",
+            "description": "Our services cater to a diverse community, including businesses, organizations, and individuals seeking dependable server management. By tailoring our solutions to meet the unique needs of each client, we foster collaborative partnerships."
+          }
+        }
+      },
+      "attributes": {
+        "title": "Attributes of a Successful NexaDB Employee",
+        "learning": {
+          "title": "Continued Learning",
+          "description": "Demonstrates a commitment to staying on top of the dynamic technological landscape by acquiring proficiency in emerging development frameworks."
+        },
+        "adaptable": {
+          "title": "Adaptable",
+          "description": "Demonstrates an ability to swiftly adapt to new software environments and learn rapidly."
+        },
+        "leadership": {
+          "title": "Leadership",
+          "description": "Aspires to cultivate leadership and mentoring skills, aiming to enhance overall effectiveness and deliver increased value to both the team and our customers."
+        },
+        "motivation": {
+          "title": "Motivation",
+          "description": "Demonstrates self-motivation, excelling in both independent work and collaborative team efforts."
+        },
+        "passion": {
+          "title": "Passion",
+          "description": "Takes immense joy in their field by finding inspiration and fulfillment in crafting innovative solutions."
+        },
+        "collaboration": {
+          "title": "Collaboration",
+          "description": "Brings extensive experience collaborating with designers and skilled developers. Thrives on detailed collaboration and seeks to work with individuals who appreciate a team-first company culture."
+        }
+      },
+      "end": {
+        "title": "Join us in shaping the future of database management.",
+        "button": "View all open roles"
+      },
+      "image-alt": {
+        "header": "Careers Background",
+        "slide": "Slide Image",
+        "employees": "Employees collaborating"
+      }
+    },
+    "Benefits": {
+      "title": "Better Benefits Start Here",
+      "description": "At NexaDB, we believe our employees are our greatest asset. That's why we're committed to providing a <b>comprehensive benefits package</b> designed to support <b>you and your family's health</b>, happiness, and career development. Here's a glimpse into how we strive to better our people.",
+      "health": {
+        "value": "Health & Wellness",
+        "title": "Keeping our employees <b>healthy</b> and <b>happy</b>",
+        "1": "Medical, dental, and vison insurance for employees and dependents",
+        "2": "Workspace accommodations",
+        "3": "Healthcare Flexible Spending Account",
+        "4": "Access to well-being programs"
+      },
+      "flexibility": {
+        "value": "Flexibility & Work-Life Balance",
+        "title": "Keeping our employees <b>charged</b> and <b>refreshed</b>",
+        "1": "Paid time off, including holidays, parental leave, jury duty, vacation, and sick leave",
+        "2": "Remote work opportunites",
+        "3": "Part-time work",
+        "4": "Access to well-being programs"
+      },
+      "finances": {
+        "value": "Financial Wellbeing",
+        "title": "Provding our employees with <b>compensation</b> and <b>opportunity</b>",
+        "1": "401(k) retirement savings plan with company match",
+        "2": "Student loan reinbursement",
+        "3": "Cross-company pay equity",
+        "4": "Access to financial planning services",
+        "5": "Employee stock purchase plan"
+      },
+      "testimonies": {
+        "title": "Hear from some of our employees",
+        "1": {
+          "name": "Sophie",
+          "description": "NexaDB goes above and beyond with their <u>health insurance</u>! Not only do they cover me and my family, but they also provide resources to stay healthy, like on-site yoga classes. I feel so supported here."
+        },
+        "2": {
+          "name": "Antonio",
+          "description": "The <u>remote work options</u> at NexaDB are a game-changer. It allows me to find a balance between work and my personal life, which makes more productive."
+        },
+        "3": {
+          "name": "Robert",
+          "description": "NexaDB offers a fantastic benefits package that includes a <u>401(k) with a company match</u> and <u>student loan repayment assistance</u>. They are truly invested in my financial future."
+        }
+      },
+      "image-alt": {
+        "family": "Family vector image",
+        "doctor": "Doctor vector image",
+        "trip": "Trip vector image",
+        "finance": "Finance vector image",
+        "sophie": "Sophie image",
+        "antonio": "Antonio image",
+        "robert": "Robert image"
+      }
+    },
+    "Positions": {
+      "title": "Careers at NexaDB",
+      "search": {
+        "job": "Job title or keyword",
+        "location": "City, state, zip code"
+      },
+      "careers-count": "{count} careers",
+      "apply": "Apply Now"
+    },
+    "view-career": {
+      "back": "Careers",
+      "salary": "Annual Salary",
+      "description": "Job Description",
+      "requirements": "Requirements",
+      "apply-button": "Apply",
+      "back-button": "Back"
+    },
+    "application-form": {
+      "name": "Firstname",
+      "last": "Lastname",
+      "email": "Email",
+      "phone": "Phone",
+      "salary": "Preferred Salary",
+      "gender": "Gender",
+      "male": "male",
+      "female": "female",
+      "birthday": "Birthday",
+      "other": "other",
+      "resume": "Upload your resume",
+      "submit": "Submit",
+      "application": "Application",
+      "toast": {
+        "recaptcha": {
+          "title": "Recaptcha Failed",
+          "description": "Please verify that you are not a robot."
+        },
+        "error": {
+          "title": "Invalid Fields",
+          "description": "Please fill in all fields."
+        },
+        "salary": {
+          "title": "Invalid Salary",
+          "description": "Please enter a valid salary."
+        },
+        "success": {
+          "title": "Application Sent",
+          "description": "We have received your application and will email you soon."
+        }
+      }
+    }
+  },
+  "404": {
+    "title": "Oops",
+    "description": "We can't seem to find the page you're looking for.",
+    "alt": "Image containg a 404 error"
+  },
+  "Contact": {
+    "title": "Let's personalize NexaDB for you",
+    "field1": "Unlock the Power of Tailored Solutions with Our Exclusive Custom Server Plans!",
+    "field2": "Feel Safe Anywhere with our Enterprise-Grade Protection Powered by the Latest Technology!",
+    "field3": "Dive into the World of Possibilities with Fully Customizable Hardware!",
+    "form": {
+      "title": "Contact Us",
+      "description": "Have a question, need assistance, or want a custom server? We're here to help! Please fill out the form below, and we'll get back to you as soon as possible.",
+      "name": "Firstname",
+      "last": "Lastname",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "toast": {
+      "recaptcha": {
+        "title": "Recaptcha Failed",
+        "description": "Please verify that you are not a robot."
+      },
+      "error": {
+        "title": "Invalid Fields",
+        "description": "Please fill in all fields."
+      },
+      "success": {
+        "title": "Inquiry Sent",
+        "description": "We have received your message and will email you soon."
+      }
+    }
+  },
+  "Admin": {
+    "login": {
+      "title": "Admin Login",
+      "username": "Username",
+      "password": "Password",
+      "sign-in": "Sign In",
+      "toast": {
+        "error": {
+          "title": "Invalid Credentials",
+          "description": "Please enter valid credentials."
+        }
+      }
+    },
+    "applications": {
+      "title": "Click a position to view its applications",
+      "applications": "applications"
+    },
+    "position-table": {
+      "applications": "Applications",
+      "name": "Firstname",
+      "last": "Lastname",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "positions": {
+      "title": "Manage all positions",
+      "position": "Position",
+      "location": "Location",
+      "salary": "Salary",
+      "listed": "Listed"
+    },
+    "view-application": {
+      "application": "Application",
+      "name": "Name",
+      "position": "Position",
+      "gender": "Gender",
+      "gender-options": {
+        "male": "Male",
+        "female": "Female",
+        "other": "Other"
+      },
+      "birthday": "Birthday",
+      "salary": "Preferred Salary",
+      "email": "Email",
+      "phone": "Phone",
+      "resume": "View Resume",
+      "reply": "Reply"
+    },
+    "edit-position": {
+      "title": "Edit Position",
+      "position": "Position",
+      "location": "Location",
+      "salary": "Salary",
+      "listed": "Listed",
+      "about": "About",
+      "delete": "Delete",
+      "save": "Save",
+      "listed-options": {
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "add-position": {
+      "title": "Add Position",
+      "position": "Position",
+      "location": "Location",
+      "salary": "Salary",
+      "listed": "Should this position be listed?",
+      "about": "About",
+      "image": "Image URL",
+      "add": "Add",
+      "toast": {
+        "error": {
+          "title": "Invalid Fields",
+          "description": "Please fill in all fields."
+        },
+        "salary": {
+          "title": "Invalid Salary",
+          "description": "Please enter a valid salary."
+        },
+        "success": {
+          "title": "Position Added",
+          "description": "The position has been added."
+        },
+        "wrong": {
+          "title": "Something went wrong",
+          "description": "Please try again."
+        }
+      }
+    },
+    "inquiries": {
+      "title": "Manage all inquiries",
+      "name": "Firstname",
+      "last": "Lastname",
+      "email": "Email",
+      "status": "Status",
+      "open-options": {
+        "open": "Open",
+        "closed": "Closed"
+      }
+    },
+    "view-inquiry": {
+      "title": "Inquiry",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "status": "Status",
+      "reply": "Reply",
+      "resolve": "Resolve",
+      "reopen": "Reopen",
+      "opened": "opened",
+      "closed": "closed",
+      "message-1": "You have",
+      "message-2": "this inquiry.",
+      "open-options": {
+        "open": "Open",
+        "closed": "Closed"
+      }
+    }
+  },
+  "TTS": {
+    "play": "Play",
+    "pause": "Pause",
+    "stop": "Stop",
+    "close": "Close",
+    "title": "Text To Speech"
+  }
+}

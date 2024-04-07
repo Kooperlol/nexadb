@@ -1,6 +1,6 @@
 "use client";
 import AdminHeader from "@/components/admin/header";
-import Header from "@/components/shared/header";
+import Header from "@/components/header/header";
 import { usePathname } from "next/navigation";
 
 import React from "react";

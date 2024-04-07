@@ -7,6 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+type Languages {
+  en String
+  es String
+  fr String
+}
+
 model Application {
   id              String   @id @default(auto()) @map("_id") @db.ObjectId
   birthdate       String
@@ -16,7 +22,7 @@ model Application {
   gender          String
   lastname        String
   phone           String
-  position        String
+  position        String @db.ObjectId
   preferredSalary BigInt
   resume          String
 }
@@ -33,10 +39,10 @@ model Inquiry {
 
 model Position {
   id       String  @id @default(auto()) @map("_id") @db.ObjectId
-  about    String
+  about    Languages
   image    String
   listed   Boolean
   location String
-  position String
+  position Languages
   salary   Int
 }

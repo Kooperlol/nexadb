@@ -8,7 +8,8 @@ import {
 } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import axios from "axios";
-import LoadingPage from "@/app/loading";
+import LoadingPage from "../app/[locale]/loading";
+import { useLocale } from "next-intl";
 
 interface UserResponse {
   user: string | null;
@@ -36,6 +37,7 @@ export const useAuth = () => {
 };
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+  const locale = useLocale();
   const [user, setUser] = useState<string | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(true);
@@ -49,7 +51,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setUser(response.data);
       } catch (error) {
         setError(error as Error);
-        router.push("/admin");
+        router.push(`/${locale}/admin`);
       } finally {
         setLoading(false);
       }
@@ -62,12 +64,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   if (loading) return <LoadingPage />;
 
-  if (path === "/admin" && user) {
-    router.push("/admin/applications");
+  if (path === `/${locale}/admin` && user) {
+    router.push(`/${locale}/admin/applications`);
     return null;
   }
 
-  if (user || path === "/admin") {
+  if (user || path === `/${locale}/admin`) {
     return (
       <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
     );

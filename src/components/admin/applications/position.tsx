@@ -4,6 +4,8 @@ import { Position } from "@prisma/client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { useTranslations, useLocale } from "next-intl";
+import getTranslatedPosition from "@/helpers/translated-positions";
 
 type PositionApplicationsProps = {
   pos: Position;
@@ -15,9 +17,13 @@ const PositionApplications: React.FC<PositionApplicationsProps> = ({
   unread,
 }) => {
   const router = useRouter();
+  const locale = useLocale();
+  const t = useTranslations("Admin.applications");
   return (
     <Card
-      onClick={() => router.push(`/admin/applications/position/${pos.id}`)}
+      onClick={() =>
+        router.push(`/${locale}/admin/applications/position/${pos.id}`)
+      }
       maxW="sm"
       key={pos.id}
       className="transition w-full h-full duration-300 transform hover:scale-105"
@@ -37,8 +43,10 @@ const PositionApplications: React.FC<PositionApplicationsProps> = ({
           }}
         />
         <Stack mt="6" spacing="3" flexGrow={1}>
-          <Heading size="md">{pos.position}</Heading>
-          <Text>{unread} applications</Text>
+          <Heading size="md">{getTranslatedPosition(pos, locale)}</Heading>
+          <Text>
+            {unread} {t("applications")}
+          </Text>
         </Stack>
       </CardBody>
     </Card>

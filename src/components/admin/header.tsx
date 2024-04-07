@@ -1,33 +1,18 @@
 "use client";
-import React, { JSXElementConstructor, ReactElement, useState } from "react";
-import { AiOutlineFontSize, AiFillSound } from "react-icons/ai";
+import React from "react";
 import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  IconButton,
-  Button,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  useDisclosure,
-  ModalBody,
-  ModalFooter,
-} from "@chakra-ui/react";
-import { MdLanguage, MdSettings } from "react-icons/md";
-import {
-  NavDropdown,
   Navbar,
   Nav,
   Container,
   NavbarBrand,
   NavbarToggle,
 } from "react-bootstrap";
+import SettingsMenu from "../header/settings-menu";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function Header() {
+  const t = useTranslations("Header.admin-nav");
+  const locale = useLocale();
   const [basicNavbarNavExpanded, setBasicNavbarNavExpanded] =
     React.useState(false);
 
@@ -40,7 +25,7 @@ export default function Header() {
       sticky="top"
       expand="lg"
       style={{ padding: "15px 25px" }}
-      className="bg-main-foreground d-flex justify-content-between" // Align items horizontally
+      className="bg-main-foreground d-flex justify-content-between"
     >
       <Container fluid>
         <NavbarBrand
@@ -54,19 +39,23 @@ export default function Header() {
           <Nav className="ms-auto gap-2">
             <Nav.Link
               className="text-white hover:text-purple-950"
-              href="/admin/applications"
+              href={`/${locale}/admin/applications`}
             >
-              Applications
+              {t("applications")}
             </Nav.Link>
             <Nav.Link
               className="text-white hover:text-purple-950"
-              href="/admin/positions"
+              href={`/${locale}/admin/positions`}
             >
-              Positions
+              {t("positions")}
             </Nav.Link>
-            <Nav.Link href="/admin/inquiries" className="text-white">
-              Inquiries
+            <Nav.Link
+              href={`/${locale}/admin/inquiries`}
+              className="text-white"
+            >
+              {t("inquiries")}
             </Nav.Link>
+            <SettingsMenu />
           </Nav>
         </Navbar.Collapse>
       </Container>

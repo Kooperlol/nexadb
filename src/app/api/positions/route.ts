@@ -1,6 +1,6 @@
-import json from "@/helpers/json";
 import prisma from "@/lib/prisma";
 import { withAccelerate } from "@prisma/extension-accelerate";
+var JSONbig = require("json-bigint");
 
 export async function POST(request: Request) {
   const { position, salary, location, listed, about, image } =
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
     return new Response("Succesfully created position", { status: 200 });
   } catch (error) {
-    return new Response(json(error), { status: 500 });
+    return new Response(JSON.stringify(error), { status: 500 });
   }
 }
 
@@ -41,7 +41,7 @@ export async function PUT(request: Request) {
     });
     return new Response("Succesfully updated position", { status: 200 });
   } catch (error) {
-    return new Response(json(error), { status: 500 });
+    return new Response(JSON.stringify(error), { status: 500 });
   }
 }
 
@@ -53,12 +53,9 @@ export async function GET(request: Request) {
         cacheStrategy: {
           ttl: 60,
         },
-        orderBy: {
-          position: "desc",
-        },
       });
-    return new Response(json(positions), { status: 200 });
+    return new Response(JSONbig.stringify(positions), { status: 200 });
   } catch (error) {
-    return new Response(json(error), { status: 500 });
+    return new Response(JSON.stringify(error), { status: 500 });
   }
 }

@@ -1,0 +1,417 @@
+{
+  "Admin": {
+    "add-position": {
+      "about": "À propos",
+      "add": "Ajouter",
+      "image": "URL de l'image",
+      "listed": "Ce poste doit-il être répertorié ?",
+      "location": "Emplacement",
+      "position": "Position",
+      "salary": "Salaire",
+      "title": "Ajouter un poste",
+      "toast": {
+        "error": {
+          "description": "Merci de remplir tous les champs.",
+          "title": "Champs invalides"
+        },
+        "salary": {
+          "description": "Veuillez saisir un salaire valide.",
+          "title": "Salaire invalide"
+        },
+        "success": {
+          "description": "Le poste a été ajouté.",
+          "title": "Poste ajouté"
+        },
+        "wrong": {
+          "description": "Veuillez réessayer.",
+          "title": "Quelque chose s'est mal passé"
+        }
+      }
+    },
+    "applications": {
+      "applications": "applications",
+      "title": "Cliquez sur un poste pour voir ses candidatures"
+    },
+    "edit-position": {
+      "about": "À propos",
+      "delete": "Supprimer",
+      "listed": "Inscrit",
+      "listed-options": {
+        "no": "Non",
+        "yes": "Oui"
+      },
+      "location": "Emplacement",
+      "position": "Position",
+      "salary": "Salaire",
+      "save": "Sauvegarder",
+      "title": "Modifier le poste"
+    },
+    "inquiries": {
+      "email": "E-mail",
+      "last": "Nom de famille",
+      "name": "Prénom",
+      "open-options": {
+        "closed": "Fermé",
+        "open": "Ouvrir"
+      },
+      "status": "Statut",
+      "title": "Gérer toutes les demandes"
+    },
+    "login": {
+      "password": "Mot de passe",
+      "sign-in": "Se connecter",
+      "title": "Connexion administrateur",
+      "toast": {
+        "error": {
+          "description": "Veuillez saisir des informations d'identification valides.",
+          "title": "Les informations d'identification invalides"
+        }
+      },
+      "username": "Nom d'utilisateur"
+    },
+    "position-table": {
+      "applications": "Applications",
+      "email": "E-mail",
+      "last": "Nom de famille",
+      "name": "Prénom",
+      "phone": "Téléphone"
+    },
+    "positions": {
+      "listed": "Inscrit",
+      "location": "Emplacement",
+      "position": "Position",
+      "salary": "Salaire",
+      "title": "Gérer tous les postes"
+    },
+    "view-application": {
+      "application": "Application",
+      "birthday": "Anniversaire",
+      "email": "E-mail",
+      "gender": "Genre",
+      "gender-options": {
+        "female": "Femelle",
+        "male": "Mâle",
+        "other": "Autre"
+      },
+      "name": "Nom",
+      "phone": "Téléphone",
+      "position": "Position",
+      "reply": "Répondre",
+      "resume": "Voir le CV",
+      "salary": "Salaire préféré"
+    },
+    "view-inquiry": {
+      "closed": "fermé",
+      "email": "E-mail",
+      "message": "Message",
+      "message-1": "Tu as",
+      "message-2": "cette enquête.",
+      "name": "Nom",
+      "open-options": {
+        "closed": "Fermé",
+        "open": "Ouvrir"
+      },
+      "opened": "ouvert",
+      "reopen": "Rouvrir",
+      "reply": "Répondre",
+      "resolve": "Résoudre",
+      "status": "Statut",
+      "title": "Enquête"
+    }
+  },
+  "Buttons": {
+    "close": "Fermer",
+    "purchase": "Achat",
+    "Submit": "Soumettre"
+  },
+  "Careers": {
+    "AboutUs": {
+      "attributes": {
+        "adaptable": {
+          "description": "Démontre une capacité à s’adapter rapidement aux nouveaux environnements logiciels et à apprendre rapidement.",
+          "title": "Adaptable"
+        },
+        "collaboration": {
+          "description": "Apporte une vaste expérience de collaboration avec des concepteurs et des développeurs qualifiés. S'épanouit grâce à une collaboration approfondie et cherche à travailler avec des personnes qui apprécient une culture d'entreprise axée sur l'équipe.",
+          "title": "Collaboration"
+        },
+        "leadership": {
+          "description": "Aspire à cultiver des compétences de leadership et de mentorat, dans le but d’améliorer l’efficacité globale et d’offrir une valeur accrue à la fois à l’équipe et à nos clients.",
+          "title": "Direction"
+        },
+        "learning": {
+          "description": "Démontre un engagement à rester à la pointe du paysage technologique dynamique en acquérant des compétences dans les cadres de développement émergents.",
+          "title": "Apprentissage continu"
+        },
+        "motivation": {
+          "description": "Fait preuve d'auto-motivation et excelle à la fois dans le travail indépendant et dans les efforts d'équipe collaboratifs.",
+          "title": "Motivation"
+        },
+        "passion": {
+          "description": "Prend une immense joie dans son domaine en trouvant l'inspiration et l'épanouissement dans l'élaboration de solutions innovantes.",
+          "title": "Passion"
+        },
+        "title": "Attributs d'un employé NexaDB qui réussit"
+      },
+      "banner": {
+        "description": "Découvrez les opportunités chez NexaDB, où la collaboration est la pierre angulaire de notre lieu de travail dynamique. Rejoignez une équipe qui valorise votre unicité et entretient un environnement d’excellence.",
+        "title": "Favoriser l’excellence par la collaboration"
+      },
+      "end": {
+        "button": "Afficher tous les postes ouverts",
+        "title": "Rejoignez-nous pour façonner l’avenir de la gestion de bases de données."
+      },
+      "image-alt": {
+        "employees": "Collaborateurs collaborant",
+        "header": "Contexte de carrière",
+        "slide": "Image de diapositive"
+      },
+      "overview": {
+        "description": "Bienvenue chez NexaDB, une force leader dans les solutions de gestion de serveurs et d'hébergement. Spécialisés dans l’optimisation des infrastructures numériques, nous proposons des services pour cultiver vos besoins. Notre engagement envers l'excellence garantit que vos serveurs fonctionnent de manière transparente, vous permettant de vous concentrer sur ce qui compte le plus.",
+        "slides": {
+          "1": {
+            "description": "Notre mission est de fournir à nos clients des solutions de serveur fiables, sécurisées et évolutives. En simplifiant les complexités de la gestion de l’infrastructure numérique, nous permettons à nos clients de prospérer.",
+            "title": "La mission : pourquoi nous existons"
+          },
+          "2": {
+            "description": "Nous envisageons un avenir où la gestion des serveurs est synonyme d’efficacité et de sécurité. Notre engagement à établir les normes de l’industrie garantit que nos clients bénéficient d’expériences d’hébergement de pointe.",
+            "title": "La vision – vers quoi nous travaillons"
+          },
+          "3": {
+            "description": "Animés par un engagement envers l’excellence et la satisfaction de nos clients, nous défendons des valeurs qui donnent la priorité à la sécurité et à la fiabilité de nos solutions serveur. Notre équipe s'engage à s'améliorer, en veillant à ce que nos services évoluent avec la technologie de demain.",
+            "title": "Nos valeurs – Comment nous accomplirons cette mission"
+          },
+          "4": {
+            "description": "Nos services s'adressent à une communauté diversifiée, comprenant des entreprises, des organisations et des particuliers recherchant une gestion de serveur fiable. En adaptant nos solutions pour répondre aux besoins uniques de chaque client, nous favorisons les partenariats collaboratifs.",
+            "title": "Communauté — Qui nous servons"
+          }
+        },
+        "title": "Présentation de l'entreprise"
+      }
+    },
+    "application-form": {
+      "application": "Application",
+      "birthday": "Anniversaire",
+      "email": "E-mail",
+      "female": "femelle",
+      "gender": "Genre",
+      "last": "Nom de famille",
+      "male": "mâle",
+      "name": "Prénom",
+      "other": "autre",
+      "phone": "Téléphone",
+      "resume": "Télécharger votre CV",
+      "salary": "Salaire préféré",
+      "submit": "Soumettre",
+      "toast": {
+        "error": {
+          "description": "Merci de remplir tous les champs.",
+          "title": "Champs invalides"
+        },
+        "recaptcha": {
+          "description": "Veuillez vérifier que vous n'êtes pas un robot.",
+          "title": "Échec de la récupération"
+        },
+        "salary": {
+          "description": "Veuillez saisir un salaire valide.",
+          "title": "Salaire invalide"
+        },
+        "success": {
+          "description": "Nous avons reçu votre candidature et vous enverrons un e-mail prochainement.",
+          "title": "Candidature envoyée"
+        }
+      }
+    },
+    "Benefits": {
+      "description": "Chez NexaDB, nous pensons que nos employés sont notre plus grand atout. C'est pourquoi nous nous engageons à offrir un <b>ensemble d'avantages sociaux complet</b> conçu pour soutenir <b>votre santé, votre bonheur et votre développement de carrière, ainsi que ceux de votre famille</b> . Voici un aperçu de la manière dont nous nous efforçons d'améliorer nos collaborateurs.",
+      "finances": {
+        "1": "Plan d'épargne-retraite 401(k) avec contrepartie de l'entreprise",
+        "2": "Remboursement du prêt étudiant",
+        "3": "Équité salariale interentreprises",
+        "4": "Accès aux services de planification financière",
+        "5": "Plan d'achat d'actions pour les salariés",
+        "title": "Offrir à nos employés <b>une rémunération</b> et <b>des opportunités</b>",
+        "value": "Bien-être financier"
+      },
+      "flexibility": {
+        "1": "Congés payés, y compris les jours fériés, les congés parentaux, les fonctions de juré, les vacances et les congés de maladie",
+        "2": "Possibilités de travail à distance",
+        "3": "Travail à temps partiel",
+        "4": "Accès aux programmes de bien-être",
+        "title": "Garder nos employés <b>chargés</b> et <b>rafraîchis</b>",
+        "value": "Flexibilité et équilibre travail-vie personnelle"
+      },
+      "health": {
+        "1": "Assurance médicale, dentaire et visuelle pour les employés et les personnes à leur charge",
+        "2": "Aménagements de l’espace de travail",
+        "3": "Compte de dépenses flexibles pour les soins de santé",
+        "4": "Accès aux programmes de bien-être",
+        "title": "Garder nos employés <b>en bonne santé</b> et <b>heureux</b>",
+        "value": "Santé"
+      },
+      "image-alt": {
+        "antonio": "Image d'Antonio",
+        "doctor": "Image vectorielle de médecin",
+        "family": "Image vectorielle famille",
+        "finance": "Image vectorielle des finances",
+        "robert": "Image de Robert",
+        "sophie": "Sophie image",
+        "trip": "Image vectorielle de voyage"
+      },
+      "testimonies": {
+        "1": {
+          "description": "NexaDB va au-delà de ses attentes avec son <u>assurance maladie</u> ! Non seulement ils couvrent ma famille et moi-même, mais ils fournissent également des ressources pour rester en bonne santé, comme des cours de yoga sur place. Je me sens tellement soutenu ici.",
+          "name": "Sophie"
+        },
+        "2": {
+          "description": "Les <u>options de travail à distance</u> chez NexaDB changent la donne. Cela me permet de trouver un équilibre entre mon travail et ma vie personnelle, ce qui me rend plus productif.",
+          "name": "Antoine"
+        },
+        "3": {
+          "description": "NexaDB propose un ensemble d'avantages fantastiques qui comprend un <u>401(k) avec une contrepartie d'entreprise</u> et <u>une aide au remboursement du prêt étudiant</u> . Ils sont véritablement investis dans mon avenir financier.",
+          "name": "Robert"
+        },
+        "title": "Écoutez certains de nos employés"
+      },
+      "title": "De meilleurs avantages commencent ici"
+    },
+    "Positions": {
+      "apply": "Appliquer maintenant",
+      "careers-count": "{count} carrières",
+      "search": {
+        "job": "Titre du poste ou mot-clé",
+        "location": "Ville (*): État (*): Code Postal"
+      },
+      "title": "Carrières chez NexaDB"
+    },
+    "view-career": {
+      "apply-button": "Appliquer",
+      "back": "Carrières",
+      "back-button": "Dos",
+      "description": "Description de l'emploi",
+      "requirements": "Exigences",
+      "salary": "Salaire annuel"
+    }
+  },
+  "Contact": {
+    "field1": "Libérez la puissance des solutions sur mesure avec nos plans de serveur personnalisés exclusifs !",
+    "field2": "Sentez-vous en sécurité partout grâce à notre protection de niveau entreprise optimisée par les dernières technologies !",
+    "field3": "Plongez dans le monde des possibilités avec du matériel entièrement personnalisable !",
+    "form": {
+      "description": "Vous avez une question, besoin d'aide ou souhaitez un serveur personnalisé ? Nous sommes là pour vous aider ! Veuillez remplir le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.",
+      "email": "E-mail",
+      "last": "Nom de famille",
+      "message": "Message",
+      "name": "Prénom",
+      "submit": "Envoyer le message",
+      "title": "Contactez-nous"
+    },
+    "title": "Personnalisons NexaDB pour vous",
+    "toast": {
+      "error": {
+        "description": "Merci de remplir tous les champs.",
+        "title": "Champs invalides"
+      },
+      "recaptcha": {
+        "description": "Veuillez vérifier que vous n'êtes pas un robot.",
+        "title": "Échec de la récupération"
+      },
+      "success": {
+        "description": "Nous avons reçu votre message et vous enverrons un e-mail prochainement.",
+        "title": "Demande envoyée"
+      }
+    }
+  },
+  "Database": {
+    "advanced": "Avancé",
+    "basic": "Basique",
+    "cores": "Noyaux",
+    "professional": "Professionnel",
+    "standard": "Standard",
+    "storage": "Stockage",
+    "title": "Explorez nos serveurs de bases de données",
+    "ultimate": "Ultime",
+    "year": "année"
+  },
+  "Footer": {
+    "rights": "Tous droits réservés.",
+    "value": "Gestion des données de nouvelle génération"
+  },
+  "Header": {
+    "admin-nav": {
+      "applications": "Applications",
+      "inquiries": "Demandes de renseignements",
+      "positions": "Postes"
+    },
+    "settings": {
+      "font-size": "Taille de police",
+      "language": {
+        "description": "Sélectionnez votre langue préférée",
+        "options": {
+          "en": "Anglais",
+          "es": "Espagnol",
+          "fr": "Français"
+        },
+        "value": "Langue"
+      },
+      "read-page": {
+        "description": "Lire la page à haute voix",
+        "start": "Commencer la lecture",
+        "stop": "Arrêter de lire",
+        "value": "Lire la page"
+      }
+    },
+    "user-nav": {
+      "about-us": "À propos de nous",
+      "benefits": "Avantages",
+      "careers": "Carrières",
+      "contact": "Contact",
+      "database": "Base de données",
+      "home": "Maison",
+      "positions": "Postes"
+    }
+  },
+  "Home": {
+    "banner": {
+      "description": "NexaDB est votre partenaire de confiance dans<important> Gestion de données</important> . Grâce à une technologie de pointe et à un engagement envers l’excellence, nous fournissons des solutions de bases de données évolutives et sécurisées.",
+      "title": {
+        "1": "Nous stockons des données pour les entreprises",
+        "2": "Nous stockons des données pour les innovateurs",
+        "3": "Nous stockons des données pour les chercheurs",
+        "4": "Nous stockons des données pour les organisations",
+        "5": "Nous stockons des données pour des organisations à but non lucratif",
+        "6": "Nous stockons des données pour les entrepreneurs"
+      }
+    },
+    "cta": {
+      "buttonText": "Commencer",
+      "heading": "Prêt à démarrer avec NexaDB ?",
+      "text": "Prêt à découvrir la puissance de NexaDB ? Suivez ces étapes simples pour démarrer et débloquer une solution de base de données transparente et open source. Que vous soyez une entreprise, un développeur ou un passionné de données, NexaDB rend la gestion des données simple et efficace. Embarquons ensemble dans un voyage d'innovation : explorez NexaDB et améliorez votre expérience des données dès aujourd'hui !"
+    },
+    "dynamicContent": {
+      "mainText": "Une base de données dynamique et open source",
+      "secondaryText": "NexaDB a conquis le cœur des développeurs grâce à ses performances transparentes et ses fonctionnalités de premier ordre. Loué et élu parmi les meilleurs, NexaDB se présente comme un choix fiable pour les entreprises et les organisations, offrant des solutions innovantes et une expérience conviviale. Sa popularité témoigne de son engagement envers l’excellence en matière de gestion des données."
+    },
+    "features": {
+      "applications": "Applications",
+      "githubStars": "Les étoiles de GitHub",
+      "supportedLanguages": "Langages de programmation pris en charge"
+    },
+    "image-alt": {
+      "cloud": "Personne assise sur un nuage",
+      "header": "Arrière-plan de l'en-tête"
+    }
+  },
+  "404": {
+    "alt": "Image contenant une erreur 404",
+    "description": "Nous n'arrivons pas à trouver la page que vous recherchez.",
+    "title": "Oops"
+  },
+  "TTS": {
+    "play": "Jouer",
+    "pause": "Pause",
+    "stop": "Arrêt",
+    "close": "Fermer",
+    "title": "Texte Pour Parler"
+  }
+}

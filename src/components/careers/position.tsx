@@ -3,8 +3,11 @@ import Link from "next/link";
 import React from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { useRef, useEffect } from "react";
+import { useTranslations, useLocale } from "next-intl";
 
 const PositionBox = (position: Position) => {
+  const t = useTranslations("Careers.Positions");
+  const locale = useLocale();
   const ref = useRef(null);
   const isInview = useInView(ref, { once: true });
   const controls = useAnimation();
@@ -37,14 +40,16 @@ const PositionBox = (position: Position) => {
           <div className="flex flex-col text-white">
             <div className="flex flex-row justify-between">
               <Link href={""}>
-                <Link href={`/careers/${position.id}`}>
+                <Link href={`/${locale}/careers/${position.id}`}>
                   <p className="text-lg font-bold hover:underline w-4/5">
-                    {position.position}
+                    {(position as any)["position"][locale]}
                   </p>
                 </Link>
               </Link>
-              <Link href={`/careers/apply/${position.id}`}>
-                <p className="hover:underline w-full text-right">Apply Now</p>
+              <Link href={`/${locale}/careers/apply/${position.id}`}>
+                <p className="hover:underline w-full text-right">
+                  {t("apply")}
+                </p>
               </Link>
             </div>
             <p>{position.location}</p>

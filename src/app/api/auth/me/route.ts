@@ -2,7 +2,6 @@ import { COOKIE_NAME } from "@/helpers/constants";
 import { cookies } from "next/headers";
 import { verify } from "jsonwebtoken";
 import { NextResponse } from "next/server";
-import json from "@/helpers/json";
 
 export async function GET() {
   const cookieStore = cookies();
@@ -22,7 +21,7 @@ export async function GET() {
   try {
     verify(token.value, process.env.JWT_SECRET || "");
     return new Response(
-      json({
+      JSON.stringify({
         response: "authenticated",
       }),
       { status: 200 }

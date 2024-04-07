@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import prisma from "@/lib/prisma";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { withAccelerate } from "@prisma/extension-accelerate";
-import json from "@/helpers/json";
+var JSONbig = require("json-bigint");
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
@@ -14,23 +14,13 @@ export async function GET(request: Request) {
 
     if (position != null) {
       try {
-        const positionName = (await prisma
-          .$extends(withAccelerate())
-          .position.findFirst({
-            cacheStrategy: {
-              ttl: 60,
-            },
-            where: {
-              id: position,
-            },
-          }))!!.position;
         applications = await prisma
           .$extends(withAccelerate())
-          .application.findFirst({
+          .application.findMany({
             cacheStrategy: {
               ttl: 60,
             },
-            where: { position: positionName },
+            where: { position: position.toString() },
           });
       } catch (error) {
         console.error("Error fetching position data:", error);
@@ -47,10 +37,10 @@ export async function GET(request: Request) {
         });
     }
 
-    return new Response(json(applications), { status: 200 });
+    return new Response(JSONbig.stringify(applications), { status: 200 });
   } catch (error) {
     console.error("Error retrieving applications:", error);
-    return new Response(json(error), { status: 500 });
+    return new Response(JSONbig.stringify(error), { status: 500 });
   }
 }
 
@@ -90,7 +80,7 @@ export async function POST(request: Request) {
     return new Response("Successfully created application", { status: 200 });
   } catch (error) {
     console.error("Error creating application:", error);
-    return new Response(json({ message: "Error creating application" }), {
+    return new Response("Error creating application", {
       status: 500,
     });
   }

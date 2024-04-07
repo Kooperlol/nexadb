@@ -1,6 +1,6 @@
-import json from "@/helpers/json";
 import prisma from "@/lib/prisma";
 import { withAccelerate } from "@prisma/extension-accelerate";
+var JSONbig = require("json-bigint");
 
 export async function GET(
   request: Request,
@@ -16,8 +16,8 @@ export async function GET(
         id,
       },
     });
-    return new Response(json(inquiry), { status: 200 });
+    return new Response(JSONbig.stringify(inquiry), { status: 200 });
   } catch (error) {
-    return new Response(json(error), { status: 500 });
+    return new Response(JSON.stringify(error), { status: 500 });
   }
 }

@@ -113,7 +113,7 @@ const SettingsMenu = () => {
           }
         />
         <TTS icon={<MdSpeaker />} iconMessage={t("settings.read-page.value")}>
-          {document != undefined ? document.documentElement.innerText : ""}
+          {document.documentElement.innerText}
         </TTS>
       </MenuList>
     </Menu>

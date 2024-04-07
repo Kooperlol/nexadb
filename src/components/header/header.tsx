@@ -8,9 +8,10 @@ import {
   NavbarBrand,
   NavbarToggle,
 } from "react-bootstrap";
-import SettingsMenu from "./settings-menu";
+import SettingsMenu from "./lang-menu";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
+import Accessibilik from "accessibility-react-widget";
 
 export default function Header() {
   const locale = useLocale();
@@ -62,6 +63,7 @@ export default function Header() {
               {t("user-nav.contact")}
             </Nav.Link>
             <SettingsMenu />
+            <Accessibilik />
           </Nav>
         </Navbar.Collapse>
       </Container>

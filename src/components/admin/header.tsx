@@ -7,7 +7,7 @@ import {
   NavbarBrand,
   NavbarToggle,
 } from "react-bootstrap";
-import SettingsMenu from "../header/settings-menu";
+import SettingsMenu from "../header/lang-menu";
 import { useTranslations, useLocale } from "next-intl";
 
 export default function Header() {

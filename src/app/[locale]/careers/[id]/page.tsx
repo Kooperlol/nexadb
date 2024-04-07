@@ -1,6 +1,6 @@
 "use client";
 import LoadingPage from "../../loading";
-import PageNotFound from "../../not-found";
+import PageNotFound from "../../[...notFound]/page";
 import { Button } from "@chakra-ui/react";
 import { Position } from "@prisma/client";
 import axios from "axios";

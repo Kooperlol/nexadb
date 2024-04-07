@@ -18,13 +18,10 @@ import { MenuPopup } from "../shared/menu-popup";
 import LocalSwitcher from "./local-switcher";
 import { useTranslations } from "next-intl";
 import TTS from "../shared/tts";
-import { useLoading } from "@/providers/loading-provider";
 
 const SettingsMenu = () => {
   const t = useTranslations("Header");
   const [fontSizeMultiplier, setFontSizeMultiplier] = useState(1);
-  const { setIsLoading } = useLoading();
-  const [isLoadingSettings, setIsLoadingSettings] = useState(true);
 
   useEffect(() => {
     // Font Size
@@ -44,10 +41,7 @@ const SettingsMenu = () => {
       "fontSizeMultiplier",
       (newMultiplier * 100).toString()
     );
-    setIsLoading(true);
     document.documentElement.style.fontSize = `calc(1em * ${newMultiplier})`;
-    setIsLoading(false);
-    setIsLoadingSettings(false);
   };
 
   // Styles for the font size slider
@@ -119,7 +113,7 @@ const SettingsMenu = () => {
           }
         />
         <TTS icon={<MdSpeaker />} iconMessage={t("settings.read-page.value")}>
-          {document.documentElement.innerText}
+          {document != undefined ? document.documentElement.innerText : ""}
         </TTS>
       </MenuList>
     </Menu>

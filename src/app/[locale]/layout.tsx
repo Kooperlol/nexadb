@@ -6,7 +6,6 @@ import "./globals.css";
 import HeaderProvider from "@/providers/header-provider";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
 import { NextIntlClientProvider, useMessages } from "next-intl";
-import { LoadingProvider } from "@/providers/loading-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,15 +28,6 @@ export default function LocaleLayout({
   children,
   params: { locale },
 }: LocaleLayoutProps) {
-  // Convert children to an array if it's not already an array
-  const childrenArray = Array.isArray(children) ? children : [children];
-
-  // Concatenate multiple children strings into a single string
-  const htmlContent = childrenArray.join("");
-
-  // Check if htmlContent is defined before using it
-  const innerHTML = htmlContent ? { __html: htmlContent } : undefined;
-
   return (
     <html lang={locale}>
       <head>
@@ -56,7 +46,7 @@ export default function LocaleLayout({
           >
             <NextIntlClientProvider messages={useMessages()} locale={locale}>
               <HeaderProvider />
-              <LoadingProvider>{children}</LoadingProvider>
+              {children}
               <Footer />
             </NextIntlClientProvider>
           </ReCaptchaProvider>

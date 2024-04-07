@@ -1,6 +1,6 @@
 "use client";
 import LoadingPage from "../../loading";
-import PageNotFound from "../../not-found";
+import PageNotFound from "../../[...notFound]/page";
 import PositionBox from "@/components/careers/position";
 import JobSearchBar from "@/components/careers/search-bar";
 import { Position } from "@prisma/client";

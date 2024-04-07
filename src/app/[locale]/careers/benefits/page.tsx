@@ -24,13 +24,13 @@ import { useTranslations } from "next-intl";
 const CareerBenefits = () => {
   const t = useTranslations("Careers.Benefits");
   return (
-    <div className="flex flex-col lg:gap-3 pt-32 md:pt-0 gap-20">
-      <div className="flex flex-col min-h-screen lg:flex-row md:px-32 px-16 items-center sm:pt-32 lg:pt-0">
-        <div className="flex flex-col gap-3 text-center lg:text-left justify-center lg:px-32">
-          <h1 className="md:text-5xl text-4xl font-bold text-white">
+    <div className="flex flex-col lg:gap-3 pt-32 sm:pt-0 gap-20">
+      <div className="flex flex-col min-h-screen lg:flex-row md:px-24 px-16 items-center sm:pt-32 lg:pt-0">
+        <div className="flex flex-col items-center gap-3 text-center lg:text-left justify-center px-0 lg:px-32">
+          <h1 className="md:text-5xl text-4xl md:w-2/3 w-4/5 font-bold text-white">
             {t("title")}
           </h1>
-          <p className="text-white md:text-3xl text-2xl">
+          <p className="text-white md:text-3xl w-4/5 md:w-2/3 text-2xl">
             {t.rich("description", {
               b: (chunks) => <b>{chunks}</b>,
             })}

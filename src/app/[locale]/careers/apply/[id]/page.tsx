@@ -1,6 +1,6 @@
 "use client";
 import LoadingPage from "@/app/[locale]/loading";
-import PageNotFound from "@/app/[locale]/not-found";
+import PageNotFound from "@/app/[locale]/[...notFound]/page";
 import {
   Box,
   Button,

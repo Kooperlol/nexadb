@@ -38,13 +38,6 @@ NexaDB is a website for a database management company to help the company find a
 
 
 
-<!-- GETTING STARTED -->
-## 🔧 Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-
-
 <!-- LICENSE -->
 ## 👨‍⚖️ License
 

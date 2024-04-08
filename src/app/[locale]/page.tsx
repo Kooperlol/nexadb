@@ -10,9 +10,10 @@ const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
 import { Button } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import headerBackground from "@../../../public/media/header.jpg";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function HomePage() {
+  const locale = useLocale();
   const t = useTranslations("Home");
   const { push } = useRouter();
   return (
@@ -160,7 +161,7 @@ export default function HomePage() {
             className="w-fit"
             bg={"purple.800"}
             color={"white"}
-            onClick={() => push("/database")}
+            onClick={() => push(`/${locale}/database`)}
             _hover={{
               bg: "purple.900",
             }}

@@ -30,7 +30,7 @@ export default function Header() {
         >
           NexaDB
         </NavbarBrand>
-        <NavbarToggle aria-controls="basic-navbar-nav" />
+        <NavbarToggle className="bg-white" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto gap-2">
             <Nav.Link className="text-white hover:text-purple-950" href="/">

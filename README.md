@@ -24,8 +24,8 @@ NexaDB is a website for a database management company to help the company find a
 
 
 ## 🏆 Program Awards
-#1 State (Green Bay, WI)
-#1 Regionals (Columbus, WI)
+#1 SLC (Green Bay, WI)<br />
+#1 RLC (Columbus, WI)
 
 
 

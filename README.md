@@ -49,6 +49,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## ✉️ Contact
 
-Kooper Propp - kooperjack8@gmail.com<br>
+Kooper Propp - koopercodes@gmail.com<br>
 Nolan Erickson - nwerickson09@gmail.com<br>
 Project Link: [https://github.com/Kooperlol/nexadb](https://github.com/Kooperlol/nexadb)

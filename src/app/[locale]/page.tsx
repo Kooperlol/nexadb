@@ -4,6 +4,7 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import { Text } from "@chakra-ui/react";
 const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
   ssr: false,
 });
@@ -98,9 +99,14 @@ export default function HomePage() {
       </div>
       <div className="flex flex-col gap-6 text-center items-center text-black bg-white md:p-32 p-8 py-32">
         <div className="flex flex-col items-center gap-3">
-          <p className="text-2xl text-main font-semibold">
+          <Text
+            as={"span"}
+            bgClip="text"
+            bgGradient="linear(to-r, purple.400,purple.600)"
+            className="text-2xl font-semibold"
+          >
             {t("dynamicContent.mainText")}
-          </p>
+          </Text>
           <p className="text-xl md:w-1/2">
             {t("dynamicContent.secondaryText")}
           </p>

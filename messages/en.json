@@ -151,7 +151,7 @@
     },
     "Benefits": {
       "title": "Better Benefits Start Here",
-      "description": "At NexaDB, we believe our employees are our greatest asset. That's why we're committed to providing a <b>comprehensive benefits package</b> designed to support <b>you and your family's health</b>, happiness, and career development. Here's a glimpse into how we strive to better our people.",
+      "description": "At NexaDB, we believe our employees are our greatest asset. That's why we're committed to providing a <b>comprehensive benefits package</b> designed to support <b>you and your family's</b> health, happiness, and career development. Here's a glimpse into how we strive to better our people.",
       "health": {
         "value": "Health & Wellness",
         "title": "Keeping our employees <b>healthy</b> and <b>happy</b>",
@@ -178,7 +178,7 @@
         "5": "Employee stock purchase plan"
       },
       "testimonies": {
-        "title": "Hear from some of our employees",
+        "title": "Hear From Some of Our Employees",
         "1": {
           "name": "Sophie",
           "description": "NexaDB goes above and beyond with their <u>health insurance</u>! Not only do they cover me and my family, but they also provide resources to stay healthy, like on-site yoga classes. I feel so supported here."

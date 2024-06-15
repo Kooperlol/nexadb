@@ -98,20 +98,26 @@ const ContactPage = () => {
     <div>
       <div className="flex lg:flex-row flex-col items-center gap-16 md:p-32 py-32 p-8 justify-evenly min-h-screen text-center">
         <div className="flex flex-col gap-10 items-center">
-          <p className="text-white text-4xl font-bold">{t("title")}</p>
+          <Text
+            as={"span"}
+            bgGradient="linear(to-r, purple.50,purple.200)"
+            bgClip="text"
+          >
+            <p className="text-4xl font-bold">{t("title")}</p>
+          </Text>
           <Card>
             <CardBody className="flex flex-col gap-5 text-left">
-              <div className="flex flex-row gap-3  justify-between items-center">
-                <FaCheck color="green" size={20} />
-                <p className="lg:w-full w-5/6">{t("field1")}</p>
+              <div className="flex flex-row gap-3 justify-center items-center">
+                <FaCheck color="green" size={25} />
+                <p className="lg:w-full text-xl w-5/6">{t("field1")}</p>
               </div>
-              <div className="flex flex-row gap-3 justify-between items-center">
-                <FaCheck color="green" size={20} />
-                <p className="lg:w-full w-5/6">{t("field2")}</p>
+              <div className="flex flex-row gap-3 justify-center items-center">
+                <FaCheck color="green" size={25} />
+                <p className="lg:w-full text-xl w-5/6">{t("field2")}</p>
               </div>
-              <div className="flex flex-row gap-3 justify-between items-center">
-                <FaCheck color="green" size={20} />
-                <p className="lg:w-full w-5/6">{t("field3")}</p>
+              <div className="flex flex-row gap-3 justify-center items-center">
+                <FaCheck color="green" size={25} />
+                <p className="lg:w-full text-xl w-5/6">{t("field3")}</p>
               </div>
             </CardBody>
           </Card>
@@ -130,13 +136,12 @@ const ContactPage = () => {
                 lineHeight={1.1}
                 fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
               >
-                {t("form.title")}
                 <Text
                   as={"span"}
                   bgGradient="linear(to-r, purple.400,purple.600)"
                   bgClip="text"
                 >
-                  !
+                  {t("form.title")}!
                 </Text>
               </Heading>
               <Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>

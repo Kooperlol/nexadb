@@ -56,7 +56,7 @@
     },
     "dynamicContent": {
       "mainText": "A Dynamic, Open Source Database",
-      "secondaryText": "NexaDB has won the hearts of developers with its seamless performance and top-notch features. Praised and top-voted, NexaDB stands as a reliable choice for businesses and organizations, offering innovative solutions and a user-friendly experience. Its popularity is a testament to its commitment to excellence in data management."
+      "secondaryText": "NexaDB has won the hearts of developers with its seamless performance and top-notch features. Praised and top-voted, NexaDB stands as a reliable choice for businesses and organizations. Its popularity is a testament to its commitment to excellence in data management."
     },
     "features": {
       "applications": "Applications",
@@ -65,7 +65,7 @@
     },
     "cta": {
       "heading": "Ready To Get Started With NexaDB?",
-      "text": "Follow these simple steps to get started and unlock a seamless, open-source database solution. Whether you're a business, developer, or data enthusiast, NexaDB makes data management straightforward and efficient. Let's embark on a journey of innovation together - explore NexaDB and elevate your data experience today!",
+      "text": "Follow these simple steps to get started and unlock a seamless, open-source database solution. Whether you're a business, developer, or data enthusiast, NexaDB makes data management straightforward and efficient. Let's embark on a journey of innovation together. Explore NexaDB and elevate your data experience today!",
       "buttonText": "Get Started"
     },
     "image-alt": {
@@ -259,7 +259,7 @@
     "alt": "Image containg a 404 error"
   },
   "Contact": {
-    "title": "Let's personalize NexaDB for you",
+    "title": "Let's Personalize NexaDB For You",
     "field1": "Unlock the Power of Tailored Solutions with Our Exclusive Custom Server Plans!",
     "field2": "Feel Safe Anywhere with our Enterprise-Grade Protection Powered by the Latest Technology!",
     "field3": "Dive into the World of Possibilities with Fully Customizable Hardware!",

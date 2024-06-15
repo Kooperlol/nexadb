@@ -1,5 +1,4 @@
 import prisma from "@/lib/prisma";
-import { withAccelerate } from "@prisma/extension-accelerate";
 var JSONbig = require("json-bigint");
 
 export async function POST(request: Request) {
@@ -47,13 +46,12 @@ export async function PUT(request: Request) {
 
 export async function GET(request: Request) {
   try {
-    const positions = await prisma
-      .$extends(withAccelerate())
-      .position.findMany({
-        cacheStrategy: {
-          ttl: 60,
-        },
-      });
+    const positions = await prisma.position.findMany({
+      cacheStrategy: {
+        ttl: 60,
+      },
+    });
+    console.log(2);
     return new Response(JSONbig.stringify(positions), { status: 200 });
   } catch (error) {
     return new Response(JSON.stringify(error), { status: 500 });

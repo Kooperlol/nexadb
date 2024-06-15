@@ -2,7 +2,6 @@ import { storage } from "@/lib/firebase";
 import { v4 as uuidv4 } from "uuid";
 import prisma from "@/lib/prisma";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { withAccelerate } from "@prisma/extension-accelerate";
 var JSONbig = require("json-bigint");
 
 export async function GET(request: Request) {
@@ -14,27 +13,23 @@ export async function GET(request: Request) {
 
     if (position != null) {
       try {
-        applications = await prisma
-          .$extends(withAccelerate())
-          .application.findMany({
-            cacheStrategy: {
-              ttl: 60,
-            },
-            where: { position: position.toString() },
-          });
+        applications = await prisma.application.findMany({
+          cacheStrategy: {
+            ttl: 60,
+          },
+          where: { position: position.toString() },
+        });
       } catch (error) {
         console.error("Error fetching position data:", error);
         return new Response("Error fetching position data", { status: 500 });
       }
     } else {
-      applications = await prisma
-        .$extends(withAccelerate())
-        .application.findMany({
-          orderBy: { createdAt: "desc" },
-          cacheStrategy: {
-            ttl: 60,
-          },
-        });
+      applications = await prisma.application.findMany({
+        orderBy: { createdAt: "desc" },
+        cacheStrategy: {
+          ttl: 60,
+        },
+      });
     }
 
     return new Response(JSONbig.stringify(applications), { status: 200 });

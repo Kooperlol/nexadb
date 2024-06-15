@@ -161,7 +161,14 @@ export default function HomePage() {
       </div>
       <div className="flex md:flex-row flex-col items-center justify-between bg-main md:gap-0 gap-24 text-white md:text-left text-center md:p-16 p-8">
         <div className="flex flex-col md:items-start items-center gap-2 md:w-3/5">
-          <p className="text-2xl font-semibold">{t("cta.heading")}</p>
+          <Text
+            as={"span"}
+            bgGradient="linear(to-r, purple.50,purple.200)"
+            bgClip="text"
+            className="text-2xl font-semibold"
+          >
+            {t("cta.heading")}
+          </Text>
           <p className="text-xl md:w-1/2 md:text-left">{t("cta.text")}</p>
           <Button
             className="w-fit"

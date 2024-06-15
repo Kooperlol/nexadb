@@ -65,6 +65,7 @@ const CareersPage = () => {
             className="md:block hidden"
             activeIndex={index}
             onSelect={handleSelect}
+            interval={7500}
           >
             <Carousel.Item>
               <Image
@@ -237,15 +238,32 @@ const CareersPage = () => {
             </p>
           </div>
         </div>
-        <Image
-          className="select-none lg:h-1/4 lg:w-1/4 rounded-lg"
-          priority
-          src="/media/team.jpeg"
-          draggable={false}
-          width={400}
-          height={400}
-          alt="Employees"
-        />
+        <div className="flex flex-col gap-5">
+          <Image
+            priority
+            src="/media/team.jpeg"
+            draggable={false}
+            width={400}
+            height={400}
+            alt="Employees"
+          />
+          <Image
+            priority
+            src="/media/code.jpg"
+            draggable={false}
+            width={400}
+            height={400}
+            alt="Helping with code"
+          />
+          <Image
+            priority
+            src="/media/ringtoss.jpg"
+            draggable={false}
+            width={400}
+            height={400}
+            alt="Employee outing"
+          />
+        </div>
       </div>
       <div className="flex flex-col items-center justify-center gap-3 p-16 bg-main text-white">
         <p className="text-3xl text-center">{t("end.title")}</p>

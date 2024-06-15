@@ -1,5 +1,4 @@
 import prisma from "@/lib/prisma";
-import { withAccelerate } from "@prisma/extension-accelerate";
 var JSONbig = require("json-bigint");
 
 export async function GET(
@@ -8,7 +7,7 @@ export async function GET(
 ) {
   const id = params.id;
   try {
-    const inquiry = await prisma.$extends(withAccelerate()).inquiry.findFirst({
+    const inquiry = await prisma.inquiry.findFirst({
       cacheStrategy: {
         ttl: 60,
       },

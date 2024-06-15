@@ -45,27 +45,27 @@
   "Home": {
     "banner": {
       "title": {
-        "1": "We store data for Businesses",
-        "2": "We store data for Innovators",
-        "3": "We store data for Researchers",
-        "4": "We store data for Organizations",
-        "5": "We store data for Non-Profits",
-        "6": "We store data for Entrepreneurs"
+        "1": "We Store Data For Businesses",
+        "2": "We Store Data For Innovators",
+        "3": "We Store Data For Researchers",
+        "4": "We Store Data For Organizations",
+        "5": "We Store Data For Non-Profits",
+        "6": "We Store Data For Entrepreneurs"
       },
       "description": "NexaDB is your trusted partner in <important>Data Management</important>. With cutting-edge technology and a commitment to excellence, we provide scalable and secure database solutions."
     },
     "dynamicContent": {
-      "mainText": "A dynamic, open source database",
+      "mainText": "A Dynamic, Open Source Database",
       "secondaryText": "NexaDB has won the hearts of developers with its seamless performance and top-notch features. Praised and top-voted, NexaDB stands as a reliable choice for businesses and organizations, offering innovative solutions and a user-friendly experience. Its popularity is a testament to its commitment to excellence in data management."
     },
     "features": {
       "applications": "Applications",
-      "githubStars": "Github stars",
-      "supportedLanguages": "Supported programming languages"
+      "githubStars": "Github Stars",
+      "supportedLanguages": "Supported Programming Languages"
     },
     "cta": {
-      "heading": "Ready to get started with NexaDB?",
-      "text": "Ready to experience the power of NexaDB? Follow these simple steps to get started and unlock a seamless, open-source database solution. Whether you're a business, developer, or data enthusiast, NexaDB makes data management straightforward and efficient. Let's embark on a journey of innovation together - explore NexaDB and elevate your data experience today!",
+      "heading": "Ready To Get Started With NexaDB?",
+      "text": "Follow these simple steps to get started and unlock a seamless, open-source database solution. Whether you're a business, developer, or data enthusiast, NexaDB makes data management straightforward and efficient. Let's embark on a journey of innovation together - explore NexaDB and elevate your data experience today!",
       "buttonText": "Get Started"
     },
     "image-alt": {

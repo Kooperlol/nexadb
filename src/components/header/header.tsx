@@ -12,10 +12,13 @@ import SettingsMenu from "./lang-menu";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import Accessibilik from "accessibility-react-widget";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const locale = useLocale();
   const t = useTranslations("Header");
+  const path = usePathname();
+  const isActive = (href: string) => path === href || (path.includes("careers") && href.includes("careers"));
   return (
     <Navbar
       sticky="top"
@@ -25,7 +28,7 @@ export default function Header() {
     >
       <Container fluid>
         <NavbarBrand
-          href="/"
+          href={`/${locale}`}
           className="text-white font-bold hover:text-purple-950"
         >
           NexaDB
@@ -33,34 +36,50 @@ export default function Header() {
         <NavbarToggle className="bg-white" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto gap-2">
-            <Nav.Link className="text-white hover:text-purple-950" href="/">
+            <Nav.Link
+              href={`/${locale}`}
+            >
+              <p className={isActive(`/${locale}`) ? "active-nav" : "deactive-nav"}>
               {t("user-nav.home")}
+              </p>
             </Nav.Link>
             <Nav.Link
-              className="text-white hover:text-purple-950"
               href={`/${locale}/database`}
             >
-              {t("user-nav.database")}
+              <p className={isActive(`/${locale}/database`) ? "active-nav" : "deactive-nav"}>
+                {t("user-nav.database")}
+              </p>
             </Nav.Link>
             <NavDropdown
               title={
-                <span className="text-white">{t("user-nav.careers")}</span>
+                <span className={isActive(`/${locale}/careers`) ? "active-nav" : "deactive-nav"}>
+                  {t("user-nav.careers")}
+                </span>
               }
               id="basic-nav-dropdown"
-              className="text-white hover:text-purple-950"
             >
-              <NavDropdown.Item href={`/${locale}/careers`}>
-                {t("user-nav.about-us")}
+              <NavDropdown.Item
+                href={`/${locale}/careers`}
+              >
+                  {t("user-nav.about-us")}
               </NavDropdown.Item>
-              <NavDropdown.Item href={`/${locale}/careers/benefits`}>
+              <NavDropdown.Item
+                href={`/${locale}/careers/benefits`}
+              >
                 {t("user-nav.benefits")}
               </NavDropdown.Item>
-              <NavDropdown.Item href={`/${locale}/careers/search`}>
+              <NavDropdown.Item
+                href={`/${locale}/careers/search`}
+              >
                 {t("user-nav.positions")}
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href={`/${locale}/contact`} className="text-white">
-              {t("user-nav.contact")}
+            <Nav.Link
+              href={`/${locale}/contact`}
+            >
+              <p className={isActive(`/${locale}/contact`) ? "active-nav" : "deactive-nav"}>
+                {t("user-nav.contact")}
+              </p>
             </Nav.Link>
             <SettingsMenu />
             <Accessibilik />

@@ -98,7 +98,7 @@ export default function HomePage() {
       </div>
       <div className="flex flex-col gap-6 text-center items-center text-black bg-white md:p-32 p-8 py-32">
         <div className="flex flex-col items-center gap-3">
-          <p className="text-2xl font-semibold">
+          <p className="text-2xl text-main font-semibold">
             {t("dynamicContent.mainText")}
           </p>
           <p className="text-xl md:w-1/2">
@@ -113,7 +113,7 @@ export default function HomePage() {
                   animateToNumber={3}
                   transitions={(index) => ({
                     type: "tween",
-                    duration: index + 0.5,
+                    duration: index + 1,
                   })}
                 />
                 <p>M+</p>
@@ -128,7 +128,7 @@ export default function HomePage() {
                   animateToNumber={10}
                   transitions={(index) => ({
                     type: "tween",
-                    duration: index + 0.5,
+                    duration: index + 1,
                   })}
                 />
                 <p>K+</p>
@@ -143,7 +143,7 @@ export default function HomePage() {
                   animateToNumber={30}
                   transitions={(index) => ({
                     type: "tween",
-                    duration: index + 0.5,
+                    duration: index + 1,
                   })}
                 />
                 <p>+</p>

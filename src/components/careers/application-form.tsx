@@ -18,11 +18,12 @@ import { Position } from "@prisma/client";
 import axios from "axios";
 import { useReCaptcha } from "next-recaptcha-v3";
 import React, { useEffect, useRef, useState } from "react";
-import { FaDollarSign } from "react-icons/fa";
+import { FaBirthdayCake, FaDollarSign, FaPhone } from "react-icons/fa";
 import { useTranslations, useLocale } from "next-intl";
 import getTranslatedPosition from "@/helpers/translated-positions";
+import { MdEmail, MdPerson, MdPhone } from "react-icons/md";
 
-const ApplyPage = ({ params }: { params: { id: string } }) => {
+const ApplicationForm = ({ params }: { params: { id: string } }) => {
   const t = useTranslations("Careers.application-form");
   const toast = useToast();
   const [position, setPosition] = useState<Position>();
@@ -164,141 +165,161 @@ const ApplyPage = ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <>
-      <div className="min-h-screen md:p-32 py-32 p-8 justify-center items-center flex">
-        <Stack
-          className="w-3/4"
-          bg={"gray.50"}
-          rounded={"xl"}
-          p={{ base: 4, sm: 6, md: 8 }}
-          spacing={{ base: 8 }}
-          maxW={{ lg: "lg" }}
+    <Stack
+      bg={"gray.50"}
+      rounded={"xl"}
+      p={{ base: 4, sm: 6, md: 8 }}
+      spacing={{ base: 8 }}
+      maxW={{ lg: "lg" }}
+    >
+      <Heading
+        color={"gray.800"}
+        lineHeight={1.1}
+        fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
+      >
+        <Text
+          as={"span"}
+          bgGradient="linear(to-r, purple.400,purple.600)"
+          bgClip="text"
         >
-          <Heading
-            color={"gray.800"}
-            lineHeight={1.1}
-            fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
-          >
-            {getTranslatedPosition(position, locale)} {t("application")}
-            <Text
-              as={"span"}
-              bgGradient="linear(to-r, purple.400,purple.600)"
-              bgClip="text"
-            >
-              !
-            </Text>
-          </Heading>
-          <Box ref={formRef} onSubmit={handSubmit} as={"form"} mt={10}>
-            <Stack spacing={4}>
-              <Input
-                id="firstname"
-                placeholder={t("name")}
-                bg={"gray.100"}
-                border={0}
-                color={"gray.500"}
-                _placeholder={{
-                  color: "gray.500",
-                }}
-              />
-              <Input
-                id="lastname"
-                placeholder={t("last")}
-                bg={"gray.100"}
-                border={0}
-                color={"gray.500"}
-                _placeholder={{
-                  color: "gray.500",
-                }}
-              />
-              <Input
-                id="email"
-                placeholder={t("email")}
-                bg={"gray.100"}
-                type="email"
-                border={0}
-                color={"gray.500"}
-                _placeholder={{
-                  color: "gray.500",
-                }}
-              />
-              <Input
-                id="phone"
-                placeholder={`${t("phone")} (xxx-xxx-xxxx)`}
-                bg={"gray.100"}
-                border={0}
-                color={"gray.500"}
-                _placeholder={{
-                  color: "gray.500",
-                }}
-              />
-              <InputGroup>
-                <InputLeftElement>
-                  <FaDollarSign color="gray.300" />
-                </InputLeftElement>
-                <Input
-                  id="salary"
-                  placeholder={t("salary")}
-                  bg={"gray.100"}
-                  border={0}
-                  color={"gray.500"}
-                  _placeholder={{
-                    color: "gray.500",
-                  }}
-                />
-              </InputGroup>
-              <Select id="gender" placeholder={t("gender")} variant="filled">
-                <option value="male">{t("male")}</option>
-                <option value="female">{t("female")}</option>
-                <option value="other">{t("other")}</option>
-              </Select>
-              <Input
-                id="birthday"
-                placeholder={t("birthday")}
-                size="md"
-                type={inputType}
-                variant="filled"
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-              />
-              <Dropzone
-                onChange={(file) => {
-                  setResume(file[0]);
-                }}
-                style={{ fontFamily: "sans-serif" }}
-                label={t("resume")}
-                accept="application/pdf"
-                maxFiles={1}
-              >
-                {resume != null && (
-                  <FileMosaic
-                    key={resume!!.id!!}
-                    {...resume}
-                    onDelete={() => setResume(null)}
-                    info
-                  />
-                )}
-              </Dropzone>
-            </Stack>
-            <Button
-              fontFamily={"heading"}
-              mt={8}
-              w={"full"}
-              bgGradient="linear(to-r, purple.400,purple.600)"
-              color={"white"}
-              type="submit"
-              _hover={{
-                bgGradient: "linear(to-r, purple.400,purple.600)",
-                boxShadow: "xl",
+          {getTranslatedPosition(position, locale)} {t("application")}!
+        </Text>
+      </Heading>
+      <Box ref={formRef} onSubmit={handSubmit} as={"form"} mt={10}>
+        <Stack spacing={4}>
+          <InputGroup>
+            <InputLeftElement>
+              <MdPerson color="gray.300" />
+            </InputLeftElement>
+            <Input
+              id="firstname"
+              placeholder={t("name")}
+              bg={"gray.100"}
+              border={0}
+              color={"gray.500"}
+              _placeholder={{
+                color: "gray.500",
               }}
-            >
-              {t("submit")}
-            </Button>
-          </Box>
-          form
+            />
+          </InputGroup>
+          <InputGroup>
+            <InputLeftElement>
+              <MdPerson color="gray.300" />
+            </InputLeftElement>
+            <Input
+              id="lastname"
+              placeholder={t("last")}
+              bg={"gray.100"}
+              border={0}
+              color={"gray.500"}
+              _placeholder={{
+                color: "gray.500",
+              }}
+            />
+          </InputGroup>
+          <InputGroup>
+            <InputLeftElement>
+              <MdEmail color="gray.300" />
+            </InputLeftElement>
+            <Input
+              id="email"
+              placeholder={t("email")}
+              bg={"gray.100"}
+              type="email"
+              border={0}
+              color={"gray.500"}
+              _placeholder={{
+                color: "gray.500",
+              }}
+            />
+          </InputGroup>
+          <InputGroup>
+            <InputLeftElement>
+              <MdPhone color="gray.300" />
+            </InputLeftElement>
+            <Input
+              id="phone"
+              placeholder={`${t("phone")}`}
+              bg={"gray.100"}
+              border={0}
+              type="tel"
+              color={"gray.500"}
+              _placeholder={{
+                color: "gray.500",
+              }}
+            />
+          </InputGroup>
+          <InputGroup>
+            <InputLeftElement>
+              <FaDollarSign color="gray.300" />
+            </InputLeftElement>
+            <Input
+              id="salary"
+              placeholder={t("salary")}
+              bg={"gray.100"}
+              border={0}
+              color={"gray.500"}
+              _placeholder={{
+                color: "gray.500",
+              }}
+            />
+          </InputGroup>
+          <Select id="gender" placeholder={t("gender")} variant="filled">
+            <option value="male">{t("male")}</option>
+            <option value="female">{t("female")}</option>
+            <option value="other">{t("other")}</option>
+          </Select>
+          <InputGroup>
+            <InputLeftElement>
+              <FaBirthdayCake color="gray.300" />
+            </InputLeftElement>
+            <Input
+              id="birthday"
+              placeholder={t("birthday")}
+              size="md"
+              type={inputType}
+              variant="filled"
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+            />
+          </InputGroup>
+          <Dropzone
+            onChange={(file) => {
+              setResume(file[0]);
+            }}
+            style={{ fontFamily: "sans-serif" }}
+            label={t("resume")}
+            accept="application/pdf"
+            maxFiles={1}
+          >
+            {resume != null && (
+              <FileMosaic
+                key={resume!!.id!!}
+                {...resume}
+                onDelete={() => setResume(null)}
+                info
+              />
+            )}
+          </Dropzone>
         </Stack>
-      </div>
-    </>
+        <Button
+          fontFamily={"heading"}
+          mt={8}
+          w={"full"}
+          bgGradient="linear(to-r, purple.400,purple.600)"
+          color={"white"}
+          type="submit"
+          _hover={{
+            bgGradient: "linear(to-r, purple.400,purple.600)",
+            boxShadow: "xl",
+          }}
+        >
+          {t("submit")}
+        </Button>
+      </Box>
+      form
+    </Stack>
   );
 };
 
-export default ApplyPage;
+export default ApplicationForm;

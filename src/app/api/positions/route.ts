@@ -51,7 +51,6 @@ export async function GET(request: Request) {
         ttl: 60,
       },
     });
-    console.log(2);
     return new Response(JSONbig.stringify(positions), { status: 200 });
   } catch (error) {
     return new Response(JSON.stringify(error), { status: 500 });

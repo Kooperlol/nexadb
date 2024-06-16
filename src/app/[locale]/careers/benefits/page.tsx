@@ -12,9 +12,9 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
-import health from "@../../public/media/health.svg";
-import flexibility from "@../../public/media/flexibility.svg";
-import savings from "@../../public/media/savings.svg";
+import health from "@/../public/media/health.svg";
+import flexibility from "@/../public/media/flexibility.svg";
+import savings from "@/../public/media/savings.svg";
 import Image from "next/image";
 import InView from "@/components/shared/slide-in-animation";
 import { useTranslations } from "next-intl";

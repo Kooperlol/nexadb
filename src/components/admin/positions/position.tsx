@@ -18,6 +18,7 @@ const Position = (position: Position) => {
       <Td>{position.location}</Td>
       <Td>${position.salary.toLocaleString()}</Td>
       <Td>{position.listed ? "yes" : "no"}</Td>
+      <Td>{position.hiringUrgently ? "yes" : "no"}</Td>
     </Tr>
   );
 };

@@ -51,6 +51,7 @@ const PositionsPage = async () => {
                 <Th>{t("location")}</Th>
                 <Th>{t("salary")}</Th>
                 <Th>{t("listed")}</Th>
+                <Th>{t("urgently")}</Th>
               </Tr>
             </Thead>
             <Tbody>

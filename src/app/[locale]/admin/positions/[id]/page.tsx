@@ -11,6 +11,10 @@ import {
   EditableInput,
   EditablePreview,
   EditableTextarea,
+  HStack,
+  Radio,
+  RadioGroup,
+  Stack,
   useToast,
 } from "@chakra-ui/react";
 import { Position } from "@prisma/client";
@@ -20,7 +24,6 @@ import React, { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import getTranslatedPositionInfo from "@/helpers/translated-position-info";
 import getTranslatedPosition from "@/helpers/translated-positions";
-import getTranslatedListed from "@/helpers/translated-listed";
 
 const ViewPositionPage = ({ params }: { params: { id: string } }) => {
   const [position, setPosition] = useState<Position>();
@@ -56,11 +59,13 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
     <>
       <div className="min-h-screen flex items-center justify-center py-36 md:px-16">
         <Card className="md:w-1/2 w-4/5">
-          <CardHeader className="text-center">
+          <CardHeader className="text-center flex flex-col gap-5">
             <p className="text-xl font-bold">{t("title")}</p>
-            <p>Id: {position?.id}</p>
-            <div className="flex flex-row gap-2 justify-center items-center">
-              <p>{t("position")}:</p>
+            <p className="underline">Id: {position?.id}</p>
+          </CardHeader>
+          <CardBody className="grid grid-cols-3 gap-5">
+            <div className="flex flex-col items-center justify-center">
+              <p className="underline">{t("position")}:</p>
               <Editable
                 defaultValue={getTranslatedPosition(position!!, locale)}
                 onChange={(pos) => {
@@ -74,10 +79,8 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
                 <EditableInput />
               </Editable>
             </div>
-          </CardHeader>
-          <CardBody className="gap-3 flex flex-col">
-            <div className="flex flex-row gap-2 items-center">
-              <p>{t("location")}:</p>
+            <div className="flex flex-col items-center justify-center">
+              <p className="underline">{t("location")}:</p>
               <Editable
                 defaultValue={position?.location}
                 onChange={(location) =>
@@ -91,8 +94,8 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
                 <EditableInput />
               </Editable>
             </div>
-            <div className="flex flex-row gap-2 items-center">
-              <p>{t("salary")}:</p>
+            <div className="flex flex-col items-center justify-center">
+              <p className="underline">{t("salary")}:</p>
               <Editable
                 value={`$${position?.salary.toLocaleString()}`}
                 onChange={(salary) => {
@@ -120,8 +123,26 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
                 <EditableInput />
               </Editable>
             </div>
-            <div className="flex flex-row gap-2 items-center">
-              <p>{t("about")}:</p>
+            <div className="flex flex-col items-center">
+              <p className="underline">{t("image")}:</p>
+              <Editable
+                wordBreak={"break-all"}
+                defaultValue={getTranslatedPositionInfo(position!!, locale)}
+                width={"full"}
+                height={"full"}
+                onChange={(image) =>
+                  setPosition((prevObject) => ({
+                    ...prevObject!!,
+                    image,
+                  }))
+                }
+              >
+                <EditablePreview />
+                <EditableTextarea />
+              </Editable>
+            </div>
+            <div className="flex flex-col items-center">
+              <p className="underline">{t("about")}:</p>
               <Editable
                 wordBreak={"break-all"}
                 defaultValue={getTranslatedPositionInfo(position!!, locale)}
@@ -138,16 +159,68 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
                 <EditableTextarea />
               </Editable>
             </div>
-            <p
-              onClick={() =>
-                setPosition((prevObject) => ({
-                  ...prevObject!!,
-                  listed: !prevObject!!.listed,
-                }))
-              }
-            >
-              {t("listed")}: {getTranslatedListed(position!!, t)}
-            </p>
+            <div className="flex flex-col items-center justify-center">
+              <p className="underline">{t("listed")}:</p>
+              <RadioGroup defaultValue={position?.listed ? "1" : "2"}>
+                <HStack spacing={5}>
+                  <Radio
+                    value="1"
+                    colorScheme="green"
+                    onChange={() =>
+                      setPosition((prevPosition) => ({
+                        ...prevPosition!!,
+                        listed: true,
+                      }))
+                    }
+                  >
+                    Yes
+                  </Radio>
+                  <Radio
+                    value="2"
+                    colorScheme="red"
+                    onChange={() =>
+                      setPosition((prevPosition) => ({
+                        ...prevPosition!!,
+                        listed: false,
+                      }))
+                    }
+                  >
+                    No
+                  </Radio>
+                </HStack>
+              </RadioGroup>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <p className="underline">{t("urgently")}:</p>
+              <RadioGroup defaultValue={position?.hiringUrgently ? "1" : "2"}>
+                <HStack spacing={5}>
+                  <Radio
+                    value="1"
+                    colorScheme="green"
+                    onChange={() =>
+                      setPosition((prevPosition) => ({
+                        ...prevPosition!!,
+                        hiringUrgently: true,
+                      }))
+                    }
+                  >
+                    Yes
+                  </Radio>
+                  <Radio
+                    value="2"
+                    colorScheme="red"
+                    onChange={() =>
+                      setPosition((prevPosition) => ({
+                        ...prevPosition!!,
+                        hiringUrgently: false,
+                      }))
+                    }
+                  >
+                    No
+                  </Radio>
+                </HStack>
+              </RadioGroup>
+            </div>
           </CardBody>
           <CardFooter className="flex flex-row gap-5">
             <Button

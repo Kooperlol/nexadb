@@ -13,7 +13,8 @@ import React, { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
 const AddPositionPage = () => {
-  const [checked, setChecked] = useState(false);
+  const [listedChecked, setListedChecked] = useState(false);
+  const [urgentlyChecked, setUrgentlyChecked] = useState(false);
   const toast = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const t = useTranslations("Admin.add-position");
@@ -26,6 +27,7 @@ const AddPositionPage = () => {
       event.currentTarget.salary.value.trim() === "" ||
       event.currentTarget.location.value.trim() === "" ||
       event.currentTarget.image.value.trim() === "" ||
+      event.currentTarget.urgently.value === null ||
       event.currentTarget.listed.value === null ||
       event.currentTarget.about.value.trim() === ""
     ) {
@@ -59,7 +61,8 @@ const AddPositionPage = () => {
       position: event.currentTarget.position.value,
       salary: parseInt(salaryWithoutCommas),
       location: event.currentTarget.location.value,
-      listed: checked,
+      listed: listedChecked,
+      hiringUrgently: urgentlyChecked,
       about: event.currentTarget.about.value,
     };
     try {
@@ -151,10 +154,19 @@ const AddPositionPage = () => {
               id="listed"
               size="md"
               colorScheme="purple"
-              checked={checked}
-              onChange={(e) => setChecked(e.target.checked)}
+              checked={listedChecked}
+              onChange={(e) => setListedChecked(e.target.checked)}
             >
               {t("listed")}
+            </Checkbox>
+            <Checkbox
+              id="urgently"
+              size="md"
+              colorScheme="purple"
+              checked={urgentlyChecked}
+              onChange={(e) => setUrgentlyChecked(e.target.checked)}
+            >
+              {t("urgently")}
             </Checkbox>
             <Textarea
               id="about"

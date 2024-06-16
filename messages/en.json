@@ -209,6 +209,7 @@
         "location": "City, state, zip code"
       },
       "careers-count": "{count} careers",
+      "urgently": "Hiring Urgently",
       "apply": "Apply Now"
     },
     "view-career": {
@@ -316,7 +317,8 @@
       "position": "Position",
       "location": "Location",
       "salary": "Salary",
-      "listed": "Listed"
+      "listed": "Listed",
+      "urgently": "Hiring Urgently"
     },
     "view-application": {
       "application": "Application",
@@ -342,7 +344,9 @@
       "salary": "Salary",
       "listed": "Listed",
       "about": "About",
+      "image": "Image URL",
       "delete": "Delete",
+      "urgently": "Hiring Urgently",
       "save": "Save",
       "listed-options": {
         "yes": "Yes",
@@ -357,6 +361,7 @@
       "listed": "Should this position be listed?",
       "about": "About",
       "image": "Image URL",
+      "urgently": "Hiring Urgently",
       "add": "Add",
       "toast": {
         "error": {

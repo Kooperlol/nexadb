@@ -8,6 +8,7 @@
       "location": "Ubicación",
       "position": "Posición",
       "salary": "Salario",
+      "urgently": "Contratación urgente",
       "title": "Añadir posición",
       "toast": {
         "error": {
@@ -35,6 +36,7 @@
     "edit-position": {
       "about": "Acerca de",
       "delete": "Borrar",
+      "image": "URL de la imagen",
       "listed": "Listado",
       "listed-options": {
         "no": "No",
@@ -42,6 +44,7 @@
       },
       "location": "Ubicación",
       "position": "Posición",
+      "urgently": "Contratación urgente",
       "salary": "Salario",
       "save": "Guardar",
       "title": "Editar posición"
@@ -81,7 +84,8 @@
       "location": "Ubicación",
       "position": "Posición",
       "salary": "Salario",
-      "title": "Gestionar todos los puestos"
+      "title": "Gestionar todos los puestos",
+      "urgently": "Contratación urgente"
     },
     "view-application": {
       "application": "Aplicación",
@@ -277,6 +281,7 @@
     },
     "Positions": {
       "apply": "Solicitar ahora",
+      "urgently": "Contratación urgente",
       "careers-count": "{count} carreras",
       "search": {
         "job": "Título del puesto o palabra clave",

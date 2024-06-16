@@ -42,6 +42,7 @@ model Position {
   about    Languages
   image    String
   listed   Boolean
+  hiringUrgently Boolean
   location String
   position Languages
   salary   Int

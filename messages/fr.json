@@ -9,6 +9,7 @@
       "position": "Position",
       "salary": "Salaire",
       "title": "Ajouter un poste",
+      "urgently": "Embauche urgente",
       "toast": {
         "error": {
           "description": "Merci de remplir tous les champs.",
@@ -35,6 +36,7 @@
     "edit-position": {
       "about": "À propos",
       "delete": "Supprimer",
+      "image": "URL de l'image",
       "listed": "Inscrit",
       "listed-options": {
         "no": "Non",
@@ -42,6 +44,7 @@
       },
       "location": "Emplacement",
       "position": "Position",
+      "urgently": "Embauche urgente",
       "salary": "Salaire",
       "save": "Sauvegarder",
       "title": "Modifier le poste"
@@ -81,7 +84,8 @@
       "location": "Emplacement",
       "position": "Position",
       "salary": "Salaire",
-      "title": "Gérer tous les postes"
+      "title": "Gérer tous les postes",
+      "urgently": "Embauche urgente"
     },
     "view-application": {
       "application": "Application",
@@ -277,6 +281,7 @@
     },
     "Positions": {
       "apply": "Appliquer maintenant",
+      "urgently": "Embauche urgente",
       "careers-count": "{count} carrières",
       "search": {
         "job": "Titre du poste ou mot-clé",

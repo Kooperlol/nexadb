@@ -21,7 +21,6 @@ const SearchCareersPage = () => {
         const response = await axios.get("/api/positions");
         setPositions(response.data);
         setDisplayed(response.data);
-        console.log(response.data);
         setLoading(false);
       } catch (error) {
         console.log("Error fetching position.");

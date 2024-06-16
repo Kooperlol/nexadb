@@ -1,6 +1,6 @@
 import { Position } from "@prisma/client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { useRef, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
@@ -11,15 +11,10 @@ const PositionBox = (position: Position) => {
   const ref = useRef(null);
   const isInview = useInView(ref, { once: true });
   const controls = useAnimation();
-  const [isShaking, setIsShaking] = useState(true);
 
   useEffect(() => {
     if (isInview) {
       controls.start("visible");
-      const timeout = setTimeout(() => {
-        setIsShaking(false);
-      }, 500);
-      return () => clearTimeout(timeout);
     }
   }, [isInview]);
 

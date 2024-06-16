@@ -10,16 +10,10 @@ export default function Transition({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const [routeChanging, setRouteChanging] = useState(false);
-
-  useEffect(() => {
-    setRouteChanging(true);
-    const timeout = setTimeout(() => {
-      setRouteChanging(false);
-    }, 500);
-
-    return () => clearTimeout(timeout);
-  }, [pathname]);
+  
+  if (pathname === "/loading") {
+    return null;
+  }
 
   return (
     <AnimatePresence mode="wait">

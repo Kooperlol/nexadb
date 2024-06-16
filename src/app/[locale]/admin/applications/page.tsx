@@ -18,8 +18,6 @@ const ApplicationsPage = async () => {
         const response = await axios.get("/api/positions");
         const positionsData = response.data;
 
-        console.log(positionsData);
-
         const applicationPromises = positionsData.map(
           async (position: Position) => {
             const appResponse = await axios.get(

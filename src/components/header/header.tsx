@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   NavDropdown,
   Navbar,
@@ -18,7 +18,14 @@ export default function Header() {
   const locale = useLocale();
   const t = useTranslations("Header");
   const path = usePathname();
-  const isActive = (href: string) => path === href || (path.includes("careers") && href.includes("careers"));
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const isActive = (href: string) =>
+    path === href || (path.includes("careers") && href.includes("careers"));
   return (
     <Navbar
       sticky="top"
@@ -36,53 +43,63 @@ export default function Header() {
         <NavbarToggle className="bg-white" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto gap-2">
-            <Nav.Link
-              href={`/${locale}`}
-            >
-              <p className={isActive(`/${locale}`) ? "active-nav" : "deactive-nav"}>
-              {t("user-nav.home")}
+            <Nav.Link href={`/${locale}`}>
+              <p
+                className={
+                  isActive(`/${locale}`) ? "active-nav" : "deactive-nav"
+                }
+              >
+                {t("user-nav.home")}
               </p>
             </Nav.Link>
-            <Nav.Link
-              href={`/${locale}/database`}
-            >
-              <p className={isActive(`/${locale}/database`) ? "active-nav" : "deactive-nav"}>
+            <Nav.Link href={`/${locale}/database`}>
+              <p
+                className={
+                  isActive(`/${locale}/database`)
+                    ? "active-nav"
+                    : "deactive-nav"
+                }
+              >
                 {t("user-nav.database")}
               </p>
             </Nav.Link>
             <NavDropdown
               title={
-                <span className={isActive(`/${locale}/careers`) ? "active-nav" : "deactive-nav"}>
+                <span
+                  className={
+                    isActive(`/${locale}/careers`)
+                      ? "active-nav"
+                      : "deactive-nav"
+                  }
+                >
                   {t("user-nav.careers")}
                 </span>
               }
               id="basic-nav-dropdown"
             >
-              <NavDropdown.Item
-                href={`/${locale}/careers`}
-              >
-                  {t("user-nav.about-us")}
+              <NavDropdown.Item href={`/${locale}/careers`}>
+                {t("user-nav.about-us")}
               </NavDropdown.Item>
-              <NavDropdown.Item
-                href={`/${locale}/careers/benefits`}
-              >
+              <NavDropdown.Item href={`/${locale}/careers/benefits`}>
                 {t("user-nav.benefits")}
               </NavDropdown.Item>
-              <NavDropdown.Item
-                href={`/${locale}/careers/search`}
-              >
+              <NavDropdown.Item href={`/${locale}/careers/search`}>
                 {t("user-nav.positions")}
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link
-              href={`/${locale}/contact`}
-            >
-              <p className={isActive(`/${locale}/contact`) ? "active-nav" : "deactive-nav"}>
+            <Nav.Link href={`/${locale}/contact`}>
+              <p
+                className={
+                  isActive(`/${locale}/contact`) ? "active-nav" : "deactive-nav"
+                }
+              >
                 {t("user-nav.contact")}
               </p>
             </Nav.Link>
             <SettingsMenu />
-            <Accessibilik />
+            {isClient &&
+              typeof window !== "undefined" &&
+              localStorage !== undefined && <Accessibilik />}{" "}
           </Nav>
         </Navbar.Collapse>
       </Container>

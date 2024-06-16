@@ -2,7 +2,7 @@ import prisma from "@/lib/prisma";
 var JSONbig = require("json-bigint");
 
 export async function POST(request: Request) {
-  const { position, salary, location, listed, about, image } =
+  const { position, salary, location, listed, about, image, hiringUrgently } =
     await request.json();
   try {
     await prisma.position.create({
@@ -13,6 +13,7 @@ export async function POST(request: Request) {
         image,
         salary,
         listed,
+        hiringUrgently,
       },
     });
 
@@ -36,6 +37,8 @@ export async function PUT(request: Request) {
         listed: position.listed,
         location: position.location,
         about: position.about,
+        image: position.image,
+        hiringUrgently: position.hiringUrgently,
       },
     });
     return new Response("Succesfully updated position", { status: 200 });

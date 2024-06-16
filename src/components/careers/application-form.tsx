@@ -18,7 +18,7 @@ import { Position } from "@prisma/client";
 import axios from "axios";
 import { useReCaptcha } from "next-recaptcha-v3";
 import React, { useEffect, useRef, useState } from "react";
-import { FaBirthdayCake, FaDollarSign } from "react-icons/fa";
+import { FaBirthdayCake } from "react-icons/fa";
 import { MdEmail, MdLink, MdPerson, MdPhone } from "react-icons/md";
 import InputMask from "react-input-mask";
 import { useTranslations, useLocale } from "next-intl";

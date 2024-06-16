@@ -49,6 +49,7 @@ export async function POST(request: Request) {
     resume,
     birthdate,
     gender,
+    portfolio,
     salary,
   } = Object.fromEntries(await request.formData());
 
@@ -69,6 +70,7 @@ export async function POST(request: Request) {
         gender: gender.toString(),
         preferredSalary: parseInt(salary.toString()),
         resume: downloadURL,
+        portfolio: portfolio.toString(),
       },
     });
 

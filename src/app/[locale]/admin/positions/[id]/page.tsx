@@ -61,7 +61,9 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
         <Card className="md:w-1/2 w-4/5">
           <CardHeader className="text-center flex flex-col gap-5">
             <p className="text-xl font-bold">{t("title")}</p>
-            <p className="underline">Id: {position?.id}</p>
+            <p>
+              <u>Id:</u> {position?.id}
+            </p>
           </CardHeader>
           <CardBody className="grid grid-cols-3 gap-5">
             <div className="flex flex-col items-center justify-center">

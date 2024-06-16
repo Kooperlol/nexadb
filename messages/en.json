@@ -231,6 +231,7 @@
       "female": "Female",
       "birthday": "Birthday",
       "other": "Other",
+      "portfolio": "Portfolio URL (Optional)",
       "resume": "Upload your resume",
       "submit": "Submit",
       "application": "Application",
@@ -333,6 +334,7 @@
       "birthday": "Birthday",
       "salary": "Preferred Salary",
       "email": "Email",
+      "portfolio": "Portfolio URL",
       "phone": "Phone",
       "resume": "View Resume",
       "reply": "Reply"

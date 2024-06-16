@@ -91,6 +91,7 @@
       "application": "Application",
       "birthday": "Anniversaire",
       "email": "E-mail",
+      "portfolio": "Portefeuille URL",
       "gender": "Genre",
       "gender-options": {
         "female": "Femelle",
@@ -203,6 +204,7 @@
       "male": "mâle",
       "name": "Prénom",
       "other": "autre",
+      "portfolio": "Portefeuille URL",
       "phone": "Téléphone",
       "resume": "Télécharger votre CV",
       "salary": "Salaire préféré",

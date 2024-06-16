@@ -19,7 +19,7 @@ import axios from "axios";
 import { useReCaptcha } from "next-recaptcha-v3";
 import React, { useEffect, useRef, useState } from "react";
 import { FaBirthdayCake, FaDollarSign } from "react-icons/fa";
-import { MdEmail, MdPerson, MdPhone } from "react-icons/md";
+import { MdEmail, MdLink, MdPerson, MdPhone } from "react-icons/md";
 import InputMask from "react-input-mask";
 import { useTranslations, useLocale } from "next-intl";
 import getTranslatedPosition from "@/helpers/translated-positions";
@@ -127,6 +127,7 @@ const ApplicationForm = ({ params }: { params: { id: string } }) => {
     formData.append("lastname", lastName.trim());
     formData.append("email", email.trim());
     formData.append("salary", salary.replace(",", ""));
+    formData.append("portfolio", event.currentTarget.portfolio.value);
     formData.append("birthdate", birthday.toString());
     formData.append("phone", phone);
     formData.append("gender", gender);
@@ -276,6 +277,21 @@ const ApplicationForm = ({ params }: { params: { id: string } }) => {
               variant="filled"
               onFocus={handleFocus}
               onBlur={handleBlur}
+            />
+          </InputGroup>
+          <InputGroup>
+            <InputLeftElement>
+              <MdLink color="gray.300" />
+            </InputLeftElement>
+            <Input
+              id="portfolio"
+              placeholder={t("portfolio")}
+              bg={"gray.100"}
+              border={0}
+              color={"gray.500"}
+              _placeholder={{
+                color: "gray.500",
+              }}
             />
           </InputGroup>
           <Dropzone

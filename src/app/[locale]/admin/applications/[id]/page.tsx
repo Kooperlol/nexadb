@@ -47,34 +47,43 @@ const ViewApplicationPage = ({ params }: { params: { id: string } }) => {
       <div className="min-h-screen flex items-center justify-center py-36 px-16">
         <Card className="w-fit">
           <CardHeader className="text-center">
-            <p className="text-xl">Application</p>
-            <p>Id: {application?.id}</p>
+            <p className="text-xl font-bold">Application</p>
+            <p>
+              <u>Id:</u> {application?.id}
+            </p>
           </CardHeader>
           <CardBody>
             <p>
-              {t("name")}: {application?.firstname} {application?.lastname}
+              <u>{t("name")}:</u> {application?.firstname}{" "}
+              {application?.lastname}
             </p>
             <p>
-              {t("position")}: {application?.position}
+              <u>{t("position")}:</u> {application?.position}
             </p>
             <p>
-              {t("gender")}: {getTranslatedApplicationGender(application, t)}
+              <u>{t("gender")}:</u>{" "}
+              {getTranslatedApplicationGender(application, t)}
             </p>
             <p>
-              {t("birthday")}: {application?.birthdate}
+              <u>{t("birthday")}:</u> {application?.birthdate}
             </p>
             <p>
-              {t("salary")}: $
+              <u>{t("salary")}:</u> $
               {application?.preferredSalary
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             </p>
             <p>
-              {t("email")}: {application?.email}
+              <u>{t("email")}:</u> {application?.email}
             </p>
             <p>
-              {t("phone")}: {application?.phone}
+              <u>{t("phone")}:</u> {application?.phone}
             </p>
+            {application?.portfolio != null && (
+              <p>
+                <u>{t("portfolio")}:</u> {application?.portfolio}
+              </p>
+            )}
           </CardBody>
           <CardFooter className="flex flex-row justify-between gap-3">
             <Link className="w-full" href={application?.resume} target="_blank">

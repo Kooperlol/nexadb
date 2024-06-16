@@ -25,6 +25,7 @@ model Application {
   position        String @db.ObjectId
   preferredSalary BigInt
   resume          String
+  portfolio       String?
 }
 
 model Inquiry {

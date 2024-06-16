@@ -49,12 +49,12 @@ const PositionBox = (position: Position) => {
                   className="relative"
                   href={`/${locale}/careers/${position.id}`}
                 >
-                  <div className="flex flex-row">
+                  <div className="flex flex-row  justify-between">
                     <p className="text-lg font-bold hover:underline w-4/5">
                       {(position as any)["position"][locale]}
                     </p>
                     {position.hiringUrgently && (
-                      <p className="bg-orange-500 text-center font-bold w-40 h-min italic p-1 rounded-lg mx-3">
+                      <p className="bg-orange-500 text-center font-bold min-w-52 w-52 h-min italic p-1 rounded-lg mx-3">
                         {t("urgently")}!
                       </p>
                     )}

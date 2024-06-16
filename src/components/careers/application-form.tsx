@@ -18,10 +18,11 @@ import { Position } from "@prisma/client";
 import axios from "axios";
 import { useReCaptcha } from "next-recaptcha-v3";
 import React, { useEffect, useRef, useState } from "react";
-import { FaBirthdayCake, FaDollarSign, FaPhone } from "react-icons/fa";
+import { FaBirthdayCake, FaDollarSign } from "react-icons/fa";
+import { MdEmail, MdPerson, MdPhone } from "react-icons/md";
+import InputMask from "react-input-mask"
 import { useTranslations, useLocale } from "next-intl";
 import getTranslatedPosition from "@/helpers/translated-positions";
-import { MdEmail, MdPerson, MdPhone } from "react-icons/md";
 
 const ApplicationForm = ({ params }: { params: { id: string } }) => {
   const t = useTranslations("Careers.application-form");
@@ -238,7 +239,9 @@ const ApplicationForm = ({ params }: { params: { id: string } }) => {
               <MdPhone color="gray.300" />
             </InputLeftElement>
             <Input
+              as={InputMask}
               id="phone"
+              mask="(999) 999-9999"
               placeholder={`${t("phone")}`}
               bg={"gray.100"}
               border={0}
@@ -317,7 +320,6 @@ const ApplicationForm = ({ params }: { params: { id: string } }) => {
           {t("submit")}
         </Button>
       </Box>
-      form
     </Stack>
   );
 };

@@ -31,7 +31,7 @@ const CareerBenefits = () => {
         priority
         draggable={false}
         src={benefitsDesktop}
-        alt={t("image-alt.header")}
+        alt={"Benefits image background"}
       />
       <Image
         className="absolute object-cover min-h-screen max-h-screen brightness-50 block md:hidden"
@@ -39,12 +39,14 @@ const CareerBenefits = () => {
         draggable={false}
         content="cover"
         src={benefitsMobile}
-        alt={t("image-alt.header")}
+        alt={"Benefits image background"}
       />
       <div className="flex flex-col lg:gap-3 pt-32 sm:pt-0 gap-20">
         <div className="relative flex flex-col min-h-screen lg:flex-row md:px-24 px-16 items-center sm:pt-32 lg:pt-0">
           <div className="flex flex-col items-center gap-3 text-center lg:text-left justify-center px-0 lg:px-32">
-            <AnimatedText>{t("title")}</AnimatedText>
+            <span>
+              <AnimatedText size="4rem">{t("title")}</AnimatedText>
+            </span>
             <p className="text-white md:text-4xl w-4/5 md:w-2/3 text-2xl">
               {t.rich("description", {
                 b: (chunks) => <b>{chunks}</b>,

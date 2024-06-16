@@ -20,9 +20,10 @@ import { useReCaptcha } from "next-recaptcha-v3";
 import React, { useEffect, useRef, useState } from "react";
 import { FaBirthdayCake, FaDollarSign } from "react-icons/fa";
 import { MdEmail, MdPerson, MdPhone } from "react-icons/md";
-import InputMask from "react-input-mask"
+import InputMask from "react-input-mask";
 import { useTranslations, useLocale } from "next-intl";
 import getTranslatedPosition from "@/helpers/translated-positions";
+import SalaryInput from "./salary";
 
 const ApplicationForm = ({ params }: { params: { id: string } }) => {
   const t = useTranslations("Careers.application-form");
@@ -34,6 +35,11 @@ const ApplicationForm = ({ params }: { params: { id: string } }) => {
   const { executeRecaptcha } = useReCaptcha();
   const [inputType, setInputType] = useState("text");
   const locale = useLocale();
+  const [rawSalary, setRawSalary] = useState<string>("");
+
+  const handleSalaryChange = (salary: string) => {
+    setRawSalary(salary);
+  };
   const handleFocus = () => {
     setInputType("date");
   };
@@ -51,7 +57,7 @@ const ApplicationForm = ({ params }: { params: { id: string } }) => {
     const email = event.currentTarget.email.value;
     const phone = event.currentTarget.phone.value;
     const birthday = event.currentTarget.birthday.value;
-    const salary = event.currentTarget.salary.value;
+    const salary = rawSalary;
     const gender = event.currentTarget.gender.value;
 
     if (!executeRecaptcha) {
@@ -252,21 +258,7 @@ const ApplicationForm = ({ params }: { params: { id: string } }) => {
               }}
             />
           </InputGroup>
-          <InputGroup>
-            <InputLeftElement>
-              <FaDollarSign color="gray.300" />
-            </InputLeftElement>
-            <Input
-              id="salary"
-              placeholder={t("salary")}
-              bg={"gray.100"}
-              border={0}
-              color={"gray.500"}
-              _placeholder={{
-                color: "gray.500",
-              }}
-            />
-          </InputGroup>
+          <SalaryInput onSalaryChange={handleSalaryChange} />
           <Select id="gender" placeholder={t("gender")} variant="filled">
             <option value="male">{t("male")}</option>
             <option value="female">{t("female")}</option>

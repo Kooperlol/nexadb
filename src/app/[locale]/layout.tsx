@@ -6,6 +6,7 @@ import "./globals.css";
 import HeaderProvider from "@/providers/header-provider";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
 import { NextIntlClientProvider, useMessages } from "next-intl";
+import Transition from "@/providers/transition-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 interface LocaleLayoutProps {
-  children: string | string[]; // Update type to allow single or multiple children
+  children: React.ReactNode; // Allow ReactNode to cover all children types
   params: { locale: string };
 }
 
@@ -46,7 +47,7 @@ export default function LocaleLayout({
           >
             <NextIntlClientProvider messages={useMessages()} locale={locale}>
               <HeaderProvider />
-              {children}
+              <Transition>{children}</Transition>
               <Footer />
             </NextIntlClientProvider>
           </ReCaptchaProvider>

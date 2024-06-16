@@ -41,6 +41,7 @@ const SettingsMenu = () => {
         icon={<MdLanguage />}
         backgroundColor={"purple.600"}
         color="white"
+        className="w-min h-min"
         title={t("settings.language.value")}
         aria-label="Language settings"
         onClick={onOpen}

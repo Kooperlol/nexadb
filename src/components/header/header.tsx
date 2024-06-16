@@ -26,14 +26,18 @@ export default function Header() {
 
   const isActive = (href: string) =>
     path === href || (path.includes("careers") && href.includes("careers"));
+
   return (
     <Navbar
       sticky="top"
       expand="lg"
       style={{ padding: "15px 25px" }}
-      className="bg-main-foreground d-flex justify-content-between"
+      className="bg-main-foreground"
     >
-      <Container fluid>
+      <Container
+        fluid
+        className="d-flex align-items-center justify-content-between"
+      >
         <NavbarBrand
           href={`/${locale}`}
           className="text-white font-bold hover:text-purple-950"
@@ -42,22 +46,25 @@ export default function Header() {
         </NavbarBrand>
         <NavbarToggle className="bg-white" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto gap-2">
-            <Nav.Link href={`/${locale}`}>
+          <Nav className="ms-auto gap-2 flex items-center md:items-start">
+            <Nav.Link href={`/${locale}`} className="d-flex align-items-center">
               <p
                 className={
-                  isActive(`/${locale}`) ? "active-nav" : "deactive-nav"
+                  isActive(`/${locale}`) ? "active-nav m-0" : "deactive-nav m-0"
                 }
               >
                 {t("user-nav.home")}
               </p>
             </Nav.Link>
-            <Nav.Link href={`/${locale}/database`}>
+            <Nav.Link
+              href={`/${locale}/database`}
+              className="d-flex align-items-center"
+            >
               <p
                 className={
                   isActive(`/${locale}/database`)
-                    ? "active-nav"
-                    : "deactive-nav"
+                    ? "active-nav m-0"
+                    : "deactive-nav m-0"
                 }
               >
                 {t("user-nav.database")}
@@ -68,14 +75,15 @@ export default function Header() {
                 <span
                   className={
                     isActive(`/${locale}/careers`)
-                      ? "active-nav"
-                      : "deactive-nav"
+                      ? "active-nav m-0"
+                      : "deactive-nav m-0"
                   }
                 >
                   {t("user-nav.careers")}
                 </span>
               }
               id="basic-nav-dropdown"
+              className="d-flex align-items-center"
             >
               <NavDropdown.Item href={`/${locale}/careers`}>
                 {t("user-nav.about-us")}
@@ -87,10 +95,15 @@ export default function Header() {
                 {t("user-nav.positions")}
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href={`/${locale}/contact`}>
+            <Nav.Link
+              href={`/${locale}/contact`}
+              className="d-flex align-items-center"
+            >
               <p
                 className={
-                  isActive(`/${locale}/contact`) ? "active-nav" : "deactive-nav"
+                  isActive(`/${locale}/contact`)
+                    ? "active-nav m-0"
+                    : "deactive-nav m-0"
                 }
               >
                 {t("user-nav.contact")}
@@ -99,7 +112,7 @@ export default function Header() {
             <SettingsMenu />
             {isClient &&
               typeof window !== "undefined" &&
-              localStorage !== undefined && <Accessibilik />}{" "}
+              localStorage !== undefined && <Accessibilik />}
           </Nav>
         </Navbar.Collapse>
       </Container>

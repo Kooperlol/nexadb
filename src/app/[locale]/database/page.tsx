@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Button, Heading, Text, Stack } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
+import Card from "@/components/database/db-card";
 
 const DatabasePage = () => {
   const t = useTranslations("Database");
@@ -53,8 +54,7 @@ const DatabasePage = () => {
 
   return (
     <div
-      className="flex flex-col items-center gap-16 md:p-32 py-32 p-8 justify-evenly min-h-screen text-center"
-      style={{ backgroundColor: "#6B46C1" }}
+      className="flex flex-col items-center gap-16 md:p-32 py-32 p-8 justify-evenly min-h-screen text-center bg-main"
     >
       <Heading as="h2" size="xl" color="white" mb={5}>
         {t("title")}
@@ -66,48 +66,9 @@ const DatabasePage = () => {
         align="stretch"
       >
         {servers.map((server) => (
-          <Box
-            key={server.id}
-            p={5}
-            bg="white"
-            rounded="xl"
-            boxShadow="xl"
-            width="full"
-            maxWidth="sm"
-            className="flex flex-col justify-between md:text-left sm:text-center"
-          >
-            <Heading as="h3" size="lg" mb={4} color="black">
-              {server.name}
-            </Heading>
-            <div>
-              <Text mb={2} color="gray.600">
-                CPU: {server.cpu}
-              </Text>
-              <Text mb={2} color="gray.600">
-                Storage: {server.storage}
-              </Text>
-              <Text mb={4} color="gray.600">
-                RAM: {server.ram}
-              </Text>
-            </div>
-            <div>
-              <Text fontSize="xl" fontWeight="bold" mb={4} color="#6B46C1">
-                {server.price}
-              </Text>
-              <Button
-                fontFamily="heading"
-                w="full"
-                bgGradient="linear(to-r, purple.400, purple.600)"
-                color="white"
-                _hover={{
-                  bgGradient: "linear(to-r, purple.400, purple.600)",
-                  boxShadow: "xl",
-                }}
-              >
-                {tButtons("purchase")}
-              </Button>
-            </div>
-          </Box>
+          <Card price={server.price} description={
+            `${server.cpu} | ${server.storage} | ${server.ram}`
+          } type={server.name} key={server.id} />
         ))}
       </Stack>
     </div>

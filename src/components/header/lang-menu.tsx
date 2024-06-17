@@ -1,5 +1,5 @@
 "use client";
-import {IconButton} from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
 import { MdLanguage } from "react-icons/md";
 import LocalSwitcher from "./local-switcher";
 import { useTranslations } from "next-intl";
@@ -14,17 +14,17 @@ const SettingsMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-         <IconButton
-          icon={<MdLanguage />}
-          backgroundColor={"purple.600"}
-          color="white"
-          className="w-min h-min"
-          title={t("settings.language.value")}
-          aria-label="Language settings"
-          onClick={() => setIsOpen(true)}
-        />
-        <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
-        </>
+      <IconButton
+        icon={<MdLanguage />}
+        backgroundColor={"purple.600"}
+        color="white"
+        className="w-min h-min"
+        title={t("settings.language.value")}
+        aria-label="Language settings"
+        onClick={() => setIsOpen(true)}
+      />
+      <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
+    </>
   );
 };
 
@@ -62,7 +62,9 @@ const SpringModal: React.FC<SpringModalProps> = ({ isOpen, setIsOpen }) => {
                 {t("settings.language.value")}
               </h3>
               <br />
-              <LocalSwitcher />
+              <div className="text-black bg-white">
+                <LocalSwitcher />
+              </div>
               <br />
               <div className="flex gap-2">
                 <button

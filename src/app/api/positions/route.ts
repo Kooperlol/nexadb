@@ -51,7 +51,7 @@ export async function GET(request: Request) {
   try {
     const positions = await prisma.position.findMany({
       cacheStrategy: {
-        ttl: 60,
+        ttl: 3600,
       },
     });
     return new Response(JSONbig.stringify(positions), { status: 200 });

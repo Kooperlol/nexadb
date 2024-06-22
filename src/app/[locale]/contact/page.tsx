@@ -18,11 +18,13 @@ import { FaCheck } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 
 const ContactPage = () => {
+  // Initialize toast and translations
   const toast = useToast();
   const t = useTranslations("Contact");
   const formRef = useRef<HTMLFormElement>(null);
   const { executeRecaptcha } = useReCaptcha();
 
+  // Handle form submission
   const handSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -31,6 +33,7 @@ const ContactPage = () => {
       return;
     }
 
+    // Execute reCAPTCHA and get token
     const token = await executeRecaptcha("application_submit");
     const response = await axios({
       method: "POST",
@@ -42,6 +45,7 @@ const ContactPage = () => {
       },
     });
 
+    // Handle reCAPTCHA failure
     if (response?.data?.success === false) {
       toast({
         title: t("toast.recaptcha.title"),
@@ -54,6 +58,7 @@ const ContactPage = () => {
       return;
     }
 
+    // Validate form fields
     if (
       event.currentTarget.firstname.value.trim() === "" ||
       event.currentTarget.lastname.value.trim() === "" ||
@@ -71,6 +76,7 @@ const ContactPage = () => {
       return;
     }
 
+    // Prepare payload for submission
     const payload = {
       firstname: event.currentTarget.firstname.value,
       lastname: event.currentTarget.lastname.value,
@@ -79,6 +85,7 @@ const ContactPage = () => {
     };
 
     try {
+      // Reset form and submit payload
       formRef.current!!.reset();
       await axios.post("/api/inquiries", payload);
       toast({

@@ -50,6 +50,7 @@ export default function HomePage() {
               style={{
                 fontWeight: "bold",
                 color: "white",
+                textAlign: "center",
                 fontSize: "1.5rem",
                 display: "inline-block",
               }}
@@ -111,53 +112,59 @@ export default function HomePage() {
             {t("dynamicContent.secondaryText")}
           </p>
         </div>
-      <div className="flex w-2/3 md:flex-row flex-col gap-10 justify-center items-center">
-        <Card className="w-60 h-60"> {/* Set the fixed width and height here */}
-          <CardBody className="flex flex-col gap-3 justify-center items-center w-full h-full">
-            <div className="flex flex-row justify-center text-4xl">
-              <AnimatedNumbers
-                animateToNumber={3}
-                transitions={(index) => ({
-                  type: "tween",
-                  duration: index + 1,
-                })}
-              />
-              <p>M+</p>
-            </div>
-            <p className="text-lg">{t("features.applications")}</p>
-          </CardBody>
-        </Card>
-        <Card className="w-60 h-60"> {/* Set the fixed width and height here */}
-          <CardBody className="flex flex-col gap-3 justify-center items-center w-full h-full">
-            <div className="flex flex-row justify-center text-4xl">
-              <AnimatedNumbers
-                animateToNumber={10}
-                transitions={(index) => ({
-                  type: "tween",
-                  duration: index + 1,
-                })}
-              />
-              <p>K+</p>
-            </div>
-            <p className="text-lg">{t("features.githubStars")}</p>
-          </CardBody>
-        </Card>
-        <Card className="w-60 h-60"> {/* Set the fixed width and height here */}
-          <CardBody className="flex flex-col gap-3 justify-center items-center w-full h-full">
-            <div className="flex flex-row justify-center text-4xl">
-              <AnimatedNumbers
-                animateToNumber={30}
-                transitions={(index) => ({
-                  type: "tween",
-                  duration: index + 1,
-                })}
-              />
-              <p>+</p>
-            </div>
-            <p className="text-lg">{t("features.supportedLanguages")}</p>
-          </CardBody>
-        </Card>
-      </div>
+        <div className="flex w-2/3 md:flex-row flex-col gap-10 justify-center items-center">
+          <Card className="w-60 h-60">
+            {" "}
+            {/* Set the fixed width and height here */}
+            <CardBody className="flex flex-col gap-3 justify-center items-center w-full h-full">
+              <div className="flex flex-row justify-center text-4xl">
+                <AnimatedNumbers
+                  animateToNumber={3}
+                  transitions={(index) => ({
+                    type: "tween",
+                    duration: index + 1,
+                  })}
+                />
+                <p>M+</p>
+              </div>
+              <p className="text-lg">{t("features.applications")}</p>
+            </CardBody>
+          </Card>
+          <Card className="w-60 h-60">
+            {" "}
+            {/* Set the fixed width and height here */}
+            <CardBody className="flex flex-col gap-3 justify-center items-center w-full h-full">
+              <div className="flex flex-row justify-center text-4xl">
+                <AnimatedNumbers
+                  animateToNumber={10}
+                  transitions={(index) => ({
+                    type: "tween",
+                    duration: index + 1,
+                  })}
+                />
+                <p>K+</p>
+              </div>
+              <p className="text-lg">{t("features.githubStars")}</p>
+            </CardBody>
+          </Card>
+          <Card className="w-60 h-60">
+            {" "}
+            {/* Set the fixed width and height here */}
+            <CardBody className="flex flex-col gap-3 justify-center items-center w-full h-full">
+              <div className="flex flex-row justify-center text-4xl">
+                <AnimatedNumbers
+                  animateToNumber={30}
+                  transitions={(index) => ({
+                    type: "tween",
+                    duration: index + 1,
+                  })}
+                />
+                <p>+</p>
+              </div>
+              <p className="text-lg">{t("features.supportedLanguages")}</p>
+            </CardBody>
+          </Card>
+        </div>
       </div>
       <div className="flex md:flex-row flex-col items-center justify-between bg-main md:gap-0 gap-24 text-white md:text-left text-center md:p-16 p-8">
         <div className="flex flex-col md:items-start items-center gap-2 md:w-3/5">

@@ -83,7 +83,7 @@ export default function Header() {
                 </span>
               }
               id="basic-nav-dropdown"
-              className="d-flex align-items-center"
+              className="d-flex align-items-center flex-col"
             >
               <NavDropdown.Item href={`/${locale}/careers`}>
                 {t("user-nav.about-us")}
@@ -95,6 +95,7 @@ export default function Header() {
                 {t("user-nav.positions")}
               </NavDropdown.Item>
             </NavDropdown>
+
             <Nav.Link
               href={`/${locale}/contact`}
               className="d-flex align-items-center"

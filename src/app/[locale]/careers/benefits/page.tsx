@@ -9,8 +9,8 @@ import {
   Card,
   CardBody,
   Stack,
-  Heading,
   Text,
+  Box,
 } from "@chakra-ui/react";
 import health from "@/../public/media/health.svg";
 import flexibility from "@/../public/media/flexibility.svg";
@@ -19,41 +19,25 @@ import Image from "next/image";
 import InView from "@/components/shared/slide-in-animation";
 import { useTranslations } from "next-intl";
 import AnimatedText from "@/components/shared/animated-text";
-import benefitsDesktop from "@/../public/media/benefits.gif";
-import benefitsMobile from "@/../public/media/benefits-mobile.jpg";
 
 const CareerBenefits = () => {
   const t = useTranslations("Careers.Benefits");
   return (
     <>
-      <Image
-        className="absolute object-cover min-h-screen w-screen max-h-screen brightness-50 hidden md:block"
-        priority
-        draggable={false}
-        src={benefitsDesktop}
-        alt={"Benefits image background"}
-      />
-      <Image
-        className="absolute object-cover min-h-screen max-h-screen brightness-50 block md:hidden"
-        priority
-        draggable={false}
-        content="cover"
-        src={benefitsMobile}
-        alt={"Benefits image background"}
-      />
-      <div className="flex flex-col lg:gap-3 pt-32 sm:pt-0 gap-20">
-        <div className="relative flex flex-col min-h-screen lg:flex-row md:px-24 px-16 items-center sm:pt-32 lg:pt-0">
-          <div className="flex flex-col items-center gap-3 text-center lg:text-left justify-center px-0 lg:px-32">
-            <span>
-              <AnimatedText size="4rem">{t("title")}</AnimatedText>
-            </span>
-            <p className="text-white md:text-4xl w-4/5 md:w-2/3 text-2xl">
-              {t.rich("description", {
-                b: (chunks) => <b>{chunks}</b>,
-              })}
-            </p>
-          </div>
+      <div className="parallax">
+        <div className="parallax__layer parallax__layer--desktop" />
+        <div className="parallax__layer parallax__layer--mobile" />
+        <div className="header-content">
+          <AnimatedText>{t("title")}</AnimatedText>
+          <h2 className="text-white w-4/5 md:w-2/3 mx-auto">
+            {t.rich("description", {
+              b: (chunks) => <b>{chunks}</b>,
+            })}
+          </h2>
         </div>
+      </div>
+      <div className="flex flex-col lg:gap-3 pt-32 sm:pt-0 gap-20">
+        <Box height={50} />
         <div className="flex justify-center">
           <div className="min-h-screen w-2/3 flex flex-col gap-10 pb-16">
             <Accordion
@@ -70,7 +54,7 @@ const CareerBenefits = () => {
                       as="span"
                       flex="1"
                       textAlign="left"
-                      className="font-bold text-3xl lg:text-5xl p-3"
+                      className="font-bold h1 p-3"
                     >
                       {t("health.value")}
                     </Text>
@@ -87,13 +71,13 @@ const CareerBenefits = () => {
                       src={health}
                       alt={t("image-alt.doctor")}
                     />
-                    <div className="md:w-1/2 w-2/3 text-2xl lg:text-4xl">
+                    <div className="md:w-1/2 w-2/3 h2">
                       <p>
                         {t.rich("health.title", {
                           b: (chunks) => <b>{chunks}</b>,
                         })}
                       </p>
-                      <ul className="list-disc text-xl lg:text-3xl">
+                      <ul className="list-disc h3">
                         <li>{t("health.1")}</li>
                         <li>{t("health.2")}</li>
                         <li>{t("health.3")}</li>
@@ -113,7 +97,7 @@ const CareerBenefits = () => {
                       as="span"
                       flex="1"
                       textAlign="left"
-                      className="font-bold text-3xl lg:text-5xl p-3"
+                      className="font-bold h1 p-3"
                     >
                       {t("flexibility.value")}
                     </Text>
@@ -130,17 +114,16 @@ const CareerBenefits = () => {
                       src={flexibility}
                       alt={t("image-alt.trip")}
                     />
-                    <div className="md:w-1/2 w-2/3 text-2xl lg:text-4xl">
-                      <p>
+                    <div className="md:w-1/2 w-2/3">
+                      <h2>
                         {t.rich("flexibility.title", {
                           b: (chunks) => <b>{chunks}</b>,
                         })}
-                      </p>
-                      <ul className="list-disc text-xl lg:text-3xl">
+                      </h2>
+                      <ul className="list-disc h3">
                         <li>{t("flexibility.1")}</li>
                         <li>{t("flexibility.2")}</li>
                         <li>{t("flexibility.3")}</li>
-                        <li>{t("flexibility.4")}</li>
                       </ul>
                     </div>
                   </AccordionPanel>
@@ -156,7 +139,7 @@ const CareerBenefits = () => {
                       as="span"
                       flex="1"
                       textAlign="left"
-                      className="font-bold text-3xl lg:text-5xl p-3"
+                      className="font-bold h1 p-3"
                     >
                       {t("finances.value")}
                     </Text>
@@ -173,13 +156,13 @@ const CareerBenefits = () => {
                       src={savings}
                       alt={t("image-alt.finance")}
                     />
-                    <div className="md:w-1/2 w-2/3 text-2xl lg:text-4xl">
-                      <p>
+                    <div className="md:w-1/2 w-2/3">
+                      <h2>
                         {t.rich("finances.title", {
                           b: (chunks) => <b>{chunks}</b>,
                         })}
-                      </p>
-                      <ul className="list-disc text-xl lg:text-3xl">
+                      </h2>
+                      <ul className="list-disc h3">
                         <li>{t("finances.1")}</li>
                         <li>{t("finances.2")}</li>
                         <li>{t("finances.3")}</li>
@@ -197,7 +180,7 @@ const CareerBenefits = () => {
                 <Text
                   bgClip="text"
                   bgGradient="linear(to-r, purple.50,purple.200)"
-                  className="text-5xl font-bold text-center"
+                  className="h1 font-bold text-center"
                 >
                   {t("testimonies.title")}
                 </Text>
@@ -215,10 +198,10 @@ const CareerBenefits = () => {
                         height={"700"}
                       />
                       <Stack mt="6" spacing="3">
-                        <Heading className="text-main" size="lg">
+                        <h2 className="text-main">
                           {t("testimonies.1.name")}
-                        </Heading>
-                        <Text className="text-xl">
+                        </h2>
+                        <Text className="h3">
                           "
                           {t.rich("testimonies.2.description", {
                             u: (chunks) => <u>{chunks}</u>,
@@ -241,10 +224,10 @@ const CareerBenefits = () => {
                         height={"700"}
                       />
                       <Stack mt="6" spacing="3">
-                        <Heading className="text-main" size="lg">
+                        <h2 className="text-main">
                           {t("testimonies.2.name")}
-                        </Heading>
-                        <Text className="text-xl">
+                        </h2>
+                        <Text className="h3">
                           "
                           {t.rich("testimonies.2.description", {
                             u: (chunks) => <u>{chunks}</u>,
@@ -267,10 +250,10 @@ const CareerBenefits = () => {
                         height={"700"}
                       />
                       <Stack mt="6" spacing="3">
-                        <Heading className="text-main" size="lg">
+                        <h2 className="text-main">
                           {t("testimonies.3.name")}
-                        </Heading>
-                        <Text className="text-xl">
+                        </h2>
+                        <Text className="h3">
                           "
                           {t.rich("testimonies.3.description", {
                             u: (chunks) => <u>{chunks}</u>,

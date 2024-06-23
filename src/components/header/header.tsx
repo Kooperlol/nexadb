@@ -19,9 +19,23 @@ export default function Header() {
   const t = useTranslations("Header");
   const path = usePathname();
   const [isClient, setIsClient] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [textColor, setTextColor] = useState("white");
 
   useEffect(() => {
     setIsClient(true);
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setScrollPosition(scrollY);
+      setTextColor(scrollY > 0 ? "#BFB9FA" : "white");
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const isActive = (href: string) =>
@@ -31,7 +45,12 @@ export default function Header() {
     <Navbar
       sticky="top"
       expand="lg"
-      style={{ padding: "15px 25px" }}
+      style={{
+        padding: "15px 25px",
+        backgroundColor: scrollPosition > 0 ? "rgba(255, 255, 255, 0.05)" : "transparent",
+        backdropFilter: scrollPosition > 0 ? "blur(10px)" : "none",
+        transition: "background-color 0.3s, backdrop-filter 0.3s",
+      }}
       className="bg-main-foreground"
     >
       <Container
@@ -40,7 +59,8 @@ export default function Header() {
       >
         <NavbarBrand
           href={`/${locale}`}
-          className="text-white font-bold hover:text-purple-950"
+          className={`font-bold hover:text-purple-950`}
+          style={{ color: textColor }}
         >
           NexaDB
         </NavbarBrand>
@@ -52,6 +72,7 @@ export default function Header() {
                 className={
                   isActive(`/${locale}`) ? "active-nav m-0" : "deactive-nav m-0"
                 }
+                style={{ color: textColor }}
               >
                 {t("user-nav.home")}
               </p>
@@ -66,6 +87,7 @@ export default function Header() {
                     ? "active-nav m-0"
                     : "deactive-nav m-0"
                 }
+                style={{ color: textColor }}
               >
                 {t("user-nav.database")}
               </p>
@@ -78,6 +100,7 @@ export default function Header() {
                       ? "active-nav m-0"
                       : "deactive-nav m-0"
                   }
+                  style={{ color: textColor }}
                 >
                   {t("user-nav.careers")}
                 </span>
@@ -106,6 +129,7 @@ export default function Header() {
                     ? "active-nav m-0"
                     : "deactive-nav m-0"
                 }
+                style={{ color: textColor }}
               >
                 {t("user-nav.contact")}
               </p>

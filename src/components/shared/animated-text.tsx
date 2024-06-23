@@ -35,7 +35,7 @@ interface AnimatedTextProps {
   size?: string;
 }
 
-const AnimatedText = ({ children, size = "3rem" }: AnimatedTextProps) => {
+const AnimatedText = ({ children, size = "2rem" }: AnimatedTextProps) => {
   return <Text size={size}>{children}</Text>;
 };
 

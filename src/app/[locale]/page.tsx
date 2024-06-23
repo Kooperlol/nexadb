@@ -29,8 +29,11 @@ export default function HomePage() {
         />
         <div className="flex md:flex-row flex-col md:gap-0 z-1 gap-5 justify-between w-screen items-center">
           <div className="flex flex-col items-center lg:items-start gap-3 md:w-1/3 drop-shadow-sm">
+            <h2 className="font-mono font-semibold text-foreground">
+              {t("banner.supertitle")}
+            </h2>
             <TypeAnimation
-              className="text-response header-shadow"
+              className="typeanimation header-shadow"
               sequence={[
                 t("banner.title.1"),
                 1000,
@@ -45,22 +48,15 @@ export default function HomePage() {
                 t("banner.title.6"),
                 1000,
               ]}
-              wrapper="span"
               speed={50}
-              style={{
-                fontWeight: "bold",
-                color: "white",
-                textAlign: "center",
-                fontSize: "1.5rem",
-                display: "inline-block",
-              }}
+              wrapper="h1"
               repeat={Infinity}
             />
-            <p className="text-response text-2xl header-shadow text-white drop-shadow-xl">
+            <h2 className="text-response header-shadow text-white drop-shadow-xl">
               {t.rich("banner.description", {
                 important: (chunks) => <b>{chunks}</b>,
               })}
-            </p>
+            </h2>
             <style jsx>{`
               @media (max-width: 768px) {
                 .text-response {
@@ -98,26 +94,24 @@ export default function HomePage() {
           </motion.div>
         </div>
       </div>
-      <div className="flex flex-col gap-6 text-center items-center text-black bg-white md:p-32 p-8 py-32">
+      <div className="flex flex-col gap-6 text-center items-center text-black bg-white lg:p-32 p-8 py-32">
         <div className="flex flex-col items-center gap-3">
           <Text
-            as={"span"}
+            as={"h1"}
             bgClip="text"
             bgGradient="linear(to-r, purple.400,purple.600)"
-            className="text-2xl font-semibold"
+            className="font-semibold"
           >
             {t("dynamicContent.mainText")}
           </Text>
-          <p className="text-xl md:w-1/2">
+          <h2 className="md:w-1/2">
             {t("dynamicContent.secondaryText")}
-          </p>
+          </h2>
         </div>
         <div className="flex w-2/3 md:flex-row flex-col gap-10 justify-center items-center">
           <Card className="w-60 h-60">
-            {" "}
-            {/* Set the fixed width and height here */}
             <CardBody className="flex flex-col gap-3 justify-center items-center w-full h-full">
-              <div className="flex flex-row justify-center text-4xl">
+              <h2 className="flex flex-row justify-center h2">
                 <AnimatedNumbers
                   animateToNumber={3}
                   transitions={(index) => ({
@@ -126,15 +120,13 @@ export default function HomePage() {
                   })}
                 />
                 <p>M+</p>
-              </div>
-              <p className="text-lg">{t("features.applications")}</p>
+              </h2>
+              <h3 className="h3">{t("features.applications")} 📱</h3>
             </CardBody>
           </Card>
           <Card className="w-60 h-60">
-            {" "}
-            {/* Set the fixed width and height here */}
             <CardBody className="flex flex-col gap-3 justify-center items-center w-full h-full">
-              <div className="flex flex-row justify-center text-4xl">
+              <h2 className="flex flex-row justify-center h2">
                 <AnimatedNumbers
                   animateToNumber={10}
                   transitions={(index) => ({
@@ -143,15 +135,13 @@ export default function HomePage() {
                   })}
                 />
                 <p>K+</p>
-              </div>
-              <p className="text-lg">{t("features.githubStars")}</p>
+              </h2>
+              <h3 className="h3">{t("features.githubStars")} 🌟</h3>
             </CardBody>
           </Card>
           <Card className="w-60 h-60">
-            {" "}
-            {/* Set the fixed width and height here */}
             <CardBody className="flex flex-col gap-3 justify-center items-center w-full h-full">
-              <div className="flex flex-row justify-center text-4xl">
+              <h2 className="flex flex-row justify-center">
                 <AnimatedNumbers
                   animateToNumber={30}
                   transitions={(index) => ({
@@ -160,23 +150,22 @@ export default function HomePage() {
                   })}
                 />
                 <p>+</p>
-              </div>
-              <p className="text-lg">{t("features.supportedLanguages")}</p>
+              </h2>
+              <h3>{t("features.supportedLanguages")} 👨‍💻</h3>
             </CardBody>
           </Card>
         </div>
       </div>
-      <div className="flex md:flex-row flex-col items-center justify-between bg-main md:gap-0 gap-24 text-white md:text-left text-center md:p-16 p-8">
+      <div className="flex md:flex-row flex-col items-center justify-between bg-main md:gap-0 gap-24 text-white lg:text-left text-center lg:p-16 p-8">
         <div className="flex flex-col md:items-start items-center gap-2 md:w-3/5">
           <Text
-            as={"span"}
             bgGradient="linear(to-r, purple.50,purple.200)"
             bgClip="text"
-            className="text-2xl font-semibold"
+            className="h1 text-left lg:text-center font-semibold"
           >
             {t("cta.heading")}
           </Text>
-          <p className="text-xl md:w-1/2 md:text-left">{t("cta.text")}</p>
+          <h2 className="md:w-1/2 md:text-left">{t("cta.text")}</h2>
           <Button
             className="w-fit"
             bg={"purple.800"}

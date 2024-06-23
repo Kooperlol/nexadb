@@ -40,10 +40,10 @@ const CareersPage = () => {
         alt={t("image-alt.header")}
       />
       <div className="gap-2 flex flex-col items-center px-2 lg:pt-0 pt-16 justify-center relative min-h-screen text-white text-center">
-        <AnimatedText>{t("banner.title")}</AnimatedText>
-        <p className="lg:text-3xl text-xl lg:w-1/2 px-3">
+        <AnimatedText size="2rem">{t("banner.title")}</AnimatedText>
+        <h2 className="lg:w-1/2 px-3">
           {t("banner.description")}
-        </p>
+        </h2>
       </div>
       <div className="justify-center flex">
         <div className="flex flex-col gap-5 p-16 lg:w-3/4 text-white">
@@ -52,14 +52,14 @@ const CareersPage = () => {
               <Text
                 bgClip="text"
                 bgGradient="linear(to-r, purple.50,purple.200)"
-                className="font-bold lg:text-4xl text-xl left-1/2 lg:text-center text-left"
+                className="font-bold h1 left-1/2 lg:text-center text-left"
               >
                 {t("overview.title")}
               </Text>
             </div>
-            <p className="lg:text-lg text-base lg:text-center text-left">
+            <h2 className="lg:text-center text-left">
               {t("overview.description")}
-            </p>
+            </h2>
           </div>
           <Carousel
             className="md:block hidden"
@@ -79,11 +79,11 @@ const CareersPage = () => {
                 <Text
                   bgClip="text"
                   bgGradient="linear(to-r, purple.50,purple.200)"
-                  className="lg:text-3xl text-2xl font-bold drop-shadow-lg"
+                  className="h2 font-bold drop-shadow-lg"
                 >
                   {t("overview.slides.1.title")}
                 </Text>
-                <p className="text-xl">{t("overview.slides.1.description")}</p>
+                <h3>{t("overview.slides.1.description")}</h3>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -98,11 +98,11 @@ const CareersPage = () => {
                 <Text
                   bgClip="text"
                   bgGradient="linear(to-r, purple.50,purple.200)"
-                  className="lg:text-3xl text-2xl font-bold drop-shadow-lg"
+                  className="h2 font-bold drop-shadow-lg"
                 >
                   {t("overview.slides.2.title")}
                 </Text>
-                <p className="text-xl">{t("overview.slides.2.description")}</p>
+                <h3>{t("overview.slides.2.description")}</h3>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -117,11 +117,11 @@ const CareersPage = () => {
                 <Text
                   bgClip="text"
                   bgGradient="linear(to-r, purple.50,purple.200)"
-                  className="lg:text-3xl text-2xl font-bold drop-shadow-lg"
+                  className="h2 font-bold drop-shadow-lg"
                 >
                   {t("overview.slides.3.title")}
                 </Text>
-                <p className="text-xl">{t("overview.slides.3.description")}</p>
+                <h3>{t("overview.slides.3.description")}</h3>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -136,46 +136,46 @@ const CareersPage = () => {
                 <Text
                   bgClip="text"
                   bgGradient="linear(to-r, purple.50,purple.200)"
-                  className="lg:text-3xl text-2xl font-bold drop-shadow-lg"
+                  className="h2 font-bold drop-shadow-lg"
                 >
                   {t("overview.slides.4.title")}
                 </Text>
-                <p className="text-xl">{t("overview.slides.4.description")}</p>
+                <h3>{t("overview.slides.4.description")}</h3>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
           <div className="lg:hidden block">
             <div>
-              <p className="lg:text-2xl text-xl">
+              <h2>
                 {t("overview.slides.1.title")}
-              </p>
-              <p className="lg:text-lg text-base">
+              </h2>
+              <h3>
                 {t("overview.slides.1.description")}
-              </p>
+              </h3>
             </div>
             <div>
-              <p className="lg:text-2xl text-xl">
+              <h2>
                 {t("overview.slides.2.title")}
-              </p>
-              <p className="lg:text-lg text-base">
+              </h2>
+              <h3>
                 {t("overview.slides.2.description")}
-              </p>
+              </h3>
             </div>
             <div>
-              <p className="lg:text-2xl text-xl">
+              <h2>
                 {t("overview.slides.3.title")}
-              </p>
-              <p className="lg:text-lg text-base">
+              </h2>
+              <h3>
                 {t("overview.slides.3.description")}
-              </p>
+              </h3>
             </div>
             <div>
-              <p className="lg:text-2xl text-xl">
+              <h2>
                 {t("overview.slides.4.title")}
-              </p>
-              <p className="lg:text-lg text-base">
+              </h2>
+              <h3>
                 {t("overview.slides.4.description")}
-              </p>
+              </h3>
             </div>
           </div>
         </div>
@@ -185,57 +185,57 @@ const CareersPage = () => {
           <Text
             bgClip="text"
             bgGradient="linear(to-r, purple.400,purple.600)"
-            className="lg:text-4xl text-2xl font-bold"
+            className="h1 font-bold"
           >
             {t("attributes.title")}
           </Text>
           <div>
-            <p className="lg:text-2xl underline text-xl">
+            <h2 className="underline">
               {t("attributes.learning.title")}
-            </p>
-            <p className="lg:text-lg text-base">
+            </h2>
+            <h3>
               {t("attributes.learning.description")}
-            </p>
+            </h3>
           </div>
           <div>
-            <p className="lg:text-2xl underline text-xl">
+            <h2 className="underline">
               {t("attributes.adaptable.title")}
-            </p>
-            <p className="lg:text-lg text-base">
+            </h2>
+            <h3>
               {t("attributes.adaptable.description")}
-            </p>
+            </h3>
           </div>
           <div>
-            <p className="lg:text-2xl underline text-xl">
+            <h2 className="underline">
               {t("attributes.leadership.title")}
-            </p>
-            <p className="lg:text-lg text-base">
+            </h2>
+            <h3>
               {t("attributes.leadership.description")}
-            </p>
+            </h3>
           </div>
           <div>
-            <p className="lg:text-2xl underline text-xl">
+            <h2 className="underline">
               {t("attributes.motivation.title")}
-            </p>
-            <p className="lg:text-lg text-base">
+            </h2>
+            <h3>
               {t("attributes.motivation.description")}
-            </p>
+            </h3>
           </div>
           <div>
-            <p className="lg:text-2xl underline text-xl">
+            <h2 className="underline">
               {t("attributes.passion.title")}
-            </p>
-            <p className="lg:text-lg text-base">
+            </h2>
+            <h3>
               {t("attributes.passion.description")}
-            </p>
+            </h3>
           </div>
           <div>
-            <p className="lg:text-2xl underline text-xl">
+            <h2 className="underline">
               {t("attributes.collaboration.title")}
-            </p>
-            <p className="lg:text-lg text-base">
+            </h2>
+            <h3>
               {t("attributes.collaboration.description")}
-            </p>
+            </h3>
           </div>
         </div>
         <div className="flex flex-col gap-5">
@@ -266,7 +266,7 @@ const CareersPage = () => {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center gap-3 p-16 bg-main text-white">
-        <p className="text-3xl text-center">{t("end.title")}</p>
+        <h1 className="text-center">{t("end.title")}</h1>
         <Button
           size={"lg"}
           className="w-fit"

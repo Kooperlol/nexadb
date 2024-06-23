@@ -50,7 +50,7 @@ export default function Header() {
         padding: "15px 25px",
         backgroundColor:
           scrollPosition > 0 || isOpen
-            ? "rgba(255, 255, 255, 0.05)"
+            ? "rgba(255, 255, 255, 0.15)"
             : "transparent",
         backdropFilter: scrollPosition > 0 || isOpen ? "blur(10px)" : "none",
         transition: "background-color 0.3s, backdrop-filter 0.3s",

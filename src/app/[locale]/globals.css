@@ -159,6 +159,7 @@
 @media (max-width: 768px) {
   .typeanimation {
     text-align: center;
+    height: 90px;
   }
 }
 

@@ -12,7 +12,7 @@ const flash = keyframes`
   }
 `;
 
-const Text = styled.h1<{ size: string }>`
+const Text = styled.h1<{ size: string; align: string }>`
   font-size: ${(props) => props.size};
   font-weight: bold;
   background: linear-gradient(
@@ -27,16 +27,25 @@ const Text = styled.h1<{ size: string }>`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: ${flash} 4s ease-in-out infinite;
-  text-align: left;
+  text-align: ${(props) => props.align};
 `;
 
 interface AnimatedTextProps {
   children: React.ReactNode;
   size?: string;
+  align?: string;
 }
 
-const AnimatedText = ({ children, size = "2rem" }: AnimatedTextProps) => {
-  return <Text size={size}>{children}</Text>;
+const AnimatedText = ({
+  children,
+  size = "2rem",
+  align = "left",
+}: AnimatedTextProps) => {
+  return (
+    <Text size={size} align={align}>
+      {children}
+    </Text>
+  );
 };
 
 export default AnimatedText;

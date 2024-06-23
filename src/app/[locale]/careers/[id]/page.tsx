@@ -58,7 +58,7 @@ const ViewCareerPage = ({ params }: { params: { id: string } }) => {
         </div>
         <hr />
         <div className="flex md:flex-row flex-col md:gap-0 gap-20 justify-between items-center">
-          <div className="flex flex-col w-1/2 gap-10 md:items-start">
+          <div className="flex flex-col md:w-1/2 w-11/12 gap-10 md:items-start">
             <Image
               src={position.image}
               style={{
@@ -108,7 +108,9 @@ const ViewCareerPage = ({ params }: { params: { id: string } }) => {
                   .replace(".", "")
                   .split(";")
                   .map((req: string, index: number) => (
-                    <li key={index}><h5>{req}</h5></li>
+                    <li key={index}>
+                      <h5>{req}</h5>
+                    </li>
                   ))}
               </ul>
             </div>

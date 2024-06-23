@@ -28,7 +28,7 @@ const CareerBenefits = () => {
         <div className="parallax__layer parallax__layer--desktop" />
         <div className="parallax__layer parallax__layer--mobile" />
         <div className="header-content">
-          <AnimatedText>{t("title")}</AnimatedText>
+          <AnimatedText align="center">{t("title")}</AnimatedText>
           <h2 className="text-white w-4/5 md:w-2/3 mx-auto">
             {t.rich("description", {
               b: (chunks) => <b>{chunks}</b>,
@@ -36,10 +36,10 @@ const CareerBenefits = () => {
           </h2>
         </div>
       </div>
-      <div className="flex flex-col lg:gap-3 pt-32 sm:pt-0 gap-20">
+      <div className="flex flex-col lg:gap-3 gap-20">
         <Box height={50} />
         <div className="flex justify-center">
-          <div className="min-h-screen w-2/3 flex flex-col gap-10 pb-16">
+          <div className="min-h-screen w-11/12 md:w-2/3 flex flex-col gap-10 pb-16">
             <Accordion
               defaultIndex={[0, 1, 2]}
               allowMultiple
@@ -71,17 +71,25 @@ const CareerBenefits = () => {
                       src={health}
                       alt={t("image-alt.doctor")}
                     />
-                    <div className="md:w-1/2 w-2/3 h2">
-                      <p>
+                    <div className="md:w-1/2 w-2/3">
+                      <h2>
                         {t.rich("health.title", {
                           b: (chunks) => <b>{chunks}</b>,
                         })}
-                      </p>
+                      </h2>
                       <ul className="list-disc h3">
-                        <li>{t("health.1")}</li>
-                        <li>{t("health.2")}</li>
-                        <li>{t("health.3")}</li>
-                        <li>{t("health.4")}</li>
+                        <li>
+                          <h3>{t("health.1")}</h3>
+                        </li>
+                        <li>
+                          <h3>{t("health.2")}</h3>
+                        </li>
+                        <li>
+                          <h3>{t("health.3")}</h3>
+                        </li>
+                        <li>
+                          <h3>{t("health.4")}</h3>
+                        </li>
                       </ul>
                     </div>
                   </AccordionPanel>
@@ -121,9 +129,15 @@ const CareerBenefits = () => {
                         })}
                       </h2>
                       <ul className="list-disc h3">
-                        <li>{t("flexibility.1")}</li>
-                        <li>{t("flexibility.2")}</li>
-                        <li>{t("flexibility.3")}</li>
+                        <li>
+                          <h3>{t("flexibility.1")}</h3>
+                        </li>
+                        <li>
+                          <h3>{t("flexibility.2")}</h3>
+                        </li>
+                        <li>
+                          <h3>{t("flexibility.3")}</h3>
+                        </li>
                       </ul>
                     </div>
                   </AccordionPanel>
@@ -162,12 +176,22 @@ const CareerBenefits = () => {
                           b: (chunks) => <b>{chunks}</b>,
                         })}
                       </h2>
-                      <ul className="list-disc h3">
-                        <li>{t("finances.1")}</li>
-                        <li>{t("finances.2")}</li>
-                        <li>{t("finances.3")}</li>
-                        <li>{t("finances.4")}</li>
-                        <li>{t("finances.5")}</li>
+                      <ul className="list-disc">
+                        <li>
+                          <h3>{t("finances.1")}</h3>
+                        </li>
+                        <li>
+                          <h3>{t("finances.2")}</h3>
+                        </li>
+                        <li>
+                          <h3>{t("finances.3")}</h3>
+                        </li>
+                        <li>
+                          <h3>{t("finances.4")}</h3>
+                        </li>
+                        <li>
+                          <h3>{t("finances.5")}</h3>
+                        </li>
                       </ul>
                     </div>
                   </AccordionPanel>
@@ -198,9 +222,7 @@ const CareerBenefits = () => {
                         height={"700"}
                       />
                       <Stack mt="6" spacing="3">
-                        <h2 className="text-main">
-                          {t("testimonies.1.name")}
-                        </h2>
+                        <h2 className="text-main">{t("testimonies.1.name")}</h2>
                         <h3>
                           "
                           {t.rich("testimonies.2.description", {
@@ -224,9 +246,7 @@ const CareerBenefits = () => {
                         height={"700"}
                       />
                       <Stack mt="6" spacing="3">
-                        <h2 className="text-main">
-                          {t("testimonies.2.name")}
-                        </h2>
+                        <h2 className="text-main">{t("testimonies.2.name")}</h2>
                         <h3>
                           "
                           {t.rich("testimonies.2.description", {
@@ -250,9 +270,7 @@ const CareerBenefits = () => {
                         height={"700"}
                       />
                       <Stack mt="6" spacing="3">
-                        <h2 className="text-main">
-                          {t("testimonies.3.name")}
-                        </h2>
+                        <h2 className="text-main">{t("testimonies.3.name")}</h2>
                         <h3>
                           "
                           {t.rich("testimonies.3.description", {

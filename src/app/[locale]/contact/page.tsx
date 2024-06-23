@@ -6,7 +6,6 @@ import {
   Input,
   Stack,
   Button,
-  Heading,
   Text,
   Textarea,
   useToast,
@@ -16,6 +15,8 @@ import { useReCaptcha } from "next-recaptcha-v3";
 import React, { useRef } from "react";
 import { FaCheck } from "react-icons/fa";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import trianglify from "@/../public/media/triangles.svg";
 
 const ContactPage = () => {
   // Initialize toast and translations
@@ -103,6 +104,13 @@ const ContactPage = () => {
 
   return (
     <div>
+      <Image
+        className="absolute z-0 object-cover h-screen w-screen"
+        priority
+        draggable={false}
+        src={trianglify}
+        alt={t("image-alt.header")}
+      />
       <div className="flex lg:flex-row flex-col items-center gap-16 md:p-32 py-32 p-8 justify-evenly min-h-screen text-center">
         <div className="flex flex-col gap-10 items-center">
           <Text
@@ -129,7 +137,7 @@ const ContactPage = () => {
             </CardBody>
           </Card>
         </div>
-        <div>
+        <div className="z-10">
           <Stack
             bg={"gray.50"}
             rounded={"xl"}
@@ -138,16 +146,14 @@ const ContactPage = () => {
             maxW={{ lg: "lg" }}
           >
             <Stack spacing={4}>
-            <Text
-              as={"h1"}
-              bgGradient="linear(to-r, purple.400,purple.600)"
-              bgClip="text"
-            >
-              {t("form.title")}!
-            </Text>
-            <h5 color={"gray.500"}>
-              {t("form.description")}
-            </h5>
+              <Text
+                as={"h1"}
+                bgGradient="linear(to-r, purple.400,purple.600)"
+                bgClip="text"
+              >
+                {t("form.title")}!
+              </Text>
+              <h5 color={"gray.500"}>{t("form.description")}</h5>
             </Stack>
             <Box ref={formRef} onSubmit={handSubmit} as={"form"} mt={10}>
               <Stack spacing={4}>

@@ -1,11 +1,12 @@
 import React from "react";
-import { Box, Button, Heading, Text, Stack } from "@chakra-ui/react";
+import { Heading, Stack } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import DBCard from "@/components/database/db-card";
+import Image from "next/image";
+import trianglify from "@/../public/media/triangles.svg";
 
 const DatabasePage = () => {
   const t = useTranslations("Database");
-  const tButtons = useTranslations("Buttons");
   const CORE = t("cores");
   const YEAR = `${t("year")}`;
 
@@ -53,10 +54,15 @@ const DatabasePage = () => {
   ];
 
   return (
-    <div
-      className="flex flex-col items-center gap-16 md:p-32 py-32 p-8 justify-evenly min-h-screen text-center bg-main"
-    >
-      <Heading as="h2" size="xl" color="white" mb={5}>
+    <div className="flex flex-col items-center gap-16 md:p-32 py-32 p-8 justify-evenly min-h-screen text-center bg-main">
+      <Image
+        className="absolute z-0 object-cover w-screen h-full"
+        priority
+        draggable={false}
+        src={trianglify}
+        alt={t("image-alt.header")}
+      />
+      <Heading className="z-10" as="h2" size="xl" color="white" mb={5}>
         {t("title")}
       </Heading>
       <Stack
@@ -66,9 +72,12 @@ const DatabasePage = () => {
         align="stretch"
       >
         {servers.map((server) => (
-          <DBCard price={server.price} description={
-            `${server.cpu} | ${server.storage} | ${server.ram}`
-          } type={server.name} key={server.id} />
+          <DBCard
+            price={server.price}
+            description={`${server.cpu} | ${server.storage} | ${server.ram}`}
+            type={server.name}
+            key={server.id}
+          />
         ))}
       </Stack>
     </div>

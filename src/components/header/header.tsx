@@ -21,6 +21,7 @@ export default function Header() {
   const [isClient, setIsClient] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [textColor, setTextColor] = useState("white");
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -47,8 +48,11 @@ export default function Header() {
       expand="lg"
       style={{
         padding: "15px 25px",
-        backgroundColor: scrollPosition > 0 ? "rgba(255, 255, 255, 0.05)" : "transparent",
-        backdropFilter: scrollPosition > 0 ? "blur(10px)" : "none",
+        backgroundColor:
+          scrollPosition > 0 || isOpen
+            ? "rgba(255, 255, 255, 0.05)"
+            : "transparent",
+        backdropFilter: scrollPosition > 0 || isOpen ? "blur(10px)" : "none",
         transition: "background-color 0.3s, backdrop-filter 0.3s",
       }}
       className="bg-main-foreground"
@@ -64,7 +68,11 @@ export default function Header() {
         >
           NexaDB
         </NavbarBrand>
-        <NavbarToggle className="bg-white" aria-controls="basic-navbar-nav" />
+        <NavbarToggle
+          className="bg-white"
+          aria-controls="basic-navbar-nav"
+          onClick={() => setIsOpen(!isOpen)}
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto gap-2 flex items-center md:items-start">
             <Nav.Link href={`/${locale}`} className="d-flex align-items-center">

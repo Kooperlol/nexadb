@@ -50,11 +50,11 @@ const PositionBox = (position: Position) => {
                 href={`/${locale}/careers/${position.id}`}
               >
                 <div className="flex flex-col md:flex-row justify-between">
-                  <h2 className="hover:underline md:w-4/5">
+                  <h2 className="hover:underline">
                     {(position as any)["position"][locale]}
                   </h2>
                   {position.hiringUrgently && (
-                    <p className="text-white text-center font-bold min-w-52 w-52 h-min p-1 rounded-full md:mx-3 bg-purple-500 border-2 border-white shadow-md">
+                    <p className="text-white text-center font-mono uppercase font-bold min-w-52 w-52 h-min p-1 rounded-full md:mx-3 bg-purple-500 border-2 border-white shadow-md">
                       ⏳ Hiring Urgently!
                     </p>
                   )}

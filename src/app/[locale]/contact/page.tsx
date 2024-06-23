@@ -103,15 +103,15 @@ const ContactPage = () => {
   };
 
   return (
-    <div>
-      <Image
-        className="absolute z-0 object-cover h-screen w-screen"
-        priority
-        draggable={false}
-        src={trianglify}
-        alt={t("image-alt.header")}
-      />
+    <>
       <div className="flex lg:flex-row flex-col items-center gap-16 md:p-32 py-32 p-8 justify-evenly min-h-screen text-center">
+        <Image
+          className="absolute z-0 object-cover h-full w-screen"
+          priority
+          draggable={false}
+          src={trianglify}
+          alt={t("image-alt.header")}
+        />
         <div className="flex flex-col gap-10 items-center">
           <Text
             as={"span"}
@@ -217,7 +217,7 @@ const ContactPage = () => {
           </Stack>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

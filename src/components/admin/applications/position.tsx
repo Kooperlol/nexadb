@@ -34,12 +34,13 @@ const PositionApplications: React.FC<PositionApplicationsProps> = ({
           alt="Position Image"
           width={300}
           loading="lazy"
-          height={300}
+          height={150}
           style={{
             objectFit: "cover",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            width: "100%",
+            width: "300px",
+            height: "150px",
           }}
         />
         <Stack mt="6" spacing="3" flexGrow={1}>

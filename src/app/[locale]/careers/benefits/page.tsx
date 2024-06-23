@@ -201,13 +201,13 @@ const CareerBenefits = () => {
                         <h2 className="text-main">
                           {t("testimonies.1.name")}
                         </h2>
-                        <Text className="h3">
+                        <h3>
                           "
                           {t.rich("testimonies.2.description", {
                             u: (chunks) => <u>{chunks}</u>,
                           })}
                           "
-                        </Text>
+                        </h3>
                       </Stack>
                     </CardBody>
                   </Card>
@@ -227,13 +227,13 @@ const CareerBenefits = () => {
                         <h2 className="text-main">
                           {t("testimonies.2.name")}
                         </h2>
-                        <Text className="h3">
+                        <h3>
                           "
                           {t.rich("testimonies.2.description", {
                             u: (chunks) => <u>{chunks}</u>,
                           })}
                           "
-                        </Text>
+                        </h3>
                       </Stack>
                     </CardBody>
                   </Card>
@@ -253,13 +253,13 @@ const CareerBenefits = () => {
                         <h2 className="text-main">
                           {t("testimonies.3.name")}
                         </h2>
-                        <Text className="h3">
+                        <h3>
                           "
                           {t.rich("testimonies.3.description", {
                             u: (chunks) => <u>{chunks}</u>,
                           })}
                           "
-                        </Text>
+                        </h3>
                       </Stack>
                     </CardBody>
                   </Card>

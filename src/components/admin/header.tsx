@@ -7,7 +7,7 @@ import {
   NavbarBrand,
   NavbarToggle,
 } from "react-bootstrap";
-import SettingsMenu from "../header/lang-menu";
+import LanguageMenu from "../header/lang-menu";
 import { useTranslations, useLocale } from "next-intl";
 
 export default function Header() {
@@ -55,7 +55,7 @@ export default function Header() {
             >
               {t("inquiries")}
             </Nav.Link>
-            <SettingsMenu />
+            <LanguageMenu />
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -51,7 +51,7 @@ const ApplicationsPage = async () => {
   return (
     <div className="container min-h-screen py-36 flex flex-col gap-3 items-center">
       <div className="gap-2 flex flex-col">
-        <p className="text-4xl text-white text-center">{t("title")}</p>
+        <h1 className="text-white text-center">{t("title")}</h1>
         <hr className="border-white" />
       </div>
       <div

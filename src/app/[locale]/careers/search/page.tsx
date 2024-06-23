@@ -41,7 +41,7 @@ const SearchCareersPage = () => {
   return (
     <>
       <div className="min-h-screen md:p-32 py-32 p-8 flex flex-col gap-1 md:gap-10 container">
-        <p className="text-white text-3xl">{t("title")}</p>
+        <h1 className="text-white">{t("title")}</h1>
         <div className="flex md:flex-row flex-col gap-3 justify-between md:items-center">
           <JobSearchBar
             onSearch={(name: string, location: string) => {
@@ -73,12 +73,12 @@ const SearchCareersPage = () => {
               }
             }}
           />
-          <p className="text-white text-xl">
+          <h3 className="text-white">
             {t("careers-count", { count: displayed?.length ?? 0 })}
-          </p>
+          </h3>
         </div>
-        <div>
-          <hr />
+        <br />
+        <div className="flex flex-col gap-3">
           {displayed!!.map((position) => (
             <PositionBox key={position.id} {...position} />
           ))}

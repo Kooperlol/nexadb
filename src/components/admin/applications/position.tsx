@@ -43,10 +43,10 @@ const PositionApplications: React.FC<PositionApplicationsProps> = ({
           }}
         />
         <Stack mt="6" spacing="3" flexGrow={1}>
-          <Heading size="md">{getTranslatedPosition(pos, locale)}</Heading>
-          <Text>
+          <h3>{getTranslatedPosition(pos, locale)}</h3>
+          <h4>
             {unread} {t("applications")}
-          </Text>
+          </h4>
         </Stack>
       </CardBody>
     </Card>

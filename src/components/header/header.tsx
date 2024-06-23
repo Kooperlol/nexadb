@@ -8,7 +8,7 @@ import {
   NavbarBrand,
   NavbarToggle,
 } from "react-bootstrap";
-import SettingsMenu from "./lang-menu";
+import LanguageMenu from "./lang-menu";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import Accessibilik from "accessibility-react-widget";
@@ -134,7 +134,7 @@ export default function Header() {
                 {t("user-nav.contact")}
               </p>
             </Nav.Link>
-            <SettingsMenu />
+            <LanguageMenu />
             {isClient &&
               typeof window !== "undefined" &&
               localStorage !== undefined && <Accessibilik />}

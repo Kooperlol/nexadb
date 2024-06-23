@@ -60,14 +60,14 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
       <div className="min-h-screen flex items-center justify-center py-36 md:px-16">
         <Card className="md:w-1/2 w-4/5">
           <CardHeader className="text-center flex flex-col gap-5">
-            <p className="text-xl font-bold">{t("title")}</p>
-            <p>
+            <h1 className="font-bold">{t("title")}</h1>
+            <h2>
               <u>Id:</u> {position?.id}
-            </p>
+            </h2>
           </CardHeader>
           <CardBody className="grid grid-cols-3 gap-5">
             <div className="flex flex-col items-center justify-center">
-              <p className="underline">{t("position")}:</p>
+              <h3 className="underline">{t("position")}:</h3>
               <Editable
                 defaultValue={getTranslatedPosition(position!!, locale)}
                 onChange={(pos) => {
@@ -82,7 +82,7 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
               </Editable>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <p className="underline">{t("location")}:</p>
+              <h3 className="underline">{t("location")}:</h3>
               <Editable
                 defaultValue={position?.location}
                 onChange={(location) =>
@@ -97,7 +97,7 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
               </Editable>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <p className="underline">{t("salary")}:</p>
+              <h3 className="underline">{t("salary")}:</h3>
               <Editable
                 value={`$${position?.salary.toLocaleString()}`}
                 onChange={(salary) => {
@@ -126,7 +126,7 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
               </Editable>
             </div>
             <div className="flex flex-col items-center">
-              <p className="underline">{t("image")}:</p>
+              <h3 className="underline">{t("image")}:</h3>
               <Editable
                 wordBreak={"break-all"}
                 defaultValue={getTranslatedPositionInfo(position!!, locale)}
@@ -144,7 +144,7 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
               </Editable>
             </div>
             <div className="flex flex-col items-center">
-              <p className="underline">{t("about")}:</p>
+              <h3 className="underline">{t("about")}:</h3>
               <Editable
                 wordBreak={"break-all"}
                 defaultValue={getTranslatedPositionInfo(position!!, locale)}
@@ -162,7 +162,7 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
               </Editable>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <p className="underline">{t("listed")}:</p>
+              <h3 className="underline">{t("listed")}:</h3>
               <RadioGroup defaultValue={position?.listed ? "1" : "2"}>
                 <HStack spacing={5}>
                   <Radio
@@ -193,7 +193,7 @@ const ViewPositionPage = ({ params }: { params: { id: string } }) => {
               </RadioGroup>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <p className="underline">{t("urgently")}:</p>
+              <h3 className="underline">{t("urgently")}:</h3>
               <RadioGroup defaultValue={position?.hiringUrgently ? "1" : "2"}>
                 <HStack spacing={5}>
                   <Radio

@@ -186,7 +186,8 @@ const ApplicationForm = ({ params }: { params: { id: string } }) => {
         fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
       >
         <Text
-          as={"span"}
+          as={"h1"}
+          textAlign={"center"}
           bgGradient="linear(to-r, purple.400,purple.600)"
           bgClip="text"
         >

@@ -110,21 +110,21 @@ const ContactPage = () => {
             bgGradient="linear(to-r, purple.50,purple.200)"
             bgClip="text"
           >
-            <p className="text-4xl font-bold">{t("title")}</p>
+            <h1 className="font-bold">{t("title")}</h1>
           </Text>
           <Card>
             <CardBody className="flex flex-col gap-5 text-left">
               <div className="flex flex-row gap-3 justify-center items-center">
                 <FaCheck color="green" size={25} />
-                <p className="lg:w-full text-xl w-5/6">{t("field1")}</p>
+                <h4 className="lg:w-full w-5/6">{t("field1")}</h4>
               </div>
               <div className="flex flex-row gap-3 justify-center items-center">
                 <FaCheck color="green" size={25} />
-                <p className="lg:w-full text-xl w-5/6">{t("field2")}</p>
+                <h4 className="lg:w-full w-5/6">{t("field2")}</h4>
               </div>
               <div className="flex flex-row gap-3 justify-center items-center">
                 <FaCheck color="green" size={25} />
-                <p className="lg:w-full text-xl w-5/6">{t("field3")}</p>
+                <h4 className="lg:w-full w-5/6">{t("field3")}</h4>
               </div>
             </CardBody>
           </Card>
@@ -138,22 +138,16 @@ const ContactPage = () => {
             maxW={{ lg: "lg" }}
           >
             <Stack spacing={4}>
-              <Heading
-                color={"gray.800"}
-                lineHeight={1.1}
-                fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
-              >
-                <Text
-                  as={"span"}
-                  bgGradient="linear(to-r, purple.400,purple.600)"
-                  bgClip="text"
-                >
-                  {t("form.title")}!
-                </Text>
-              </Heading>
-              <Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
-                {t("form.description")}
-              </Text>
+            <Text
+              as={"h1"}
+              bgGradient="linear(to-r, purple.400,purple.600)"
+              bgClip="text"
+            >
+              {t("form.title")}!
+            </Text>
+            <h5 color={"gray.500"}>
+              {t("form.description")}
+            </h5>
             </Stack>
             <Box ref={formRef} onSubmit={handSubmit} as={"form"} mt={10}>
               <Stack spacing={4}>

@@ -44,7 +44,6 @@
   },
   "Home": {
     "banner": {
-      "supertitle": "Over 1,000+ Clients & Counting!",
       "title": {
         "1": "We Store Data For Businesses",
         "2": "We Store Data For Innovators",
@@ -209,7 +208,7 @@
         "job": "Job title or keyword",
         "location": "City, state, zip code"
       },
-      "careers-count": "{count} careers",
+      "careers-count": "{count} Careers",
       "urgently": "Hiring Urgently",
       "apply": "Apply Now"
     },

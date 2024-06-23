@@ -102,7 +102,7 @@ const AddPositionPage = () => {
           height={"fit-content"}
         >
           <div>
-            <p className="text-xl text-center">{t("title")}</p>
+            <h1 className="text-center">{t("title")}</h1>
           </div>
           <Box
             className="flex flex-col gap-3"

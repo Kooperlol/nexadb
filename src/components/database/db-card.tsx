@@ -7,7 +7,7 @@ interface CardProps {
   type: string;
 }
 
-const Card: React.FC<CardProps> = ({ price, description, type }) => {
+const DBCard: React.FC<CardProps> = ({ price, description, type }) => {
   return (
     <motion.div
       whileHover="hover"
@@ -46,9 +46,9 @@ const Card: React.FC<CardProps> = ({ price, description, type }) => {
           {description}
         </p>
       </div>
-      <button className="absolute bottom-4 left-4 right-4 z-20 rounded border-2 border-white bg-white py-2 text-center font-mono font-black uppercase text-neutral-800 backdrop-blur transition-colors hover:bg-gray-100 hover:text-white">
-        Get it now
-      </button>
+      <div className="absolute bottom-4 left-4 right-4 z-20 rounded border-2 border-white bg-white py-2 text-center font-mono font-black uppercase text-neutral-800 backdrop-blur transition-colors hover:text-purple-800">
+          Get it now
+      </div>
       <Background />
     </motion.div>
   );
@@ -112,4 +112,4 @@ const Background = () => {
   );
 };
 
-export default Card;
+export default DBCard;

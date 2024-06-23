@@ -4,6 +4,8 @@ import React from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { useRef, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
+import NexaButton from "../shared/button";
+import { Card } from "@chakra-ui/react";
 
 const PositionBox = (position: Position) => {
   const t = useTranslations("Careers.Positions");
@@ -36,7 +38,7 @@ const PositionBox = (position: Position) => {
         initial="hidden"
         animate={controls}
       >
-        <div className="flex flex-col gap-8">
+        <Card bgColor={"#694EBC"} className="flex flex-col gap-8 p-5 rounded-lg">
           <div className="flex flex-col text-white">
             <div className="flex flex-row justify-between">
               <Link href={""}>
@@ -45,27 +47,26 @@ const PositionBox = (position: Position) => {
                   href={`/${locale}/careers/${position.id}`}
                 >
                   <div className="flex flex-row  justify-between">
-                    <p className="text-lg font-bold hover:underline w-4/5">
+                    <h2 className="hover:underline w-4/5">
                       {(position as any)["position"][locale]}
-                    </p>
+                    </h2>
                     {position.hiringUrgently && (
-                      <p className="bg-orange-500 text-center font-bold min-w-52 w-52 h-min italic p-1 rounded-lg mx-3">
-                        {t("urgently")}!
-                      </p>
+                      <p className="text-white text-center font-bold min-w-52 w-52 h-min p-1 rounded-full mx-3 bg-purple-500 border-2 border-white shadow-md">
+                        ⏳ Hiring Urgently!
+                      </p>    
                     )}
                   </div>
                 </Link>
               </Link>
-              <Link href={`/${locale}/careers/${position.id}`}>
-                <p className="hover:underline w-full text-right">
-                  {t("apply")}
-                </p>
-              </Link>
+              <NexaButton name={t("apply")} href={`/${locale}/careers/${position.id}`} />
             </div>
-            <p>{position.location}</p>
+            <h3>📍 {position.location}</h3>
+            <h3>✨ Estimated ${position.salary.toLocaleString()} a year</h3>
+            <h3 className="line-clamp-2 overflow-hidden">
+              ℹ️ {(position as any)["about"][locale].split(`${t("requirements")}:`)[0]}
+            </h3>
           </div>
-          <hr />
-        </div>
+        </Card>
       </motion.div>
     </>
   );

@@ -163,6 +163,8 @@
 }
 
 :root {
+  --fontsize5: 0.25rem;
+  --fontsize4: 0.5rem;
   --fontsize3: 0.75rem;
   --fontsize2: calc(var(--fontsize3) * 1.618); /* is equal to 1.236rem */
   --fontsize1: calc(var(--fontsize2) * 1.618); /* is equal to 1.996rem */
@@ -180,6 +182,24 @@ h2 {
 h3 {
   font-size: var(--fontsize3);
   font-weight: 300 !important;
+}
+
+h4 {
+  font-size: var(--fontsize4);
+  font-weight: 300 !important;
+}
+
+h5 {
+  font-size: var(--fontsize5);
+  font-weight: 300 !important;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .parallax {

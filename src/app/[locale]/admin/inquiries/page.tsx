@@ -32,7 +32,7 @@ const InquiriesPage = async () => {
   return (
     <>
       <div className="min-h-screen py-36 px-16 gap-5 flex flex-col">
-        <p className="text-4xl text-white text-center">{t("title")}</p>
+        <h1 className="text-white text-center">{t("title")}</h1>
         <TableContainer bg={"white"}>
           <Table variant="simple">
             <Thead>
@@ -52,7 +52,6 @@ const InquiriesPage = async () => {
             </Tbody>
           </Table>
         </TableContainer>
-        s
       </div>
     </>
   );

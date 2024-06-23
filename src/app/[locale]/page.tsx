@@ -1,22 +1,21 @@
 "use client";
-import { Card, CardBody } from "@chakra-ui/react";
+import { Card, CardBody, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import { Text } from "@chakra-ui/react";
+import { useTranslations, useLocale } from "next-intl";
+import headerBackground from "@../../../public/media/header.jpg";
+import NexaButton from "@/components/shared/button";
+
 const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
   ssr: false,
 });
-import { Button } from "@chakra-ui/react";
-import { useRouter } from "next/navigation";
-import headerBackground from "@../../../public/media/header.jpg";
-import { useTranslations, useLocale } from "next-intl";
 
 export default function HomePage() {
   const locale = useLocale();
   const t = useTranslations("Home");
-  const { push } = useRouter();
+
   return (
     <>
       <div className="flex min-h-screen relative items-center justify-center md:p-32 p-8 py-32">
@@ -29,9 +28,6 @@ export default function HomePage() {
         />
         <div className="flex md:flex-row flex-col md:gap-0 z-1 gap-5 justify-between w-screen items-center">
           <div className="flex flex-col items-center lg:items-start gap-3 md:w-1/3 drop-shadow-sm">
-            <h2 className="font-mono font-semibold text-foreground">
-              {t("banner.supertitle")}
-            </h2>
             <TypeAnimation
               className="typeanimation header-shadow"
               sequence={[
@@ -49,14 +45,17 @@ export default function HomePage() {
                 1000,
               ]}
               speed={50}
-              wrapper="h1"
+              style={{
+                fontSize: "2rem",
+              }}
               repeat={Infinity}
             />
             <h2 className="text-response header-shadow text-white drop-shadow-xl">
               {t.rich("banner.description", {
-                important: (chunks) => <b>{chunks}</b>,
+                important: (chunks) => <span className="font-semibold">{chunks}</span>,
               })}
             </h2>
+            <NexaButton name={t("cta.buttonText")} href={`/${locale}/database`} />
             <style jsx>{`
               @media (max-width: 768px) {
                 .text-response {
@@ -104,9 +103,7 @@ export default function HomePage() {
           >
             {t("dynamicContent.mainText")}
           </Text>
-          <h2 className="md:w-1/2">
-            {t("dynamicContent.secondaryText")}
-          </h2>
+          <h2 className="md:w-1/2">{t("dynamicContent.secondaryText")}</h2>
         </div>
         <div className="flex w-2/3 md:flex-row flex-col gap-10 justify-center items-center">
           <Card className="w-60 h-60">
@@ -166,17 +163,6 @@ export default function HomePage() {
             {t("cta.heading")}
           </Text>
           <h2 className="md:w-1/2 md:text-left">{t("cta.text")}</h2>
-          <Button
-            className="w-fit"
-            bg={"purple.800"}
-            color={"white"}
-            onClick={() => push(`/${locale}/database`)}
-            _hover={{
-              bg: "purple.900",
-            }}
-          >
-            {t("cta.buttonText")}
-          </Button>
         </div>
         <Image
           className="select-none"

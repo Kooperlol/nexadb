@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Heading, Text, Stack } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
-import Card from "@/components/database/db-card";
+import DBCard from "@/components/database/db-card";
 
 const DatabasePage = () => {
   const t = useTranslations("Database");
@@ -66,7 +66,7 @@ const DatabasePage = () => {
         align="stretch"
       >
         {servers.map((server) => (
-          <Card price={server.price} description={
+          <DBCard price={server.price} description={
             `${server.cpu} | ${server.storage} | ${server.ram}`
           } type={server.name} key={server.id} />
         ))}

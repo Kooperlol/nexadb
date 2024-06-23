@@ -9,12 +9,13 @@ import { FiAlertCircle } from "react-icons/fi";
 import { useState } from "react";
 import { FaLanguage } from "react-icons/fa";
 
-const SettingsMenu = () => {
+const LanguageMenu = () => {
   const t = useTranslations("Header");
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <IconButton
+        _hover={{ backgroundColor: "purple.700" }}
         icon={<MdLanguage />}
         backgroundColor={"purple.600"}
         color="white"
@@ -82,4 +83,4 @@ const SpringModal: React.FC<SpringModalProps> = ({ isOpen, setIsOpen }) => {
   );
 };
 
-export default SettingsMenu;
+export default LanguageMenu;

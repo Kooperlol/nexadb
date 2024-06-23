@@ -2,8 +2,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import careersMobile from "@/../public/media/mobile_careers.jpg";
-import { Button } from "@chakra-ui/react";
-import { useRouter } from "next/navigation";
 import careersDesktop from "@/../public/media/careers.gif";
 import ourMissionSlide from "@/../public/media/mission.jpg";
 import ourVisionSlide from "@/../public/media/vision.jpg";
@@ -11,12 +9,12 @@ import ourValuesSlide from "@/../public/media/values.jpg";
 import communitySlide from "@/../public/media/community.jpg";
 import { useLocale, useTranslations } from "next-intl";
 import { Text } from "@chakra-ui/react";
+import NexaButton from "@/components/shared/button";
 
 import { Carousel } from "react-bootstrap";
 import AnimatedText from "@/components/shared/animated-text";
 
 const CareersPage = () => {
-  const { push } = useRouter();
   const [index, setIndex] = useState(0);
   const locale = useLocale();
   const t = useTranslations("Careers.AboutUs");
@@ -267,18 +265,7 @@ const CareersPage = () => {
       </div>
       <div className="flex flex-col items-center justify-center gap-3 p-16 bg-main text-white">
         <h1 className="text-center">{t("end.title")}</h1>
-        <Button
-          size={"lg"}
-          className="w-fit"
-          bg={"purple.800"}
-          color={"white"}
-          onClick={() => push(`/${locale}/careers/search`)}
-          _hover={{
-            bg: "purple.900",
-          }}
-        >
-          {t("end.button")}
-        </Button>
+        <NexaButton name={t("end.button")} href={`/${locale}/careers/search`} />
       </div>
     </div>
   );

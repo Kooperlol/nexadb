@@ -47,42 +47,42 @@ const ViewApplicationPage = ({ params }: { params: { id: string } }) => {
       <div className="min-h-screen flex items-center justify-center py-36 px-16">
         <Card className="w-fit">
           <CardHeader className="text-center">
-            <p className="text-xl font-bold">Application</p>
-            <p>
+            <h1 className="font-bold">Application</h1>
+            <h2>
               <u>Id:</u> {application?.id}
-            </p>
+            </h2>
           </CardHeader>
           <CardBody>
-            <p>
+            <h3>
               <u>{t("name")}:</u> {application?.firstname}{" "}
               {application?.lastname}
-            </p>
-            <p>
+            </h3>
+            <h3>
               <u>{t("position")}:</u> {application?.position}
-            </p>
-            <p>
+            </h3>
+            <h3>
               <u>{t("gender")}:</u>{" "}
               {getTranslatedApplicationGender(application, t)}
-            </p>
-            <p>
+            </h3>
+            <h3>
               <u>{t("birthday")}:</u> {application?.birthdate}
-            </p>
-            <p>
+            </h3>
+            <h3>
               <u>{t("salary")}:</u> $
               {application?.preferredSalary
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-            </p>
-            <p>
+            </h3>
+            <h3>
               <u>{t("email")}:</u> {application?.email}
-            </p>
-            <p>
+            </h3>
+            <h3>
               <u>{t("phone")}:</u> {application?.phone}
-            </p>
+            </h3>
             {application?.portfolio != null && (
-              <p>
+              <h3>
                 <u>{t("portfolio")}:</u> {application?.portfolio}
-              </p>
+              </h3>
             )}
           </CardBody>
           <CardFooter className="flex flex-row justify-between gap-3">

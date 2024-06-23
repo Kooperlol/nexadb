@@ -48,27 +48,27 @@ const ViewInquiryPage = ({ params }: { params: { id: string } }) => {
       <div className="min-h-screen flex items-center justify-center py-36 px-16">
         <Card className="w-fit">
           <CardHeader className="text-center">
-            <p className="text-xl font-bold">{t("title")}</p>
-            <p>
+            <h1 className="font-bold">{t("title")}</h1>
+            <h2>
               <u>Id:</u> {inquiry?.id}
-            </p>
-            <p>
+            </h2>
+            <h2>
               <u>Status:</u>{" "}
               {inquiry?.open
                 ? t("open-options.open")
                 : t("open-options.closed")}
-            </p>
+            </h2>
           </CardHeader>
           <CardBody>
-            <p>
+            <h3>
               <u>{t("name")}:</u> {inquiry?.firstname} {inquiry?.lastname}
-            </p>
-            <p>
+            </h3>
+            <h3>
               <u>{t("email")}:</u> {inquiry?.email}
-            </p>
-            <p>
+            </h3>
+            <h3>
               <u>{t("message")}:</u> {inquiry?.message}
-            </p>
+            </h3>
           </CardBody>
           <CardFooter className="flex flex-row gap-5">
             <Link className="w-full" href={`mailto:${inquiry?.email}`}>

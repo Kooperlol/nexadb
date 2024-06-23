@@ -42,16 +42,16 @@ const ViewCareerPage = ({ params }: { params: { id: string } }) => {
     <>
       <div className="min-h-screen container md:p-32 py-32 p-8 text-white flex flex-col gap-3">
         <Link href={`/${locale}/careers/search`}>
-          <p className="hover:underline text-lg">← {t("back")}</p>
+          <h2 className="hover:underline">← {t("back")}</h2>
         </Link>
         <div className="flex flex-row justify-between font-bold">
-          <Text className="text-2xl font-bold text-left text-white">
+          <h1 className="font-bold text-left text-white">
             {(position as any)["position"][locale]}
-          </Text>
+          </h1>
           <Text
             bgClip="text"
             bgGradient="linear(to-r, #ffbfbf,#ff7e5f)"
-            className="text-2xl font-bold text-right"
+            className="h2 font-bold text-right"
           >
             {position.location}
           </Text>
@@ -72,33 +72,33 @@ const ViewCareerPage = ({ params }: { params: { id: string } }) => {
               <Text
                 bgClip="text"
                 bgGradient="linear(to-r, purple.50,purple.200)"
-                className="text-xl font-bold"
+                className="h4 font-bold"
               >
                 {t("salary")}
               </Text>
-              <p>${position.salary.toLocaleString()}</p>
+              <h5>${position.salary.toLocaleString()}</h5>
             </div>
             <div>
               <Text
                 bgClip="text"
                 bgGradient="linear(to-r, purple.50,purple.200)"
-                className="text-xl font-bold"
+                className="h4 font-bold"
               >
                 {t("description")}
               </Text>
-              <p>
+              <h5>
                 {
                   (position as any)["about"][locale].split(
                     `${t("requirements")}:`
                   )[0]
                 }
-              </p>
+              </h5>
             </div>
             <div>
               <Text
                 bgClip="text"
                 bgGradient="linear(to-r, purple.50,purple.200)"
-                className="text-xl font-bold"
+                className="h4 font-bold"
               >
                 {t("requirements")}
               </Text>
@@ -108,7 +108,7 @@ const ViewCareerPage = ({ params }: { params: { id: string } }) => {
                   .replace(".", "")
                   .split(";")
                   .map((req: string, index: number) => (
-                    <li key={index}>{req}</li>
+                    <li key={index}><h5>{req}</h5></li>
                   ))}
               </ul>
             </div>

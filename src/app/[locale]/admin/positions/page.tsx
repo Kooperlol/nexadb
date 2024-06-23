@@ -1,17 +1,19 @@
 "use client";
 import LoadingPage from "@/app/[locale]/loading";
-import AddPositionButton from "@/components/admin/positions/add-position";
 import Position from "@/components/admin/positions/position";
 import { Table, TableContainer, Tbody, Th, Thead, Tr } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import NexaButton from "@/components/shared/button";
 
 const PositionsPage = async () => {
   const [positions, setPositions] = useState<Position[]>();
   const [loading, setLoading] = useState(true);
   const t = useTranslations("Admin.positions");
+  const tButton = useTranslations("Admin.add-position");
+  const locale = useLocale();
 
   useEffect(() => {
     const fetchPositions = async () => {
@@ -40,8 +42,8 @@ const PositionsPage = async () => {
             alignItems: "center",
           }}
         >
-          <p className="text-4xl text-white text-center">{t("title")}</p>
-          <AddPositionButton />
+          <h1 className="text-white text-center">{t("title")}</h1>
+          <NexaButton name={tButton("title")} href={`/${locale}/admin/positions/add`} />
         </div>
         <TableContainer bg={"white"}>
           <Table variant="simple">

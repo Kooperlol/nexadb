@@ -151,7 +151,7 @@
   font-weight: bold;
   color: white;
   display: inline-block;
-  text-align: left; 
+  text-align: left;
   width: 100%;
   font-size: var(--fontsize1);
 }
@@ -159,6 +159,7 @@
 @media (max-width: 768px) {
   .typeanimation {
     text-align: center;
+    height: 90px;
   }
 }
 
@@ -186,18 +187,18 @@ h3 {
 
 h4 {
   font-size: var(--fontsize4);
-  font-weight: 300 !important;
+  font-weight: 200 !important;
 }
 
 h5 {
   font-size: var(--fontsize5);
-  font-weight: 300 !important;
+  font-weight: 200 !important;
 }
 
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;  
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -233,11 +234,11 @@ h5 {
 }
 
 .parallax__layer--desktop {
-  background-image: url('/media/benefits.gif');
+  background-image: url("/media/benefits.gif");
 }
 
 .parallax__layer--mobile {
-  background-image: url('/media/benefits-mobile.jpg');
+  background-image: url("/media/benefits-mobile.jpg");
   display: none;
 }
 
@@ -263,4 +264,3 @@ h5 {
   justify-content: center;
   height: 100%;
 }
-

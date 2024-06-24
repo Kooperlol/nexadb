@@ -52,10 +52,15 @@ export default function HomePage() {
             />
             <h2 className="text-response header-shadow text-white drop-shadow-xl">
               {t.rich("banner.description", {
-                important: (chunks) => <span className="font-semibold">{chunks}</span>,
+                important: (chunks) => (
+                  <span className="font-semibold">{chunks}</span>
+                ),
               })}
             </h2>
-            <NexaButton name={t("cta.buttonText")} href={`/${locale}/database`} />
+            <NexaButton
+              name={t("cta.buttonText")}
+              href={`/${locale}/database`}
+            />
             <style jsx>{`
               @media (max-width: 768px) {
                 .text-response {
@@ -153,16 +158,16 @@ export default function HomePage() {
           </Card>
         </div>
       </div>
-      <div className="flex md:flex-row flex-col items-center justify-between bg-main md:gap-0 gap-24 text-white lg:text-left text-center lg:p-16 p-8">
+      <div className="flex md:flex-row flex-col items-center justify-between bg-main md:gap-0 gap-24 text-white lg:p-16 p-8">
         <div className="flex flex-col md:items-start items-center gap-2 md:w-3/5">
           <Text
             bgGradient="linear(to-r, purple.50,purple.200)"
             bgClip="text"
-            className="h1 text-left lg:text-center font-semibold"
+            className="h1 font-semibold"
           >
             {t("cta.heading")}
           </Text>
-          <h2 className="md:w-1/2 md:text-left">{t("cta.text")}</h2>
+          <h2 className="md:w-1/2">{t("cta.text")}</h2>
         </div>
         <Image
           className="select-none"

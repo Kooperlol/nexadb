@@ -1,8 +1,5 @@
 import { Position } from '@prisma/client';
-import OpenAI from 'openai';
-const openai = new OpenAI({
-    apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY
-});
+import { openai } from '@/lib/openai';
 
 export async function POST(request: Request) {
     const { messages } = await request.json();

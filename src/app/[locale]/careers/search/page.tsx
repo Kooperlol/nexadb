@@ -7,6 +7,7 @@ import { Position } from "@prisma/client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
+import Chatbot from "@/components/careers/chatbot";
 
 const SearchCareersPage = () => {
   const t = useTranslations("Careers.Positions");
@@ -40,6 +41,7 @@ const SearchCareersPage = () => {
 
   return (
     <>
+      <Chatbot />
       <div className="min-h-screen md:p-32 py-32 p-8 flex flex-col gap-1 md:gap-10 container">
         <h1 className="text-white">{t("title")}</h1>
         <div className="flex md:flex-row flex-col gap-3 justify-between md:items-center">

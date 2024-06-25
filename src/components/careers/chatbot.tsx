@@ -1,4 +1,3 @@
-"use client"
 import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
 import { motion } from 'framer-motion';
 import { IconButton, Spinner } from '@chakra-ui/react';
@@ -11,19 +10,18 @@ export interface Message {
 }
 
 const Chatbot: React.FC = () => {
-    const [lastMessageTime, setLastMessageTime] = useState<number>(0);
-    const [isRateLimited, setIsRateLimited] = useState<boolean>(false);
-
-  const toggleChat = () => {
-    setIsOpen(!isOpen);
-  };
-
+  const [lastMessageTime, setLastMessageTime] = useState<number>(0);
+  const [isRateLimited, setIsRateLimited] = useState<boolean>(false);
   const [messages, setMessages] = useState<Message[]>([
     { text: "Hello! How can I help you today? Ask me anything about NexaDB's careers?", isUser: false }
   ]);
   const [userInput, setUserInput] = useState<string>('');
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const toggleChat = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleUserInput = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setUserInput(event.target.value);
@@ -35,9 +33,14 @@ const Chatbot: React.FC = () => {
     }
   };
 
+  const formatLinks = (text: string) => {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, url => `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`);
+  };
+
   const sendMessage = async () => {
     const currentTime = new Date().getTime();
-    if (currentTime - lastMessageTime < 3000) { // 3000 milliseconds = 3 seconds
+    if (currentTime - lastMessageTime < 3000) {
       setIsRateLimited(true);
       setTimeout(() => setIsRateLimited(false), 3000 - (currentTime - lastMessageTime));
       return;
@@ -59,7 +62,7 @@ const Chatbot: React.FC = () => {
 
       const data = response.data;
       const aiMessage: Message = {
-        text: data,
+        text: formatLinks(data),
         isUser: false,
       };
       setMessages(prevMessages => [...prevMessages, aiMessage]);
@@ -77,37 +80,25 @@ const Chatbot: React.FC = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
-          style={{
-            width: 400,
-            height: 500
-          }}
+          style={{ width: 400, height: 500 }}
           className="relative bg-purple-600 text-white rounded-lg shadow-lg flex flex-col"
         >
-          <button onClick={toggleChat} className="absolute top-2 right-2 text-gray-100">
-            ✕
-          </button>
+          <button onClick={toggleChat} className="absolute top-2 right-2 text-gray-100">✕</button>
           <div className="flex-grow p-4 overflow-y-auto">
             {messages.map((msg, index) => (
               <div key={index} className={`my-2 flex ${msg.isUser ? 'justify-end' : 'justify-start'}`}>
                 {!msg.isUser && (
                   <div className="flex-shrink-0 mr-2">
-                    <div className="bg-purple-800 rounded-full w-8 h-8 flex items-center justify-center">
-                      🤖
-                    </div>
+                    <div className="bg-purple-800 rounded-full w-8 h-8 flex items-center justify-center">🤖</div>
                   </div>
                 )}
-                <div className={`max-w-xs rounded-lg p-2 ${msg.isUser ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}>
-                  {!msg.isUser && <div className="text-sm font-semibold">Career Bot</div>}
-                  <div>{msg.text}</div>
-                </div>
+                <div className={`max-w-xs rounded-lg p-2 ${msg.isUser ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`} dangerouslySetInnerHTML={{ __html: msg.text }} />
               </div>
             ))}
             {isLoading && (
               <div className="my-2 flex justify-start">
                 <div className="flex-shrink-0 mr-2">
-                  <div className="bg-purple-800 rounded-full w-8 h-8 flex items-center justify-center">
-                    🤖
-                  </div>
+                  <div className="bg-purple-800 rounded-full w-8 h-8 flex items-center justify-center">🤖</div>
                 </div>
                 <div className="max-w-xs rounded-lg p-2 bg-gray-200 text-black flex items-center">
                   <Spinner size="sm" color="purple.500" />
@@ -117,21 +108,21 @@ const Chatbot: React.FC = () => {
             )}
           </div>
           <div className="p-2 border-t border-purple-700 flex gap-1 items-center">
-          <textarea
-            value={userInput}
-            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleUserInput(e)}
-            onKeyPress={(e: React.KeyboardEvent<HTMLTextAreaElement>) => handleKeyPress(e)}
-            className="flex-grow p-2 border rounded text-black"
-            placeholder="Type a message..."
-            rows={1}
+            <textarea
+              value={userInput}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleUserInput(e)}
+              onKeyPress={(e: React.KeyboardEvent<HTMLTextAreaElement>) => handleKeyPress(e)}
+              className="flex-grow p-2 border rounded text-black"
+              placeholder="Type a message..."
+              rows={1}
             />
-        <IconButton
-            colorScheme="purple"
-            aria-label='Send'
-            onClick={sendMessage}
-            icon={<MdSend />}
-            isDisabled={isRateLimited || isLoading}
-        />
+            <IconButton
+              colorScheme="purple"
+              aria-label='Send'
+              onClick={sendMessage}
+              icon={<MdSend />}
+              isDisabled={isRateLimited || isLoading}
+            />
           </div>
         </motion.div>
       ) : (
@@ -149,4 +140,4 @@ const Chatbot: React.FC = () => {
   );
 };
 
-export default Chatbot;
+export default Chatbot

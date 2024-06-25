@@ -15,7 +15,7 @@ export async function POST(request: Request) {
           .filter((position: Position) => position.listed)
           .map((position: Position) => ({
               role: 'system',
-              content: `Position: ${position.position}\nDescription: ${position.about}\nLocation: ${position.location}\nSalary: ${position.salary}\nHiring Urgently: ${position.hiringUrgently}`
+              content: `Position: ${position.position}\nDescription: ${position.about}\nLocation: ${position.location}\nSalary: ${position.salary}\nHiring Urgently: ${position.hiringUrgently}\nLink: https://nexadb.vercel.app/en/careers/${position.id}`
           }));
 
           const allMessages = [

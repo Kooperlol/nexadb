@@ -48,32 +48,42 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get("/api/auth/me");
-        setUser(response.data);
+        if (response.data.response === 'authenticated') {
+          setUser('authenticated');
+        } else {
+          setUser(null);
+        }
       } catch (error) {
         setError(error as Error);
-        router.push(`/${locale}/admin`);
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, [router]);
+  }, [router, locale]);
+
+  useEffect(() => {
+    if (!loading) {
+      if (error) {
+        router.push(`/${locale}/admin`);
+      } else if (user && path === `/${locale}/admin`) {
+        router.push(`/${locale}/admin/applications`);
+      }
+    }
+  }, [loading, error, user, path, router, locale]);
 
   const value = { user, error, loading };
 
-  if (loading) return <LoadingPage />;
-
-  if (path === `/${locale}/admin` && user) {
-    router.push(`/${locale}/admin/applications`);
-    return null;
+  if (loading) {
+    return <LoadingPage />;
   }
 
   if (user || path === `/${locale}/admin`) {
     return (
       <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
     );
-  } else {
-    return <LoadingPage />;
   }
+
+  return <LoadingPage />;
 };

@@ -3,11 +3,11 @@ import { IconButton } from "@chakra-ui/react";
 import { MdLanguage } from "react-icons/md";
 import LocalSwitcher from "./local-switcher";
 import { useTranslations } from "next-intl";
-
 import { AnimatePresence, motion } from "framer-motion";
 import { FiAlertCircle } from "react-icons/fi";
 import { useState } from "react";
 import { FaLanguage } from "react-icons/fa";
+import { createPortal } from "react-dom";
 
 const LanguageMenu = () => {
   const t = useTranslations("Header");
@@ -24,7 +24,10 @@ const LanguageMenu = () => {
         aria-label="Language settings"
         onClick={() => setIsOpen(true)}
       />
-      <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      {isOpen && createPortal(
+        <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />,
+        document.body
+      )}
     </>
   );
 };
@@ -45,7 +48,7 @@ const SpringModal: React.FC<SpringModalProps> = ({ isOpen, setIsOpen }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setIsOpen(false)}
-          className="bg-slate-900/20 backdrop-blur p-8 fixed inset-0 z-50 grid place-items-center overflow-y-scroll cursor-pointer"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/20 backdrop-blur p-8 cursor-pointer"
         >
           <motion.div
             initial={{ scale: 0, rotate: "12.5deg" }}

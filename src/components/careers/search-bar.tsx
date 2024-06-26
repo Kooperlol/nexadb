@@ -1,5 +1,5 @@
 import { Input, InputLeftElement, InputGroup } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { MdLocationPin } from "react-icons/md";
 import { debounce } from "lodash";
@@ -14,16 +14,22 @@ const JobSearchBar: React.FC<JobSearchProps> = ({ onSearch }) => {
   const [jobTitle, setJobTitle] = useState("");
   const [location, setLocation] = useState("");
 
-  const debouncedHandleSearch = debounce(
-    (jobTitle: string, location: string) => {
+  const debouncedHandleSearch = useCallback(
+    debounce((jobTitle: string, location: string) => {
       onSearch(jobTitle, location);
-    },
-    500
+    }, 500),
+    [onSearch]
   );
 
-  useEffect(() => {
-    debouncedHandleSearch(jobTitle, location);
-  }, [jobTitle, location, debouncedHandleSearch]);
+  const handleJobTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setJobTitle(e.target.value);
+    debouncedHandleSearch(e.target.value, location);
+  };
+
+  const handleLocationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLocation(e.target.value);
+    debouncedHandleSearch(jobTitle, e.target.value);
+  };
 
   return (
     <div
@@ -45,7 +51,7 @@ const JobSearchBar: React.FC<JobSearchProps> = ({ onSearch }) => {
           border={"none"}
           _hover={{ border: "none" }}
           placeholder={t("job")}
-          onChange={(e) => setJobTitle(e.target.value)}
+          onChange={handleJobTitleChange}
         />
       </InputGroup>
       <InputGroup>
@@ -59,7 +65,7 @@ const JobSearchBar: React.FC<JobSearchProps> = ({ onSearch }) => {
           _hover={{ border: "none" }}
           border={"none"}
           placeholder={t("location")}
-          onChange={(e) => setLocation(e.target.value)}
+          onChange={handleLocationChange}
         />
       </InputGroup>
     </div>

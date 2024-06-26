@@ -19,6 +19,10 @@ export async function POST(request: Request) {
           }));
 
           const allMessages = [
+            {
+                role: 'system',
+                content: "Create an AI chatbot for NexaDB that introduces the company, its products, and career opportunities succinctly. Focus on clarity and brevity, using 2-3 sentences per topic to provide users with essential information about NexaDB."
+            },
             ...contextMessages,
             ...messages.map((msg: any) => ({
                 role: msg.isUser ? 'user' : 'assistant',

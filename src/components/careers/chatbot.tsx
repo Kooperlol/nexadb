@@ -34,9 +34,18 @@ const Chatbot: React.FC = () => {
   };
 
   const formatLinks = (text: string) => {
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-    return text.replace(urlRegex, url => `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`);
+    // Format URLs with colored style
+    const urlRegex = /\[([^\]]+)\]\((https?:\/\/[^\s]+)\)/g;
+    text = text.replace(urlRegex, (match, label, url) => `<a href="${url}" target="_blank" rel="noopener noreferrer" style="color: #6B46C1;">${label}</a>`);
+  
+    // Format **text** as bold
+    const boldRegex = /\*\*(.*?)\*\*/g;
+    text = text.replace(boldRegex, (match, boldText) => `<strong>${boldText}</strong>`);
+  
+    return text;
   };
+
+  
 
   const sendMessage = async () => {
     const currentTime = new Date().getTime();
